@@ -216,75 +216,179 @@
 
     .hero {
       position:relative;
+      overflow:visible;
+      isolation:isolate;
+      min-height:588px;
+      background:#001846;
+      color:#fff;
+    }
+    .hero-bg-rotator,
+    .hero-bg-rotator span {
+      position:absolute;
+      inset:0;
+    }
+    .hero-bg-rotator {
+      z-index:-4;
       overflow:hidden;
-      background:#F8FAFC;
+      pointer-events:none;
+    }
+    .hero-bg-rotator span {
+      opacity:0;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.04);
+      filter:saturate(.94) contrast(1.05);
+      animation:heroBgSwap 24s infinite;
+    }
+    .hero-bg-rotator span:nth-child(1) { background-image:url('imagenes/6.png'); animation-delay:0s; }
+    .hero-bg-rotator span:nth-child(2) { background-image:url('imagenes/9.png'); animation-delay:6s; }
+    .hero-bg-rotator span:nth-child(3) { background-image:url('imagenes/1.png'); animation-delay:12s; }
+    .hero-bg-rotator span:nth-child(4) { background-image:url('imagenes/5.png'); animation-delay:18s; }
+    @keyframes heroBgSwap {
+      0% { opacity:1; transform:scale(1.04); }
+      8% { opacity:1; }
+      25% { opacity:1; }
+      33% { opacity:0; transform:scale(1.09); }
+      100% { opacity:0; transform:scale(1.09); }
     }
     .hero::after {
       content:"";
       position:absolute;
-      right:-106px;
-      top:0;
-      width:300px;
-      height:300px;
-      background:var(--navy);
-      clip-path:polygon(35% 0,100% 0,100% 100%);
-      opacity:.92;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(circle at 52% 36%, rgba(131,10,61,.22), transparent 26%),
+        linear-gradient(90deg, rgba(2,10,29,.90) 0%, rgba(0,24,70,.86) 47%, rgba(0,32,96,.92) 100%);
     }
-    .hero::before {
-      content:"";
+    .hero-bg-fade {
       position:absolute;
-      right:42px;
-      top:0;
-      width:11px;
-      height:215px;
-      background:var(--mustard);
-      transform:skewX(-35deg);
-      z-index:1;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(0,24,70,.02) 0%, rgba(0,24,70,.18) 58%, rgba(0,24,70,.96) 100%),
+        radial-gradient(circle at 82% 15%, rgba(255,255,255,.08), transparent 28%);
     }
     .hero-grid {
       position:relative;
       z-index:2;
-      display:grid;
-      grid-template-columns:1fr .98fr;
-      gap:32px;
+      min-height:588px;
+      display:flex;
       align-items:center;
-      padding:46px 0 56px;
+      justify-content:center;
+      padding:70px 0 108px;
+      text-align:center;
     }
     .hero-copy {
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:24px;
       position:relative;
-      overflow:hidden;
+      width:min(760px, 100%);
+      margin-inline:auto;
     }
-    .hero-copy::before {
-      content:"";
-      position:absolute;
-      inset:0 0 auto 0;
-      height:4px;
-      background:var(--green);
+    .hero-copy .eyebrow {
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      padding:8px 16px;
+      margin-bottom:26px;
+      letter-spacing:.01em;
+      text-transform:none;
+      font-size:12px;
+      backdrop-filter:blur(8px);
     }
-    .hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:17px; }
-    .hero-kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
-    .kpi {
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:13px;
-      padding:12px 13px;
-    }
-    .kpi strong {
-      display:block;
-      color:var(--navy);
-      font-size:20px;
-      line-height:1;
+    .hero-copy .eyebrow::before { display:none; }
+    .hero-copy h1 {
+      color:#fff;
+      max-width:760px;
+      margin:0 auto 18px;
+      font-size:clamp(31px, 4.2vw, 52px);
+      line-height:1.05;
       font-weight:650;
-      margin-bottom:4px;
+      letter-spacing:-.048em;
     }
-    .kpi span { color:var(--muted); font-size:11.2px; font-weight:600; }
+    .hero-copy h1::after {
+      content:"";
+      display:block;
+      width:72px;
+      height:3px;
+      margin:24px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg, #56d48c, #2f75ff);
+    }
+    .hero-copy .lead {
+      color:rgba(255,255,255,.86);
+      max-width:780px;
+      margin:0 auto 28px;
+      font-size:clamp(16px, 1.55vw, 18px);
+      line-height:1.65;
+    }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:24px; }
+    .hero-actions .btn {
+      min-height:50px;
+      padding:13px 26px;
+      border-radius:999px;
+      box-shadow:0 18px 36px rgba(0,0,0,.18);
+      animation-duration:.72s;
+      animation-timing-function:cubic-bezier(.22,1,.36,1);
+      animation-fill-mode:both;
+    }
+    .hero-actions .btn-primary {
+      background:linear-gradient(135deg, #2f75ff 0%, #5fdb94 100%);
+      color:#001846;
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:0 18px 42px rgba(47,117,255,.32), 0 0 0 7px rgba(95,219,148,.13);
+      font-weight:800;
+      transform-origin:center;
+      animation-name:heroBtnInLeft;
+    }
+    .hero-actions .btn-primary:hover {
+      box-shadow:0 22px 48px rgba(47,117,255,.42), 0 0 0 8px rgba(95,219,148,.18);
+    }
+    .hero-actions .btn-outline {
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border-color:rgba(255,255,255,.54);
+      animation-name:heroBtnInRight;
+    }
+    @keyframes heroBtnInLeft {
+      from { opacity:0; transform:translateX(-72px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @keyframes heroBtnInRight {
+      from { opacity:0; transform:translateX(72px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg-rotator span,
+      .hero-actions .btn {
+        animation:none;
+      }
+      .hero-bg-rotator span:first-child { opacity:1; }
+    }
+    .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+    .kpi {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:transparent;
+      border:0;
+      border-radius:0;
+      padding:0;
+      color:rgba(255,255,255,.82);
+    }
+    .kpi::before { content:""; width:8px; height:8px; border-radius:50%; background:#6ee7b7; box-shadow:0 0 0 4px rgba(110,231,183,.12); }
+    .kpi strong {
+      display:inline;
+      color:#fff;
+      font-size:14px;
+      line-height:1.2;
+      font-weight:750;
+      margin:0;
+    }
+    .kpi span { color:rgba(255,255,255,.82); font-size:13px; font-weight:650; }
 
     .hero-slider {
+      display:none;
       background:var(--navy);
       border-radius:22px;
       overflow:hidden;
@@ -362,7 +466,7 @@
     }
     .dot.active { background:var(--mustard); }
 
-    .risk-strip { margin-top:-30px; position:relative; z-index:4; }
+    .risk-strip { margin-top:-31px; position:relative; z-index:4; }
     .risk-box {
       background:#fff;
       border:1px solid var(--line);
@@ -370,17 +474,19 @@
       box-shadow:var(--shadow);
       padding:22px;
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:18px;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
       align-items:center;
+      padding:20px 30px;
     }
+    .risk-box > div:first-child { display:none; }
     .risk-card-mini { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
     .risk-pill {
       min-height:88px;
       background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:13px;
-      padding:12px;
+      border:0;
+      border-radius:14px;
+      padding:18px 20px;
     }
     .risk-pill i { display:block; width:9px; height:9px; border-radius:50%; margin-bottom:9px; }
     .risk-pill:nth-child(1) i { background:var(--green); }
@@ -388,6 +494,21 @@
     .risk-pill:nth-child(3) i { background:var(--danger); }
     .risk-pill strong { display:block; color:var(--navy); font-size:13px; margin-bottom:1px; font-weight:650; }
     .risk-pill span { color:var(--muted); font-size:11.5px; }
+    .hero-proof {
+      min-height:88px;
+      background:var(--soft);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+    .hero-proof strong {
+      display:block;
+      color:var(--navy);
+      font-size:clamp(25px, 2.4vw, 30px);
+      line-height:1;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .hero-proof span { color:#4b5567; font-size:12.5px; font-weight:700; }
 
     .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
@@ -1094,6 +1215,7 @@
       .mid-cta-grid,
       .footer-grid { grid-template-columns:1fr; }
       .grid-4 { grid-template-columns:repeat(2,1fr); }
+      .risk-box { grid-template-columns:repeat(2,1fr); }
       .why-list, .image-band { grid-template-columns:1fr; }
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
@@ -1114,6 +1236,7 @@
       .mid-cta-parallax { min-height:420px; }
       .mid-cta-card { padding:8px 0; }
       .hero-kpis, .risk-card-mini, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
+      .risk-box { grid-template-columns:1fr; padding:16px; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
       .modal-head, .modal-body { padding:18px; }
@@ -1129,6 +1252,13 @@
 
   <main id="inicio">
     <section class="hero" id="resumen">
+      <div class="hero-bg-rotator" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hero-bg-fade" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Cumplimiento · Riesgo · Confianza</span>
@@ -1199,17 +1329,16 @@
     <section class="risk-strip" id="evaluacion">
       <div class="wrap">
         <div class="risk-box">
-          <div>
+          <div class="risk-intro">
             <span class="eyebrow">Autoevaluación de Riesgo Crecer</span>
             <h2>Diagnóstico preliminar en pocos minutos.</h2>
             <p class="lead">Evalúa de forma inicial el cumplimiento laboral, previsional, documental y de seguridad de tu organización.</p>
             <button class="btn btn-primary" data-open-eval>Iniciar evaluación gratuita</button>
           </div>
-          <div class="risk-card-mini">
-            <div class="risk-pill"><i></i><strong>Riesgo bajo</strong><span>85 a 100 puntos</span></div>
-            <div class="risk-pill"><i></i><strong>Riesgo medio</strong><span>60 a 84 puntos</span></div>
-            <div class="risk-pill"><i></i><strong>Riesgo alto</strong><span>Menor a 60 puntos</span></div>
-          </div>
+          <div class="hero-proof"><strong>20+</strong><span>años de experiencia</span></div>
+          <div class="hero-proof"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
+          <div class="hero-proof"><strong>100%</strong><span>diagnóstico trazable</span></div>
+          <div class="hero-proof"><strong>0-100</strong><span>score inicial</span></div>
         </div>
       </div>
     </section>
