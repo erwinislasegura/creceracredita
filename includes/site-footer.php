@@ -13,7 +13,7 @@ $crmAccessUrl = $crmAccessUrl ?? 'public/login';
 ?>
 <style>
   /* Shared site chrome: this include owns the footer styling for every page. */
-  footer { background:#071E41 !important; color:rgba(255,255,255,.74) !important; padding:32px 0 !important; }
+  footer { background:#001846 !important; color:rgba(255,255,255,.74) !important; padding:32px 0 !important; }
   .footer-grid { display:grid !important; grid-template-columns:1.2fr .8fr .8fr !important; gap:22px !important; }
   .footer-brand-logo { width:220px !important; height:auto !important; margin-bottom:10px !important; padding:8px !important; background:#fff !important; border:1px solid rgba(255,255,255,.12) !important; border-radius:12px !important; display:block !important; }
   .footer-logo .logo-placeholder,
@@ -24,7 +24,7 @@ $crmAccessUrl = $crmAccessUrl ?? 'public/login';
   footer span { display:block !important; margin:5px 0 !important; }
   .footer-access { margin-top:14px !important; padding-top:12px !important; border-top:1px solid rgba(255,255,255,.14) !important; }
   .footer-access-link { display:inline-flex !important; align-items:center !important; gap:8px !important; width:auto !important; margin-top:8px !important; padding:9px 12px !important; border:1px solid rgba(255,255,255,.22) !important; border-radius:999px !important; background:rgba(255,255,255,.06) !important; color:#fff !important; font-weight:650 !important; }
-  .footer-access-link:hover { background:#0B8F63 !important; border-color:#0B8F63 !important; color:#fff !important; }
+  .footer-access-link:hover { background:#830A3D !important; border-color:#830A3D !important; color:#fff !important; }
   .footer-menu { margin:0 !important; padding:0 !important; list-style:none !important; }
   .footer-menu li { margin:5px 0 !important; }
   .footer-menu a { display:block !important; }
