@@ -18,6 +18,7 @@ $activePage = $activePage ?? 'inicio';
   .nav { height:68px !important; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:18px !important; }
   .brand { display:flex !important; align-items:center !important; justify-content:flex-start !important; flex:0 0 236px !important; min-width:0 !important; }
   .brand-mark { width:220px !important; height:48px !important; display:flex !important; align-items:center !important; justify-content:center !important; overflow:hidden !important; }
+  .brand-logo { width:100% !important; height:100% !important; object-fit:contain !important; display:block !important; }
   .brand .logo-placeholder,
   .brand .brand-placeholder,
   .brand .brand-logo-placeholder { width:100% !important; height:46px !important; min-height:46px !important; padding:0 14px !important; border:1px solid rgba(6,43,95,.16) !important; border-radius:12px !important; background:#fff !important; color:var(--navy) !important; box-shadow:0 2px 8px rgba(6,43,95,.06) !important; display:flex !important; align-items:center !important; justify-content:center !important; font-size:16px !important; font-weight:750 !important; letter-spacing:-.01em !important; line-height:1 !important; text-transform:none !important; text-align:center !important; }
@@ -53,7 +54,7 @@ $activePage = $activePage ?? 'inicio';
 <header class="header">
   <nav class="nav wrap" aria-label="MENÚ PRINCIPAL">
     <a class="brand" href="index.php" aria-label="Crecer Acredita">
-      <span class="brand-mark"><span class="logo-placeholder brand-placeholder brand-logo-placeholder" role="img" aria-label="Crecer Acredita">Crecer Acredita</span></span>
+      <span class="brand-mark"><img class="brand-logo" src="logo/logo.png" alt="Crecer Acredita"></span>
     </a>
     <div class="menu-group">
       <span class="menu-heading">MENÚ PRINCIPAL</span>

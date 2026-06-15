@@ -585,6 +585,64 @@
     .mining-box h3 { color:#fff; }
     .mining-box ul { margin:9px 0 0; padding-left:17px; color:rgba(255,255,255,.80); }
 
+
+    .mid-cta-parallax {
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:#071E41;
+      min-height:360px;
+      display:flex;
+      align-items:center;
+      isolation:isolate;
+    }
+    .mid-cta-parallax::before {
+      content:"";
+      position:absolute;
+      inset:-12% 0;
+      background:
+        linear-gradient(105deg, rgba(6,43,95,.92) 0%, rgba(6,43,95,.78) 47%, rgba(11,143,99,.58) 100%),
+        url('imagenes/6.png') center / cover no-repeat;
+      background-attachment:fixed;
+      z-index:-2;
+    }
+    .mid-cta-parallax::after {
+      content:"";
+      position:absolute;
+      right:-90px;
+      bottom:-130px;
+      width:330px;
+      height:330px;
+      border-radius:50%;
+      background:rgba(214,165,26,.22);
+      z-index:-1;
+    }
+    .mid-cta-card {
+      max-width:690px;
+      padding:34px;
+      border-radius:24px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 24px 60px rgba(0,0,0,.22);
+      backdrop-filter:blur(10px);
+    }
+    .mid-cta-card h2 { color:#fff; font-size:clamp(24px, 3vw, 34px); }
+    .mid-cta-card .lead { color:rgba(255,255,255,.82); }
+    .mid-cta-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+    .mid-cta-proof { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    .mid-cta-proof span {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.84);
+      font-size:12.5px;
+      font-weight:600;
+    }
+
     .seal-grid { display:grid; grid-template-columns:.94fr 1.06fr; gap:24px; align-items:start; }
     .seal-card {
       background:#fff;
@@ -982,6 +1040,7 @@
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
       .hero::after, .hero::before { opacity:.2; }
+      .mid-cta-parallax::before { background-attachment:scroll; }
       .experience, .mining { background-attachment:scroll; }
     }
 
@@ -993,7 +1052,8 @@
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
       .section { padding:42px 0; }
-      .hero-copy, .risk-box, .contact-cta, .seal-card { padding:18px; border-radius:17px; }
+      .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-card { padding:18px; border-radius:17px; }
+      .mid-cta-parallax { min-height:420px; }
       .hero-kpis, .risk-card-mini, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
@@ -1129,6 +1189,27 @@
             <p class="text-muted">Reconocimiento para contratistas con mejores estándares.</p>
             <a class="btn btn-outline" href="sello-crecer.php#sello">Conocer el sello</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section mid-cta-parallax" id="cta-ejecutivo">
+      <div class="wrap">
+        <div class="mid-cta-card reveal-card">
+          <span class="eyebrow">Acompañamiento especializado</span>
+          <h2>Convierte el control documental en una ventaja operativa.</h2>
+          <p class="lead">Usamos información, alertas y seguimiento experto para ayudarte a anticipar incumplimientos, ordenar evidencias y tomar mejores decisiones con tus contratistas.</p>
+          <div class="mid-cta-actions">
+            <a class="btn btn-primary" href="contacto.php#contacto">Agendar una reunión</a>
+            <button class="btn btn-mustard" data-open-eval>Evaluar mi riesgo</button>
+          </div>
+          <div class="mid-cta-proof" aria-label="Beneficios destacados">
+            <span>✓ Gestión preventiva</span>
+            <span>✓ Reportabilidad ejecutiva</span>
+            <span>✓ Soporte experto</span>
+          </div>
         </div>
       </div>
     </section>
