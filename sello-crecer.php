@@ -236,32 +236,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="wrap">
-      <span><strong>Crecer Acredita</strong> · Reducimos el riesgo de tu cadena de contratistas</span>
-      <span>creceracredita@crecerconsultores.cl · +56 9 2181 6236</span>
-    </div>
-  </div>
-
-  <header class="header">
-    <nav class="nav wrap" aria-label="Menú principal">
-      <a class="brand" href="index.php" aria-label="Crecer Acredita">
-        <span class="brand-mark brand-placeholder" aria-hidden="true">Crecer Acredita</span>
-      </a>
-      <ul class="menu" id="menu">
-        <li><a href="index.php" class="">Inicio</a></li>
-<li><a href="nosotros.php" class="">Nosotros</a></li>
-<li><a href="servicios.php" class="">Servicios</a></li>
-<li><a href="mineria.php" class="">Minería</a></li>
-<li><a href="sello-crecer.php" class="active">Sello Crecer</a></li>
-<li><a href="contacto.php" class="">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
-        <button class="hamb" id="hamb" aria-label="Abrir menú">☰</button>
-      </div>
-    </nav>
-  </header>
+  <?php $activePage = 'sello'; include __DIR__ . '/includes/site-header.php'; ?>
 
 <main>
 
@@ -352,28 +327,7 @@ footer a:hover{color:#fff}
 
 </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-logo">
-        <div class="footer-logo-placeholder" aria-hidden="true">Crecer Acredita</div>
-        <p>Transformamos el cumplimiento en confianza. Más de 20 años de experiencia respaldando soluciones de cumplimiento para empresas.</p>
-      </div>
-      <div>
-        <h4>Menú</h4>
-        <a href="nosotros.php">Nosotros</a>
-        <a href="servicios.php">Servicios</a>
-        <a href="mineria.php">Crecer Acredita Minería</a>
-        <a href="sello-crecer.php">Sello Crecer</a>
-        <a href="contacto.php">Contacto</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="mailto:creceracredita@crecerconsultores.cl">creceracredita@crecerconsultores.cl</a>
-        <a href="https://wa.me/56921816236" target="_blank" rel="noopener">+56 9 2181 6236</a>
-        <span>Santiago, Chile</span>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/includes/site-footer.php'; ?>
 
 
 <script>
