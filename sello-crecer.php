@@ -245,16 +245,16 @@ footer a:hover{color:#fff}
 
   <header class="header">
     <nav class="nav wrap" aria-label="Menú principal">
-      <a class="brand" href="index.html" aria-label="Crecer Acredita">
+      <a class="brand" href="index.php" aria-label="Crecer Acredita">
         <span class="brand-mark brand-placeholder" aria-hidden="true">Crecer Acredita</span>
       </a>
       <ul class="menu" id="menu">
-        <li><a href="index.html" class="">Inicio</a></li>
-<li><a href="nosotros.html" class="">Nosotros</a></li>
-<li><a href="servicios.html" class="">Servicios</a></li>
-<li><a href="mineria.html" class="">Minería</a></li>
-<li><a href="sello-crecer.html" class="active">Sello Crecer</a></li>
-<li><a href="contacto.html" class="">Contacto</a></li>
+        <li><a href="index.php" class="">Inicio</a></li>
+<li><a href="nosotros.php" class="">Nosotros</a></li>
+<li><a href="servicios.php" class="">Servicios</a></li>
+<li><a href="mineria.php" class="">Minería</a></li>
+<li><a href="sello-crecer.php" class="active">Sello Crecer</a></li>
+<li><a href="contacto.php" class="">Contacto</a></li>
       </ul>
       <div class="nav-actions">
         <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
@@ -271,8 +271,8 @@ footer a:hover{color:#fff}
         <h1>Cumplimiento que genera confianza.</h1>
         <p class="lead">El Sello Crecer reconoce a empresas contratistas que mantienen estándares superiores en materias laborales, previsionales, documentales y de gestión preventiva.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="contacto.html">Solicitar información</a>
-          <a class="btn btn-mustard" href="servicios.html">Ver servicios</a>
+          <a class="btn btn-primary" href="contacto.php">Solicitar información</a>
+          <a class="btn btn-mustard" href="servicios.php">Ver servicios</a>
         </div>
       </div>
     </section>
@@ -360,11 +360,11 @@ footer a:hover{color:#fff}
       </div>
       <div>
         <h4>Menú</h4>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="mineria.html">Crecer Acredita Minería</a>
-        <a href="sello-crecer.html">Sello Crecer</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="nosotros.php">Nosotros</a>
+        <a href="servicios.php">Servicios</a>
+        <a href="mineria.php">Crecer Acredita Minería</a>
+        <a href="sello-crecer.php">Sello Crecer</a>
+        <a href="contacto.php">Contacto</a>
       </div>
       <div>
         <h4>Contacto</h4>
