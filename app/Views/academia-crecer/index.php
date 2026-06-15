@@ -2,11 +2,11 @@
 <section class="academia-crecer-section" id="academia-crecer">
   <style>
     .academia-crecer-section {
-      --navy: #062B5F;
-      --navy-dark: #041D42;
-      --green: #0B8F63;
-      --green-2: #0EA573;
-      --mustard: #D6A51A;
+      --navy: #002060;
+      --navy-dark: #001846;
+      --green: #830A3D;
+      --green-2: #A3164E;
+      --mustard: #B0174F;
       --ink: #172033;
       --muted: #667386;
       --line: #E3E9F2;
