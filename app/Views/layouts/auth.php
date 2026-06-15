@@ -1,1 +1,1 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acceso CRM</title><link rel="stylesheet" href="/assets/css/app.css"></head><body class="auth-body"><?=$content?></body></html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acceso CRM</title><link rel="stylesheet" href="<?=url('/assets/css/app.css')?>"></head><body class="auth-body"><?=$content?></body></html>
