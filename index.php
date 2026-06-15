@@ -1007,69 +1007,37 @@
   <?php $activePage = 'inicio'; include __DIR__ . '/includes/site-header.php'; ?>
 
   <main id="inicio">
-    <section class="hero">
+    <section class="hero" id="resumen">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Cumplimiento · Riesgo · Confianza</span>
           <h1>Control inteligente de contratistas para decisiones más seguras.</h1>
-          <p class="lead">Protegemos a tu organización mediante procesos de acreditación, cumplimiento legal y evaluación preventiva de riesgos laborales, previsionales y documentales.</p>
+          <p class="lead">Un resumen de nuestras soluciones para acreditar contratistas, prevenir incumplimientos y fortalecer la confianza operacional.</p>
 
           <div class="hero-actions">
             <button class="btn btn-primary" data-open-eval>Iniciar evaluación gratuita</button>
-            <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+            <a class="btn btn-outline" href="servicios.php">Ver servicios</a>
           </div>
 
           <div class="hero-kpis">
             <div class="kpi"><strong>20+</strong><span>años de experiencia</span></div>
-            <div class="kpi"><strong>360°</strong><span>asesoría y soporte</span></div>
-            <div class="kpi"><strong>0-100</strong><span>diagnóstico de riesgo</span></div>
+            <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
+            <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
           </div>
         </div>
 
-        <div class="hero-slider" aria-label="Mensajes principales">
+        <div class="hero-slider" aria-label="Resumen de soluciones">
           <div class="slide active">
             <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80');"></div>
             <div class="slide-overlay"></div>
             <div class="slide-content">
               <div>
-                <span class="slide-tag">Slider 1</span>
-                <h2>Control Inteligente de Contratistas</h2>
-                <p>Procesos de acreditación, cumplimiento legal y monitoreo preventivo para reducir contingencias antes de que afecten tu operación.</p>
+                <span class="slide-tag">Resumen</span>
+                <h2>Cumplimiento simple, preventivo y trazable</h2>
+                <p>Conoce las áreas principales y entra a cada página para revisar el detalle.</p>
               </div>
-              <a class="btn btn-mustard" href="#evaluacion">Evaluar riesgo ahora</a>
+              <a class="btn btn-mustard" href="servicios.php">Explorar servicios</a>
             </div>
-          </div>
-
-          <div class="slide">
-            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80');"></div>
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-              <div>
-                <span class="slide-tag">Slider 2</span>
-                <h2>Prevención de Multas y Contingencias</h2>
-                <p>Identificamos incumplimientos antes de que se transformen en sanciones, demandas laborales o riesgos operacionales.</p>
-              </div>
-              <a class="btn btn-mustard" href="#servicios">Conocer soluciones</a>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');"></div>
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-              <div>
-                <span class="slide-tag">Slider 3</span>
-                <h2>Sello Crecer: cumplimiento que genera confianza</h2>
-                <p>Reconocemos a contratistas con altos estándares laborales, previsionales y documentales para facilitar decisiones más seguras.</p>
-              </div>
-              <a class="btn btn-mustard" href="#sello">Ver Sello Crecer</a>
-            </div>
-          </div>
-
-          <div class="dots">
-            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
           </div>
         </div>
       </div>
@@ -1080,11 +1048,10 @@
         <div class="risk-box">
           <div>
             <span class="eyebrow">Autoevaluación de Riesgo Crecer</span>
-            <h2>¿Conoces el nivel de riesgo de tu empresa?</h2>
-            <p class="lead">Obtén un diagnóstico preliminar sobre cumplimiento laboral, previsional, documental y de seguridad.</p>
+            <h2>Diagnóstico preliminar en pocos minutos.</h2>
+            <p class="lead">Evalúa de forma inicial el cumplimiento laboral, previsional, documental y de seguridad de tu organización.</p>
             <button class="btn btn-primary" data-open-eval>Iniciar evaluación gratuita</button>
           </div>
-
           <div class="risk-card-mini">
             <div class="risk-pill"><i></i><strong>Riesgo bajo</strong><span>85 a 100 puntos</span></div>
             <div class="risk-pill"><i></i><strong>Riesgo medio</strong><span>60 a 84 puntos</span></div>
@@ -1094,235 +1061,40 @@
       </div>
     </section>
 
-    <section class="section experience">
-      <div class="wrap exp-grid">
-        <div class="exp-number">
-          <strong>20+</strong>
-          <span>años de experiencia en Gestión de Personas y Cumplimiento Laboral</span>
-        </div>
-        <div>
-          <span class="eyebrow">Experiencia aplicada</span>
-          <h2>Experiencia que entiende los desafíos reales de las empresas.</h2>
-          <p class="lead">Trayectoria profesional en Recursos Humanos, Relaciones Laborales y Cumplimiento Organizacional aplicada al control de contratistas.</p>
-          <div class="exp-list">
-            <div>Relaciones laborales</div>
-            <div>Cumplimiento previsional</div>
-            <div>Auditorías laborales</div>
-            <div>Administración de contratos</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div>
-          <span class="eyebrow">Más que acreditación</span>
-          <h2>Controlamos, evaluamos y reducimos riesgos asociados a contratistas.</h2>
-          <p class="lead">Nuestro enfoque no se limita a revisar documentos. Analizamos riesgos que podrían generar multas, demandas laborales, incumplimientos regulatorios o afectar la continuidad operacional.</p>
-          <div class="visual-list">
-            <div class="visual-row"><span class="check">✓</span><div><strong>Prevención temprana.</strong> Alertas antes de que los incumplimientos se transformen en contingencias.</div></div>
-            <div class="visual-row"><span class="check">✓</span><div><strong>Control permanente.</strong> Seguimiento documental, laboral, previsional y normativo.</div></div>
-            <div class="visual-row"><span class="check">✓</span><div><strong>Información ejecutiva.</strong> Indicadores claros para tomar mejores decisiones.</div></div>
-          </div>
-        </div>
-
-        <div class="image-stack">
-          <div class="photo-card tall js-parallax-card" data-speed="-0.055">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Equipo en reunión corporativa">
-            <div class="overlay"><strong>Gestión y control</strong><span>Monitoreo permanente y decisiones más seguras.</span></div>
-          </div>
-          <div style="display:grid; gap:12px;">
-            <div class="photo-card js-parallax-card" data-speed="0.045">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Análisis documental y cumplimiento">
-              <div class="overlay"><strong>Cumplimiento</strong><span>Validación documental y seguimiento.</span></div>
-            </div>
-            <div class="photo-card js-parallax-card" data-speed="0.035">
-              <img src="https://images.unsplash.com/photo-1581092446327-9db0de73b02d?auto=format&fit=crop&w=1200&q=80" alt="Operación industrial">
-              <div class="overlay"><strong>Prevención</strong><span>Reducción de riesgos operacionales.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section services" id="servicios">
+    <section class="section services" id="servicios-resumen">
       <div class="wrap">
-        <span class="eyebrow">Servicios</span>
-        <h2>Soluciones para fortalecer el cumplimiento y reducir riesgos.</h2>
-        <p class="lead">Acreditación, gestión integral del riesgo, auditorías, cumplimiento legal, plataforma y soporte especializado.</p>
+        <span class="eyebrow">Resumen de soluciones</span>
+        <h2>Elige el tema que necesitas revisar.</h2>
+        <p class="lead">El inicio resume las líneas principales. Cada botón lleva a la página o sección específica con más información.</p>
 
         <div class="grid-4">
           <article class="service-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
             <h3>Acreditación de Contratistas</h3>
-            <p class="text-muted">Administración y validación de documentación requerida para contratistas y subcontratistas.</p>
-            <ul><li>Control documental</li><li>Alertas de vencimiento</li><li>Seguimiento de observaciones</li></ul>
+            <p class="text-muted">Control documental y seguimiento de observaciones.</p>
+            <a class="btn btn-outline" href="servicios.php#acreditacion">Ver acreditación</a>
           </article>
 
           <article class="service-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Gestión Integral del Riesgo</h3>
-            <p class="text-muted">Evaluación de riesgos laborales, previsionales, documentales, legales y operacionales.</p>
-            <ul><li>Alertas preventivas</li><li>Indicadores de riesgo</li><li>Planes de mitigación</li></ul>
-          </article>
-
-          <article class="service-card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
-            <h3>Auditorías y Cumplimiento Legal</h3>
-            <p class="text-muted">Revisión de antecedentes laborales y previsionales para detectar brechas.</p>
-            <ul><li>Detección de incumplimientos</li><li>Reducción de contingencias</li><li>Fiscalización preparada</li></ul>
+            <p class="text-muted">Indicadores, alertas preventivas y planes de mitigación.</p>
+            <a class="btn btn-outline" href="servicios.php#riesgo">Ver gestión de riesgo</a>
           </article>
 
           <article class="service-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/></svg></div>
-            <h3>Plataforma y Soporte Especializado</h3>
-            <p class="text-muted">Información centralizada, reportabilidad ejecutiva y acompañamiento permanente.</p>
-            <ul><li>Indicadores de gestión</li><li>Seguimiento en línea</li><li>Mesa de ayuda</li></ul>
+            <h3>Crecer Acredita Minería</h3>
+            <p class="text-muted">Soporte para exigencias documentales de la industria minera.</p>
+            <a class="btn btn-outline" href="mineria.php#mineria">Ver línea minería</a>
           </article>
-        </div>
 
-        <div class="accordion" aria-label="Detalle de servicios">
-          <div class="accordion-item active">
-            <button class="accordion-btn" type="button">
-              <span>Acreditación de Contratistas <small>Control documental, alertas de vencimiento y seguimiento de observaciones.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">
-              Administración y validación de documentación requerida para empresas contratistas y subcontratistas.
-              <ul><li>Control documental permanente.</li><li>Alertas de vencimiento.</li><li>Gestión de regularizaciones.</li><li>Monitoreo de cumplimiento.</li></ul>
-            </div></div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-btn" type="button">
-              <span>Gestión Integral del Riesgo <small>Evaluación laboral, previsional, documental, legal y operacional.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">
-              Analizamos riesgos que podrían transformarse en multas, demandas laborales, incumplimientos regulatorios o riesgos reputacionales.
-              <ul><li>Alertas preventivas.</li><li>Indicadores de riesgo.</li><li>Reportes ejecutivos.</li><li>Planes de mitigación.</li></ul>
-            </div></div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-btn" type="button">
-              <span>Auditorías y Cumplimiento Legal <small>Revisión de antecedentes laborales y previsionales.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">
-              Detectamos incumplimientos oportunamente, ayudando a reducir contingencias legales, prevenir multas y fortalecer procesos de fiscalización.
-            </div></div>
-          </div>
-        </div>
-
-        <div class="image-band">
-          <div class="band-card js-parallax-card" data-speed="-0.035">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Reunión corporativa">
-            <div class="band-overlay">Acompañamiento cercano y permanente.</div>
-          </div>
-          <div class="band-card js-parallax-card" data-speed="0.025">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Revisión documental">
-            <div class="band-overlay">Control documental y cumplimiento normativo.</div>
-          </div>
-          <div class="band-card js-parallax-card" data-speed="-0.025">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Equipo profesional">
-            <div class="band-overlay">Información ejecutiva para mejores decisiones.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section mining" id="mineria">
-      <div class="wrap">
-        <span class="eyebrow">Crecer Acredita Minería</span>
-        <h2>Especialistas en cumplimiento para la industria minera.</h2>
-        <p class="lead">Línea especializada para contratistas y subcontratistas que prestan servicios a compañías mineras y requieren altos estándares de control documental.</p>
-
-        <div class="mining-grid">
-          <div class="mining-box">
-            <h3>Servicios especializados</h3>
-            <ul>
-              <li>Acreditación multiplataforma de empresas contratistas.</li>
-              <li>Acreditación de trabajadores y control documental para ingreso a faena.</li>
-              <li>Cumplimiento laboral, previsional y reportabilidad ejecutiva.</li>
-            </ul>
-          </div>
-          <div class="mining-box">
-            <h3>Beneficios</h3>
-            <ul>
-              <li>Mayor control de contratistas y continuidad operacional.</li>
-              <li>Reducción de riesgos legales y prevención de multas.</li>
-              <li>Mayor competitividad para contratistas en licitaciones.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sello">
-      <div class="wrap seal-grid">
-        <div class="seal-card">
-          <span class="eyebrow">Sello Crecer</span>
-          <h2>Cumplimiento que genera confianza.</h2>
-          <p class="lead">Certificación que reconoce a contratistas con estándares superiores en materias laborales, previsionales, documentales y de gestión preventiva.</p>
-          <a class="btn btn-navy" href="#contacto">Quiero conocer el Sello Crecer</a>
-        </div>
-
-        <div class="seal-levels">
-          <div class="level"><span class="badge">Sello Crecer Bronce</span><span class="text-muted">Cumplimiento básico acreditado</span></div>
-          <div class="level"><span class="badge">Sello Crecer Plata</span><span class="text-muted">Cumplimiento consistente y controlado</span></div>
-          <div class="level"><span class="badge">Sello Crecer Oro</span><span class="text-muted">Excelencia en cumplimiento preventivo</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why">
-      <div class="wrap">
-        <span class="eyebrow">Por qué elegir Crecer Acredita</span>
-        <h2>Conocimiento práctico, visión integral y acompañamiento cercano.</h2>
-        <div class="why-list">
-          <div class="why-item"><b>Más de 20 años de experiencia</b><span class="text-muted">Trayectoria en Recursos Humanos, Relaciones Laborales y Cumplimiento.</span></div>
-          <div class="why-item"><b>Conocimiento práctico de la legislación</b><span class="text-muted">Experiencia en fiscalizaciones, auditorías y cumplimiento normativo.</span></div>
-          <div class="why-item"><b>Industrias exigentes</b><span class="text-muted">Estándares requeridos por organizaciones con procesos críticos.</span></div>
-          <div class="why-item"><b>Atención personalizada</b><span class="text-muted">Acompañamiento cercano y permanente.</span></div>
-          <div class="why-item"><b>Visión integral</b><span class="text-muted">Impacto de obligaciones laborales y previsionales en la operación.</span></div>
-          <div class="why-item"><b>Sello Crecer</b><span class="text-muted">Reconocimiento de buenas prácticas de cumplimiento.</span></div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="section section-tight">
-      <div class="wrap faq-grid">
-        <div>
-          <span class="eyebrow">Preguntas clave</span>
-          <h2>Claridad desde el primer contacto.</h2>
-          <p class="lead">La experiencia debe ser simple, rápida y visual para que cualquier empresa pueda entender su nivel de riesgo y los pasos recomendados.</p>
-        </div>
-        <div class="accordion" aria-label="Preguntas frecuentes">
-          <div class="accordion-item active">
-            <button class="accordion-btn" type="button">
-              <span>¿Qué mide la Autoevaluación de Riesgo? <small>Cumplimiento laboral, previsional, seguridad, control documental y gestión de contratistas.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">El resultado entrega un puntaje de 0 a 100 y un semáforo de riesgo bajo, medio o alto, con recomendaciones generales.</div></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-btn" type="button">
-              <span>¿Qué pasa si la empresa obtiene riesgo bajo? <small>Puede avanzar hacia el proceso de certificación Sello Crecer.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">Si el resultado supera los 85 puntos, la plataforma invita a conocer los beneficios del Sello Crecer.</div></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-btn" type="button">
-              <span>¿Existe enfoque para minería? <small>Sí, hay una línea especializada para contratistas de la industria minera.</small></span>
-              <b class="accordion-icon">+</b>
-            </button>
-            <div class="accordion-panel"><div class="accordion-panel-inner">Si la empresa selecciona Minería como industria, se muestra información específica sobre Crecer Acredita Minería.</div></div>
-          </div>
+          <article class="service-card">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
+            <h3>Sello Crecer</h3>
+            <p class="text-muted">Reconocimiento para contratistas con mejores estándares.</p>
+            <a class="btn btn-outline" href="sello-crecer.php#sello">Conocer el sello</a>
+          </article>
         </div>
       </div>
     </section>
@@ -1331,11 +1103,11 @@
       <div class="wrap">
         <div class="contact-cta">
           <div>
-            <h2>¿Necesitas fortalecer el cumplimiento y reducir riesgos?</h2>
-            <p>Nuestro equipo está preparado para ayudarte a controlar, evaluar y reducir los riesgos asociados a tus contratistas.</p>
+            <h2>¿Necesitas orientación para partir?</h2>
+            <p>Conversemos sobre la solución más adecuada para tu empresa y tus contratistas.</p>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="mailto:creceracredita@crecerconsultores.cl">Enviar correo</a>
+            <a class="btn btn-primary" href="contacto.php#contacto">Ir a contacto</a>
             <a class="btn btn-mustard" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -1418,7 +1190,7 @@
                   <p id="riskMsg" class="lead" style="margin-inline:auto;"></p>
                   <div id="specialMsg" style="margin:16px 0;"></div>
                   <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-                    <a id="resultCta" class="btn btn-primary" href="#contacto">Solicitar asesoría</a>
+                    <a id="resultCta" class="btn btn-primary" href="contacto.php#contacto">Solicitar asesoría</a>
                     <button type="button" class="btn btn-outline" id="restartEval">Realizar nuevamente</button>
                   </div>
                 </div>
@@ -1633,6 +1405,7 @@
       document.getElementById('riskTitle').textContent = result.title;
       document.getElementById('riskMsg').textContent = result.message;
       document.getElementById('resultCta').textContent = result.cta;
+      document.getElementById('resultCta').href = result.href;
       document.getElementById('specialMsg').innerHTML = result.extra;
 
       questionsStep.style.display = 'none';
@@ -1649,6 +1422,7 @@
           title:'Riesgo bajo',
           message:'Tu empresa presenta un adecuado nivel de cumplimiento y control. Se recomienda mantener los controles actuales y avanzar hacia procesos de mejora continua.',
           cta:'Quiero conocer el Sello Crecer',
+          href:'sello-crecer.php#sello',
           extra:'<div class="card" style="text-align:left;"><strong>Tu organización demuestra un alto nivel de cumplimiento.</strong><br><span class="text-muted">Te invitamos a conocer los beneficios del Sello Crecer y diferenciarte frente a tus clientes y empresas mandantes.</span></div>'
         };
       } else if (score >= 60) {
@@ -1657,6 +1431,7 @@
           title:'Riesgo medio',
           message:'Se identifican oportunidades de mejora que podrían transformarse en incumplimientos futuros. Se recomienda fortalecer los procesos de control y cumplimiento.',
           cta:'Solicitar asesoría',
+          href:'contacto.php#contacto',
           extra:''
         };
       } else {
@@ -1665,11 +1440,13 @@
           title:'Riesgo alto',
           message:'Se detectan brechas relevantes que podrían generar riesgos laborales, previsionales o documentales. Se recomienda implementar un plan de regularización y apoyo especializado.',
           cta:'Agendar reunión con un especialista',
+          href:'contacto.php#contacto',
           extra:''
         };
       }
 
       if ((industry || '').toLowerCase().includes('minería')) {
+        r.href = 'mineria.php#mineria';
         r.extra += '<div class="card" style="text-align:left; margin-top:10px;"><strong>Crecer Acredita Minería.</strong><br><span class="text-muted">Conoce nuestra línea especializada para empresas que prestan servicios a compañías mineras y requieren altos estándares de acreditación y control documental.</span></div>';
       }
 

@@ -10,9 +10,13 @@ $menuItems = [
 $activePage = $activePage ?? 'inicio';
 ?>
 <style>
-  .menu-group { display:flex; flex-direction:column; align-items:center; gap:2px; min-width:0; }
-  .menu-heading { color:var(--navy); font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; line-height:1; }
-  @media (max-width: 900px) { .menu-group { align-items:flex-end; } .menu-heading { display:none; } }
+  .menu-group { display:flex; align-items:center; min-width:0; }
+  .menu-heading { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .header .menu { gap:4px; }
+  .header .menu a { letter-spacing:-.01em; padding:9px 11px; }
+  .header .menu a.active { background:rgba(11,143,99,.10); color:var(--green); box-shadow:inset 0 0 0 1px rgba(11,143,99,.14); }
+  .header .btn-outline { border-color:rgba(6,43,95,.16); box-shadow:0 8px 18px rgba(6,43,95,.06); }
+  @media (max-width: 900px) { .menu-group { align-items:flex-end; } }
 </style>
 <div class="topbar">
   <div class="wrap">
@@ -28,13 +32,11 @@ $activePage = $activePage ?? 'inicio';
     </a>
     <div class="menu-group">
       <span class="menu-heading">MENÚ PRINCIPAL</span>
-      <ol class="menu" id="menu">
-        <?php $menuIndex = 1; ?>
+      <ul class="menu" id="menu">
         <?php foreach ($menuItems as $key => $item): ?>
-          <li><a href="<?= $item['href'] ?>" class="<?= $activePage === $key ? 'active' : '' ?>"><?= $menuIndex ?>. <?= $item['label'] ?></a></li>
-          <?php $menuIndex++; ?>
+          <li><a href="<?= $item['href'] ?>" class="<?= $activePage === $key ? 'active' : '' ?>"><?= $item['label'] ?></a></li>
         <?php endforeach; ?>
-      </ol>
+      </ul>
     </div>
     <div class="nav-actions">
       <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>

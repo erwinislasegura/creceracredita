@@ -255,25 +255,25 @@ footer a:hover{color:#fff}
         <span class="eyebrow">Soluciones principales</span>
         <h2>Un modelo preventivo, claro y orientado a resultados.</h2>
         <div class="grid-4">
-          <article class="service-card">
+          <article class="service-card" id="acreditacion">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
             <h3>Acreditación de Contratistas</h3>
             <p class="text-muted">Administración y validación de documentación requerida para empresas contratistas y subcontratistas.</p>
             <ul><li>Control documental</li><li>Alertas de vencimiento</li><li>Gestión de regularizaciones</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="riesgo">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Gestión Integral del Riesgo</h3>
             <p class="text-muted">Evaluación de riesgo laboral, previsional, documental, legal, operacional y reputacional.</p>
             <ul><li>Alertas preventivas</li><li>Indicadores de riesgo</li><li>Planes de mitigación</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="auditorias">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
             <h3>Auditorías y Cumplimiento Legal</h3>
             <p class="text-muted">Revisión de antecedentes laborales y previsionales para detectar incumplimientos oportunamente.</p>
             <ul><li>Prevenir multas</li><li>Reducir contingencias</li><li>Fortalecer fiscalización</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="plataforma">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/></svg></div>
             <h3>Plataforma y Soporte</h3>
             <p class="text-muted">Acceso centralizado a información, monitoreo permanente y mesa de ayuda especializada.</p>

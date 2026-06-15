@@ -9,7 +9,7 @@ $menuItems = $menuItems ?? [
 ];
 ?>
 <style>
-  .footer-menu { margin:0; padding-left:20px; }
+  .footer-menu { margin:0; padding:0; list-style:none; }
   .footer-menu li { margin:5px 0; }
   .footer-menu a { display:inline; }
 </style>
@@ -21,11 +21,11 @@ $menuItems = $menuItems ?? [
     </div>
     <div>
       <h4>MENÚ PRINCIPAL</h4>
-      <ol class="footer-menu">
+      <ul class="footer-menu">
         <?php foreach ($menuItems as $item): ?>
           <li><a href="<?= $item['href'] ?>"><?= $item['label'] ?></a></li>
         <?php endforeach; ?>
-      </ol>
+      </ul>
     </div>
     <div>
       <h4>Contacto</h4>
