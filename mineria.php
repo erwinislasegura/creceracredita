@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto | Crecer Acredita</title>
-  <meta name="description" content="Contacto de Crecer Acredita." />
+  <title>Crecer Acredita Minería | Crecer Acredita</title>
+  <meta name="description" content="Crecer Acredita Minería de Crecer Acredita." />
   <meta name="theme-color" content="#062B5F" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,9 +91,7 @@ p:last-child{margin-bottom:0}
 .brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 228px;min-width:0}
 .brand-mark{display:flex;align-items:center;justify-content:flex-start;width:214px;height:48px;overflow:hidden}
 .brand-mark img{width:214px;height:auto;max-height:48px;object-fit:contain;object-position:left center;filter:drop-shadow(0 2px 3px rgba(6,43,95,.05))}
-.logo-placeholder{display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--navy);font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.1;text-align:center}
-.brand-logo-placeholder{width:214px;height:48px;font-size:12px;box-shadow:0 2px 3px rgba(6,43,95,.05)}
-.footer-logo-placeholder{width:220px;height:54px;margin-bottom:10px;font-size:12px}
+.brand-placeholder{width:214px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--green));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.02em;box-shadow:0 2px 3px rgba(6,43,95,.05)}
 .menu{display:flex;align-items:center;gap:1px;list-style:none;padding:0;margin:0}
 .menu a{display:block;padding:8px 9px;border-radius:9px;font-size:12.8px;font-weight:600;color:#29364E}
 .menu a:hover,.menu a.active{background:var(--soft);color:var(--navy)}
@@ -204,6 +202,7 @@ p:last-child{margin-bottom:0}
 footer{background:#071E41;color:rgba(255,255,255,.74);padding:32px 0}
 .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:22px}
 .footer-logo img{width:220px;background:#fff;border-radius:10px;padding:3px;margin-bottom:10px}
+.footer-logo-placeholder{width:220px;min-height:54px;background:#fff;color:var(--navy);border-radius:10px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.02em}
 footer h4{color:#fff;margin:0 0 8px;font-size:14.5px;font-weight:650}
 footer a{display:block;margin:5px 0;color:rgba(255,255,255,.74)}
 footer a:hover{color:#fff}
@@ -223,7 +222,6 @@ footer a:hover{color:#fff}
   .nav{height:66px}
   .brand-mark{width:188px;height:44px}
   .brand-mark img{width:188px;max-height:44px}
-  .brand-logo-placeholder{width:188px;height:44px;font-size:11px}
   .section{padding:42px 0}
   .page-hero{padding:54px 0 48px}
   .grid-4,.grid-3,.values-list,.form-grid{grid-template-columns:1fr}
@@ -232,114 +230,93 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80');}</style>
+  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1800&q=80');}</style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="wrap">
-      <span><strong>Crecer Acredita</strong> · Reducimos el riesgo de tu cadena de contratistas</span>
-      <span>creceracredita@crecerconsultores.cl · +56 9 2181 6236</span>
-    </div>
-  </div>
-
-  <header class="header">
-    <nav class="nav wrap" aria-label="Menú principal">
-      <a class="brand" href="index.html" aria-label="Crecer Acredita">
-        <span class="brand-mark"><span class="logo-placeholder brand-logo-placeholder" aria-label="Crecer Acredita">Crecer<br>Acredita</span></span>
-      </a>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" class="">Inicio</a></li>
-<li><a href="nosotros.html" class="">Nosotros</a></li>
-<li><a href="servicios.html" class="">Servicios</a></li>
-<li><a href="mineria.html" class="">Minería</a></li>
-<li><a href="sello-crecer.html" class="">Sello Crecer</a></li>
-<li><a href="contacto.html" class="active">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
-        <button class="hamb" id="hamb" aria-label="Abrir menú">☰</button>
-      </div>
-    </nav>
-  </header>
+  <?php $activePage = 'mineria'; include __DIR__ . '/includes/site-header.php'; ?>
 
 <main>
 
-    <section class="page-hero" id="contacto">
+    <section class="page-hero" id="mineria">
       <div class="wrap">
-        <span class="eyebrow">Contacto</span>
-        <h1>¿Necesitas fortalecer el cumplimiento y reducir riesgos?</h1>
-        <p class="lead">Nuestro equipo está preparado para ayudarte a controlar, evaluar y reducir los riesgos asociados a tus contratistas.</p>
+        <span class="eyebrow">Crecer Acredita Minería</span>
+        <h1>Especialistas en cumplimiento para la industria minera.</h1>
+        <p class="lead">La industria minera exige altos estándares de control, seguridad y cumplimiento. Por ello desarrollamos una línea especializada para contratistas y subcontratistas que prestan servicios a compañías mineras.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:creceracredita@crecerconsultores.cl">Enviar correo</a>
-          <a class="btn btn-mustard" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-primary" href="contacto.php">Solicitar asesoría</a>
+          <a class="btn btn-mustard" href="sello-crecer.php">Conocer Sello Crecer</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section parallax-mining">
+      <div class="wrap">
+        <span class="eyebrow">Alta exigencia operacional</span>
+        <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
+        <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
+        <div class="grid-2">
+          <div class="glass">
+            <h3>Servicios especializados</h3>
+            <ul>
+              <li>Acreditación multiplataforma de empresas contratistas.</li>
+              <li>Acreditación de trabajadores.</li>
+              <li>Control documental para ingreso a faena.</li>
+              <li>Cumplimiento laboral y previsional.</li>
+              <li>Gestión de riesgos de contratistas.</li>
+              <li>Reportabilidad ejecutiva.</li>
+              <li>Monitoreo permanente de cumplimiento.</li>
+            </ul>
+          </div>
+          <div class="glass">
+            <h3>Modelo preventivo para minería</h3>
+            <p>El enfoque permite centralizar información, anticipar observaciones, preparar auditorías y reducir la exposición a riesgos legales, laborales y operacionales.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section section-soft">
-      <div class="wrap contact-grid">
-        <div class="contact-card">
-          <span class="eyebrow">Datos de contacto</span>
-          <h2>Hablemos sobre cumplimiento, acreditación y gestión de riesgos.</h2>
-          <p>Cuéntanos qué necesita tu organización y te orientaremos sobre el proceso más adecuado.</p>
-
-          <div class="contact-item"><div class="contact-dot">✉</div><div><b>Correo</b><a href="mailto:creceracredita@crecerconsultores.cl">creceracredita@crecerconsultores.cl</a></div></div>
-          <div class="contact-item"><div class="contact-dot">☎</div><div><b>WhatsApp</b><a href="https://wa.me/56921816236" target="_blank" rel="noopener">+56 9 2181 6236</a></div></div>
-          <div class="contact-item"><div class="contact-dot">⌖</div><div><b>Ubicación</b><span>Santiago, Chile</span></div></div>
+      <div class="wrap grid-2">
+        <div class="card-feature">
+          <span class="eyebrow">Para empresas mineras</span>
+          <h2>Mayor control y menor exposición a riesgos.</h2>
+          <ul class="text-muted">
+            <li>Mayor control de contratistas.</li>
+            <li>Prevención de multas.</li>
+            <li>Reducción de riesgos legales.</li>
+            <li>Continuidad operacional.</li>
+            <li>Información centralizada.</li>
+          </ul>
         </div>
+        <div class="card-feature">
+          <span class="eyebrow">Para contratistas</span>
+          <h2>Mejor preparación y mayor competitividad.</h2>
+          <ul class="text-muted">
+            <li>Mayor competitividad en licitaciones.</li>
+            <li>Disminución de rechazos documentales.</li>
+            <li>Preparación para auditorías.</li>
+            <li>Acceso al Sello Crecer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <form class="form-box" action="#" method="post">
-          <span class="eyebrow">Formulario</span>
-          <h2>Solicita información</h2>
-          <p class="lead">Completa tus datos y te contactaremos para orientar el proceso de cumplimiento de tu organización.</p>
-
-          <div class="form-grid">
-            <div class="field"><label>Nombre</label><input type="text" name="nombre" placeholder="Nombre y apellido" required></div>
-            <div class="field"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre empresa" required></div>
-            <div class="field"><label>Correo</label><input type="email" name="correo" placeholder="correo@empresa.cl" required></div>
-            <div class="field"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+56 9..." required></div>
-            <div class="field span-2"><label>Servicio de interés</label>
-              <select name="servicio" required>
-                <option value="">Seleccionar</option>
-                <option>Acreditación de Contratistas</option>
-                <option>Gestión Integral del Riesgo</option>
-                <option>Auditorías y Cumplimiento Legal</option>
-                <option>Crecer Acredita Minería</option>
-                <option>Sello Crecer</option>
-              </select>
-            </div>
-            <div class="field span-2"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos brevemente qué necesitas"></textarea></div>
-            <div class="span-2"><button class="btn btn-primary" type="submit">Enviar solicitud</button></div>
+    <section class="section section-tight">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Transformamos el cumplimiento en confianza.</h2>
+            <p>Ayudamos a las empresas a fortalecer el cumplimiento, reducir contingencias y tomar decisiones más seguras respecto de sus contratistas.</p>
           </div>
-        </form>
+          <a class="btn btn-mustard" href="https://wa.me/56921816236" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        </div>
       </div>
     </section>
 
 </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-logo">
-        <span class="logo-placeholder footer-logo-placeholder" aria-label="Crecer Acredita">Crecer<br>Acredita</span>
-        <p>Transformamos el cumplimiento en confianza. Más de 20 años de experiencia respaldando soluciones de cumplimiento para empresas.</p>
-      </div>
-      <div>
-        <h4>Menú</h4>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="mineria.html">Crecer Acredita Minería</a>
-        <a href="sello-crecer.html">Sello Crecer</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="mailto:creceracredita@crecerconsultores.cl">creceracredita@crecerconsultores.cl</a>
-        <a href="https://wa.me/56921816236" target="_blank" rel="noopener">+56 9 2181 6236</a>
-        <span>Santiago, Chile</span>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/includes/site-footer.php'; ?>
 
 
 <script>
