@@ -222,18 +222,36 @@
       background:#001846;
       color:#fff;
     }
-    .hero::before {
-      content:"";
+    .hero-bg-rotator,
+    .hero-bg-rotator span {
       position:absolute;
       inset:0;
-      z-index:-3;
-      background-image:url('imagenes/6.png');
+    }
+    .hero-bg-rotator {
+      z-index:-4;
+      overflow:hidden;
+      pointer-events:none;
+    }
+    .hero-bg-rotator span {
+      opacity:0;
       background-size:cover;
       background-position:center;
-      transform:scale(1.02);
+      transform:scale(1.04);
       filter:saturate(.94) contrast(1.05);
+      animation:heroBgSwap 24s infinite;
     }
-    .hero::after {
+    .hero-bg-rotator span:nth-child(1) { background-image:url('imagenes/6.png'); animation-delay:0s; }
+    .hero-bg-rotator span:nth-child(2) { background-image:url('imagenes/9.png'); animation-delay:6s; }
+    .hero-bg-rotator span:nth-child(3) { background-image:url('imagenes/1.png'); animation-delay:12s; }
+    .hero-bg-rotator span:nth-child(4) { background-image:url('imagenes/5.png'); animation-delay:18s; }
+    @keyframes heroBgSwap {
+      0% { opacity:1; transform:scale(1.04); }
+      8% { opacity:1; }
+      25% { opacity:1; }
+      33% { opacity:0; transform:scale(1.09); }
+      100% { opacity:0; transform:scale(1.09); }
+    }
+    .hero::before {
       content:"";
       position:absolute;
       inset:0;
@@ -283,10 +301,10 @@
       color:#fff;
       max-width:760px;
       margin:0 auto 18px;
-      font-size:clamp(36px, 5.3vw, 64px);
-      line-height:.98;
-      font-weight:750;
-      letter-spacing:-.06em;
+      font-size:clamp(31px, 4.2vw, 52px);
+      line-height:1.05;
+      font-weight:650;
+      letter-spacing:-.048em;
     }
     .hero-copy h1::after {
       content:"";
@@ -306,15 +324,46 @@
     }
     .hero-actions { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:24px; }
     .hero-actions .btn {
-      min-height:48px;
-      padding:12px 24px;
+      min-height:50px;
+      padding:13px 26px;
       border-radius:999px;
       box-shadow:0 18px 36px rgba(0,0,0,.18);
+      animation-duration:.72s;
+      animation-timing-function:cubic-bezier(.22,1,.36,1);
+      animation-fill-mode:both;
+    }
+    .hero-actions .btn-primary {
+      background:linear-gradient(135deg, #2f75ff 0%, #5fdb94 100%);
+      color:#001846;
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:0 18px 42px rgba(47,117,255,.32), 0 0 0 7px rgba(95,219,148,.13);
+      font-weight:800;
+      transform-origin:center;
+      animation-name:heroBtnInLeft;
+    }
+    .hero-actions .btn-primary:hover {
+      box-shadow:0 22px 48px rgba(47,117,255,.42), 0 0 0 8px rgba(95,219,148,.18);
     }
     .hero-actions .btn-outline {
       background:rgba(255,255,255,.08);
       color:#fff;
       border-color:rgba(255,255,255,.54);
+      animation-name:heroBtnInRight;
+    }
+    @keyframes heroBtnInLeft {
+      from { opacity:0; transform:translateX(-72px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @keyframes heroBtnInRight {
+      from { opacity:0; transform:translateX(72px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg-rotator span,
+      .hero-actions .btn {
+        animation:none;
+      }
+      .hero-bg-rotator span:first-child { opacity:1; }
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
     .kpi {
@@ -1203,6 +1252,12 @@
 
   <main id="inicio">
     <section class="hero" id="resumen">
+      <div class="hero-bg-rotator" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="hero-bg-fade" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
