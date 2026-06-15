@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sello Crecer | Crecer Acredita</title>
-  <meta name="description" content="Sello Crecer de Crecer Acredita." />
+  <title>Nosotros | Crecer Acredita</title>
+  <meta name="description" content="Nosotros de Crecer Acredita." />
   <meta name="theme-color" content="#062B5F" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,9 +91,6 @@ p:last-child{margin-bottom:0}
 .brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 228px;min-width:0}
 .brand-mark{display:flex;align-items:center;justify-content:flex-start;width:214px;height:48px;overflow:hidden}
 .brand-mark img{width:214px;height:auto;max-height:48px;object-fit:contain;object-position:left center;filter:drop-shadow(0 2px 3px rgba(6,43,95,.05))}
-.brand-placeholder,.footer-logo-placeholder{background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--navy);font-weight:900;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;text-align:center}
-.brand-placeholder{font-size:17px;line-height:1.05;padding:4px 14px;box-shadow:0 2px 3px rgba(6,43,95,.05)}
-.footer-logo-placeholder{width:220px;min-height:52px;margin-bottom:10px;padding:8px 14px;font-size:18px}
 .menu{display:flex;align-items:center;gap:1px;list-style:none;padding:0;margin:0}
 .menu a{display:block;padding:8px 9px;border-radius:9px;font-size:12.8px;font-weight:600;color:#29364E}
 .menu a:hover,.menu a.active{background:var(--soft);color:var(--navy)}
@@ -223,7 +220,6 @@ footer a:hover{color:#fff}
   .nav{height:66px}
   .brand-mark{width:188px;height:44px}
   .brand-mark img{width:188px;max-height:44px}
-  .brand-placeholder{font-size:15px;padding:4px 10px}
   .section{padding:42px 0}
   .page-hero{padding:54px 0 48px}
   .grid-4,.grid-3,.values-list,.form-grid{grid-template-columns:1fr}
@@ -232,47 +228,22 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=1800&q=80');}</style>
+  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80');}</style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="wrap">
-      <span><strong>Crecer Acredita</strong> · Reducimos el riesgo de tu cadena de contratistas</span>
-      <span>creceracredita@crecerconsultores.cl · +56 9 2181 6236</span>
-    </div>
-  </div>
-
-  <header class="header">
-    <nav class="nav wrap" aria-label="Menú principal">
-      <a class="brand" href="index.html" aria-label="Crecer Acredita">
-        <span class="brand-mark brand-placeholder" aria-hidden="true">Crecer Acredita</span>
-      </a>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" class="">Inicio</a></li>
-<li><a href="nosotros.html" class="">Nosotros</a></li>
-<li><a href="servicios.html" class="">Servicios</a></li>
-<li><a href="mineria.html" class="">Minería</a></li>
-<li><a href="sello-crecer.html" class="active">Sello Crecer</a></li>
-<li><a href="contacto.html" class="">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
-        <button class="hamb" id="hamb" aria-label="Abrir menú">☰</button>
-      </div>
-    </nav>
-  </header>
+  <?php $activePage = 'nosotros'; include __DIR__ . '/includes/site-header.php'; ?>
 
 <main>
 
-    <section class="page-hero" id="sello">
+    <section class="page-hero" id="nosotros">
       <div class="wrap">
-        <span class="eyebrow">Sello Crecer</span>
-        <h1>Cumplimiento que genera confianza.</h1>
-        <p class="lead">El Sello Crecer reconoce a empresas contratistas que mantienen estándares superiores en materias laborales, previsionales, documentales y de gestión preventiva.</p>
+        <span class="eyebrow">Nosotros</span>
+        <h1>Transformamos la acreditación tradicional en una herramienta estratégica de gestión de riesgos.</h1>
+        <p class="lead">Crecer Acredita nace para ayudar a las organizaciones a identificar oportunamente incumplimientos que puedan generar sanciones legales, accidentes, conflictos laborales o impactos reputacionales.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="contacto.html">Solicitar información</a>
-          <a class="btn btn-mustard" href="servicios.html">Ver servicios</a>
+          <a class="btn btn-primary" href="servicios.php">Conocer servicios</a>
+          <a class="btn btn-mustard" href="contacto.php">Solicitar asesoría</a>
         </div>
       </div>
     </section>
@@ -280,60 +251,58 @@ footer a:hover{color:#fff}
     <section class="section">
       <div class="wrap grid-2">
         <div class="card-feature">
-          <span class="eyebrow">Qué es el Sello Crecer</span>
-          <h2>Una certificación de cumplimiento para empresas contratistas.</h2>
-          <p class="lead">Su propósito es generar confianza y diferenciar a aquellas empresas comprometidas con la excelencia y el cumplimiento.</p>
-          <p class="text-muted">Permite a contratistas fortalecer su posicionamiento y a empresas mandantes identificar proveedores de menor riesgo.</p>
+          <span class="eyebrow">Nuestra historia</span>
+          <h2>Prevención, análisis de riesgos y acompañamiento continuo.</h2>
+          <p class="lead">Entendemos que el verdadero desafío de las organizaciones no es únicamente reunir documentos, sino identificar incumplimientos que puedan impactar la continuidad operacional.</p>
+          <p class="text-muted">Por ello desarrollamos un modelo de trabajo basado en prevención, control documental, cumplimiento normativo y apoyo especializado para empresas mandantes y contratistas.</p>
         </div>
+
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=1200&q=80" alt="Certificación y confianza empresarial">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Equipo profesional revisando cumplimiento">
           <div class="image-card-caption">
-            <strong>Cumplimiento que diferencia</strong>
-            <span>Reconocimiento de buenas prácticas para contratistas confiables.</span>
+            <strong>Experiencia aplicada al cumplimiento</strong>
+            <span>Soluciones prácticas para la gestión y control de contratistas.</span>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section section-soft">
-      <div class="wrap">
-        <span class="eyebrow">Áreas evaluadas</span>
-        <h2>Evaluación integral del cumplimiento.</h2>
-        <div class="grid-3">
-          <div class="card"><h3>Cumplimiento Laboral</h3><p class="text-muted">Contratos, anexos, jornadas y obligaciones laborales.</p></div>
-          <div class="card"><h3>Cumplimiento Previsional</h3><p class="text-muted">Cotizaciones previsionales y obligaciones de seguridad social.</p></div>
-          <div class="card"><h3>Cumplimiento Documental</h3><p class="text-muted">Actualización y vigencia de antecedentes.</p></div>
-          <div class="card"><h3>Gestión Preventiva</h3><p class="text-muted">Capacidad para anticipar riesgos y mantener controles efectivos.</p></div>
-          <div class="card"><h3>Historial de Cumplimiento</h3><p class="text-muted">Seguimiento de observaciones e incumplimientos.</p></div>
-          <div class="card"><h3>Confianza Operacional</h3><p class="text-muted">Información útil para empresas mandantes y procesos de licitación.</p></div>
+      <div class="wrap grid-2">
+        <div>
+          <span class="eyebrow">Nuestra experiencia</span>
+          <h2>Más de 20 años liderando procesos de Gestión de Personas.</h2>
+          <p class="lead">Nuestra experiencia permite comprender tanto las necesidades de empresas mandantes como los desafíos que enfrentan los contratistas para mantener un cumplimiento permanente.</p>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-num">01</div><div class="timeline-body"><h3>Recursos Humanos y Relaciones Laborales</h3><p class="text-muted">Administración de personas, gestión de dotaciones y relaciones laborales.</p></div></div>
+            <div class="timeline-item"><div class="timeline-num">02</div><div class="timeline-body"><h3>Cumplimiento Laboral y Previsional</h3><p class="text-muted">Revisión de obligaciones, fiscalizaciones, auditorías y procesos documentales.</p></div></div>
+            <div class="timeline-item"><div class="timeline-num">03</div><div class="timeline-body"><h3>Administración de Contratos</h3><p class="text-muted">Experiencia en subcontratación, servicios transitorios y control de contratistas.</p></div></div>
+          </div>
+        </div>
+
+        <div class="card-feature">
+          <span class="eyebrow">Misión y visión</span>
+          <h2>Seguridad, transparencia y continuidad operacional.</h2>
+          <div class="divider"></div>
+          <h3>Misión</h3>
+          <p class="text-muted">Ayudar a las organizaciones a gestionar eficientemente los riesgos asociados a sus contratistas mediante soluciones de acreditación, cumplimiento normativo y monitoreo preventivo.</p>
+          <div class="divider"></div>
+          <h3>Visión</h3>
+          <p class="text-muted">Ser la empresa referente en Chile en gestión de riesgos y cumplimiento para contratistas, aportando seguridad, transparencia y continuidad operacional a nuestros clientes.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap grid-2">
-        <div>
-          <span class="eyebrow">Categorías</span>
-          <h2>Tres niveles de reconocimiento.</h2>
-          <div class="level-card"><div class="medal bronze">B</div><div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado.</p></div></div>
-          <div style="height:10px"></div>
-          <div class="level-card"><div class="medal silver">P</div><div><h3>Sello Crecer Plata</h3><p class="text-muted">Cumplimiento consistente y controlado.</p></div></div>
-          <div style="height:10px"></div>
-          <div class="level-card"><div class="medal gold">O</div><div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva.</p></div></div>
-        </div>
-        <div class="card-feature">
-          <span class="eyebrow">Beneficios</span>
-          <h2>Valor para contratistas y empresas mandantes.</h2>
-          <div class="accordion">
-            <div class="accordion-item active">
-              <button class="accordion-btn" type="button"><span>Para contratistas <small>Diferenciación competitiva y mayor credibilidad.</small></span><b class="accordion-icon">+</b></button>
-              <div class="accordion-panel"><div class="accordion-panel-inner">Mejor posicionamiento en licitaciones, reconocimiento de buenas prácticas y mayor confianza frente a empresas mandantes.</div></div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-btn" type="button"><span>Para empresas mandantes <small>Identificación rápida de proveedores confiables.</small></span><b class="accordion-icon">+</b></button>
-              <div class="accordion-panel"><div class="accordion-panel-inner">Menor exposición a riesgos, mejor toma de decisiones y reducción de contingencias asociadas a la cadena de contratistas.</div></div>
-            </div>
-          </div>
+      <div class="wrap">
+        <span class="eyebrow">Valores</span>
+        <h2>Principios que guían nuestro trabajo.</h2>
+        <div class="values-list">
+          <div class="value"><b>Excelencia</b><span class="text-muted">Altos estándares de calidad y servicio.</span></div>
+          <div class="value"><b>Integridad</b><span class="text-muted">Transparencia, ética y responsabilidad.</span></div>
+          <div class="value"><b>Cercanía</b><span class="text-muted">Relaciones de confianza de largo plazo.</span></div>
+          <div class="value"><b>Innovación</b><span class="text-muted">Herramientas y metodologías que generan valor.</span></div>
+          <div class="value"><b>Prevención</b><span class="text-muted">Identificación temprana de riesgos.</span></div>
         </div>
       </div>
     </section>
@@ -352,28 +321,7 @@ footer a:hover{color:#fff}
 
 </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-logo">
-        <div class="footer-logo-placeholder" aria-hidden="true">Crecer Acredita</div>
-        <p>Transformamos el cumplimiento en confianza. Más de 20 años de experiencia respaldando soluciones de cumplimiento para empresas.</p>
-      </div>
-      <div>
-        <h4>Menú</h4>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="mineria.html">Crecer Acredita Minería</a>
-        <a href="sello-crecer.html">Sello Crecer</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="mailto:creceracredita@crecerconsultores.cl">creceracredita@crecerconsultores.cl</a>
-        <a href="https://wa.me/56921816236" target="_blank" rel="noopener">+56 9 2181 6236</a>
-        <span>Santiago, Chile</span>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/includes/site-footer.php'; ?>
 
 
 <script>
