@@ -1,0 +1,1 @@
+<header class="topbar"><div><small>Panel interno</small><h1><?=e($title ?? 'Crecer Acredita CRM')?></h1></div><div class="userchip"><?=e(auth()['name']??'')?><form method="post" action="<?=url('/logout')?>"><?=csrf_field()?><button>Salir</button></form></div></header>
