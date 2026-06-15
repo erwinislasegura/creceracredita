@@ -4,6 +4,7 @@ $menuItems = [
   'nosotros' => ['label' => 'Nosotros', 'href' => 'nosotros.php'],
   'servicios' => ['label' => 'Servicios', 'href' => 'servicios.php'],
   'mineria' => ['label' => 'Crecer Acredita Minería', 'href' => 'mineria.php'],
+  'academia' => ['label' => 'Academia Crecer', 'href' => 'academiacrecer.php'],
   'sello' => ['label' => 'Sello Crecer', 'href' => 'sello-crecer.php'],
   'contacto' => ['label' => 'Contacto', 'href' => 'contacto.php'],
 ];
