@@ -585,6 +585,88 @@
     .mining-box h3 { color:#fff; }
     .mining-box ul { margin:9px 0 0; padding-left:17px; color:rgba(255,255,255,.80); }
 
+
+    .mid-cta-parallax {
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:#071E41;
+      min-height:390px;
+      display:flex;
+      align-items:center;
+      isolation:isolate;
+    }
+    .mid-cta-parallax::before {
+      content:"";
+      position:absolute;
+      inset:-12% 0;
+      background:
+        linear-gradient(90deg, rgba(7,30,65,.97) 0%, rgba(6,43,95,.90) 42%, rgba(6,43,95,.58) 100%),
+        url('imagenes/6.png') center right / cover no-repeat;
+      background-attachment:fixed;
+      z-index:-2;
+    }
+    .mid-cta-parallax::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, transparent 0 68%, rgba(214,165,26,.88) 68% 69%, transparent 69%),
+        radial-gradient(circle at 83% 22%, rgba(11,143,99,.22), transparent 30%);
+      z-index:-1;
+      pointer-events:none;
+    }
+    .mid-cta-grid {
+      display:grid;
+      grid-template-columns:minmax(0, .96fr) minmax(280px, .58fr);
+      gap:24px;
+      align-items:center;
+    }
+    .mid-cta-card {
+      max-width:650px;
+      padding:32px 0;
+    }
+    .mid-cta-card .eyebrow { color:#7DE0B8; }
+    .mid-cta-card h2 {
+      color:#fff;
+      font-size:clamp(24px, 3vw, 34px);
+      max-width:620px;
+    }
+    .mid-cta-card .lead { color:rgba(255,255,255,.80); }
+    .mid-cta-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+    .mid-cta-panel {
+      background:#fff;
+      color:var(--ink);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 22px 55px rgba(0,0,0,.24);
+      border:1px solid rgba(255,255,255,.50);
+      position:relative;
+      overflow:hidden;
+    }
+    .mid-cta-panel::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg,var(--green),var(--mustard));
+    }
+    .mid-cta-panel h3 { margin-top:4px; }
+    .mid-cta-proof { display:grid; gap:10px; margin-top:14px; }
+    .mid-cta-proof span {
+      display:flex;
+      align-items:flex-start;
+      gap:9px;
+      padding:11px 12px;
+      border-radius:13px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:550;
+    }
+    .mid-cta-proof b { color:var(--green); }
+
     .seal-grid { display:grid; grid-template-columns:.94fr 1.06fr; gap:24px; align-items:start; }
     .seal-card {
       background:#fff;
@@ -976,12 +1058,14 @@
       .seal-grid,
       .mining-grid,
       .contact-cta,
+      .mid-cta-grid,
       .footer-grid { grid-template-columns:1fr; }
       .grid-4 { grid-template-columns:repeat(2,1fr); }
       .why-list, .image-band { grid-template-columns:1fr; }
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
       .hero::after, .hero::before { opacity:.2; }
+      .mid-cta-parallax::before { background-attachment:scroll; }
       .experience, .mining { background-attachment:scroll; }
     }
 
@@ -993,7 +1077,9 @@
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
       .section { padding:42px 0; }
-      .hero-copy, .risk-box, .contact-cta, .seal-card { padding:18px; border-radius:17px; }
+      .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
+      .mid-cta-parallax { min-height:420px; }
+      .mid-cta-card { padding:8px 0; }
       .hero-kpis, .risk-card-mini, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
@@ -1130,6 +1216,30 @@
             <a class="btn btn-outline" href="sello-crecer.php#sello">Conocer el sello</a>
           </article>
         </div>
+      </div>
+    </section>
+
+
+    <section class="section mid-cta-parallax" id="cta-ejecutivo">
+      <div class="wrap mid-cta-grid">
+        <div class="mid-cta-card reveal-card">
+          <span class="eyebrow">Control preventivo para contratistas</span>
+          <h2>Acredita, ordena y anticipa riesgos antes de que impacten la operación.</h2>
+          <p class="lead">Te ayudamos a convertir documentos, alertas e indicadores en decisiones claras para sostener cumplimiento laboral, previsional y documental.</p>
+          <div class="mid-cta-actions">
+            <a class="btn btn-primary" href="contacto.php#contacto">Agendar una reunión</a>
+            <a class="btn btn-mustard" href="servicios.php#acreditacion">Ver acreditación</a>
+          </div>
+        </div>
+        <aside class="mid-cta-panel reveal-card" aria-label="Beneficios del acompañamiento Crecer Acredita">
+          <h3>Más control, menos contingencias</h3>
+          <p class="text-muted">Un acompañamiento alineado con el enfoque de Crecer Acredita: simple, trazable y preventivo.</p>
+          <div class="mid-cta-proof">
+            <span><b>01</b> Revisión documental y seguimiento de observaciones.</span>
+            <span><b>02</b> Alertas para anticipar incumplimientos críticos.</span>
+            <span><b>03</b> Reportabilidad ejecutiva para empresas mandantes.</span>
+          </div>
+        </aside>
       </div>
     </section>
 

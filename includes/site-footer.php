@@ -12,6 +12,7 @@ $menuItems = $menuItems ?? [
   /* Shared site chrome: this include owns the footer styling for every page. */
   footer { background:#071E41 !important; color:rgba(255,255,255,.74) !important; padding:32px 0 !important; }
   .footer-grid { display:grid !important; grid-template-columns:1.2fr .8fr .8fr !important; gap:22px !important; }
+  .footer-brand-logo { width:220px !important; height:auto !important; margin-bottom:10px !important; padding:8px !important; background:#fff !important; border:1px solid rgba(255,255,255,.12) !important; border-radius:12px !important; display:block !important; }
   .footer-logo .logo-placeholder,
   .footer-logo-placeholder { width:220px !important; min-height:52px !important; margin-bottom:10px !important; padding:8px 14px !important; background:#fff !important; border:1px solid rgba(255,255,255,.12) !important; border-radius:12px !important; color:var(--navy) !important; display:flex !important; align-items:center !important; justify-content:center !important; font-size:18px !important; font-weight:750 !important; letter-spacing:-.01em !important; text-align:center !important; text-transform:none !important; }
   footer h4 { color:#fff !important; margin:0 0 8px !important; font-size:14.5px !important; font-weight:650 !important; }
@@ -26,7 +27,7 @@ $menuItems = $menuItems ?? [
 <footer>
   <div class="wrap footer-grid">
     <div class="footer-logo">
-      <span class="logo-placeholder footer-logo-placeholder" role="img" aria-label="Crecer Acredita">Crecer Acredita</span>
+      <img class="footer-brand-logo" src="logo/logo.png" alt="Crecer Acredita">
       <p>Transformamos el cumplimiento en confianza. Más de 20 años de experiencia respaldando soluciones de cumplimiento para empresas.</p>
     </div>
     <div>
