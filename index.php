@@ -714,6 +714,16 @@
     .accordion-panel-inner { padding:0 18px 18px; color:var(--muted); font-size:14px; }
     .accordion-panel-inner ul { margin:10px 0 0; padding-left:18px; }
     .accordion-panel-inner li { margin:5px 0; }
+    .motion-card { transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
+    .motion-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:rgba(11,143,99,.24); }
+    .reveal-card { opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease; }
+    .reveal-card.is-visible { opacity:1; transform:translateY(0); }
+    .insight-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start; }
+    .info-list { display:grid; gap:10px; margin-top:18px; }
+    .info-pill { display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px; box-shadow:var(--shadow-sm); }
+    .info-pill b { color:var(--navy); }
+    .info-num { width:30px; height:30px; border-radius:10px; background:var(--navy); color:#fff; display:grid; place-items:center; font-size:12px; font-weight:750; flex:0 0 30px; }
+    @media (max-width: 900px) { .insight-grid { grid-template-columns:1fr; } }
     .faq-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:26px; align-items:start; }
 
     /* MODAL PREMIUM */
@@ -1092,28 +1102,28 @@
         <p class="lead">El inicio resume las líneas principales. Cada botón lleva a la página o sección específica con más información.</p>
 
         <div class="grid-4">
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
             <h3>Acreditación de Contratistas</h3>
             <p class="text-muted">Control documental y seguimiento de observaciones.</p>
             <a class="btn btn-outline" href="servicios.php#acreditacion">Ver acreditación</a>
           </article>
 
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Gestión Integral del Riesgo</h3>
             <p class="text-muted">Indicadores, alertas preventivas y planes de mitigación.</p>
             <a class="btn btn-outline" href="servicios.php#riesgo">Ver gestión de riesgo</a>
           </article>
 
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/></svg></div>
             <h3>Crecer Acredita Minería</h3>
             <p class="text-muted">Soporte para exigencias documentales de la industria minera.</p>
             <a class="btn btn-outline" href="mineria.php#mineria">Ver línea minería</a>
           </article>
 
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Sello Crecer</h3>
             <p class="text-muted">Reconocimiento para contratistas con mejores estándares.</p>
@@ -1130,26 +1140,72 @@
         <p class="lead">El inicio presenta una visión ejecutiva. Usa estos accesos para revisar información más completa en cada sección.</p>
 
         <div class="grid-4">
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <h3>Nosotros</h3>
             <p class="text-muted">Conoce la experiencia, enfoque preventivo y principios de trabajo de Crecer Acredita.</p>
             <a class="btn btn-outline" href="nosotros.php#nosotros">Ver nosotros</a>
           </article>
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <h3>Servicios</h3>
             <p class="text-muted">Revisa el modelo de acreditación, auditoría, cumplimiento y soporte operativo.</p>
             <a class="btn btn-outline" href="servicios.php#servicios">Ver servicios</a>
           </article>
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <h3>Minería</h3>
             <p class="text-muted">Explora soluciones para contratistas que operan bajo estándares de compañías mineras.</p>
             <a class="btn btn-outline" href="mineria.php#mineria">Ver minería</a>
           </article>
-          <article class="service-card">
+          <article class="service-card motion-card reveal-card">
             <h3>Sello Crecer</h3>
             <p class="text-muted">Conoce los niveles de reconocimiento y el valor de certificar buenas prácticas.</p>
             <a class="btn btn-outline" href="sello-crecer.php#sello">Ver sello</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="orientacion">
+      <div class="wrap insight-grid">
+        <div class="reveal-card">
+          <span class="eyebrow">Orientación rápida</span>
+          <h2>Información clave antes de avanzar.</h2>
+          <p class="lead">Estas preguntas ayudan a entender qué revisar primero y hacia qué sección del sitio conviene continuar.</p>
+          <div class="info-list">
+            <div class="info-pill"><span class="info-num">01</span><div><b>Diagnóstico inicial.</b><br><span class="text-muted">Usa la autoevaluación para identificar brechas laborales, previsionales, documentales y de seguridad.</span></div></div>
+            <div class="info-pill"><span class="info-num">02</span><div><b>Ruta de mejora.</b><br><span class="text-muted">Si existen observaciones, revisa servicios de acreditación, auditoría y gestión integral del riesgo.</span></div></div>
+            <div class="info-pill"><span class="info-num">03</span><div><b>Especialización.</b><br><span class="text-muted">Si operas en minería, entra a la línea especializada para estándares de faena y reportabilidad.</span></div></div>
+          </div>
+        </div>
+
+        <div class="accordion reveal-card" aria-label="Información frecuente del inicio">
+          <div class="accordion-item active">
+            <button class="accordion-btn" type="button">
+              <span>¿Qué puedo revisar desde el inicio? <small>Resumen ejecutivo y enlaces directos a cada sección importante.</small></span>
+              <b class="accordion-icon">+</b>
+            </button>
+            <div class="accordion-panel"><div class="accordion-panel-inner">Puedes iniciar la autoevaluación, entrar a servicios específicos, revisar la línea minera, conocer Sello Crecer o ir al formulario de contacto.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn" type="button">
+              <span>¿Cuándo ir a Servicios? <small>Cuando necesitas detalle de acreditación, auditorías, cumplimiento y soporte.</small></span>
+              <b class="accordion-icon">+</b>
+            </button>
+            <div class="accordion-panel"><div class="accordion-panel-inner">La página de Servicios concentra el modelo preventivo: control documental, indicadores, alertas, auditorías y acompañamiento operativo.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn" type="button">
+              <span>¿Cuándo corresponde Minería? <small>Cuando hay exigencias de ingreso a faena o control multiplataforma.</small></span>
+              <b class="accordion-icon">+</b>
+            </button>
+            <div class="accordion-panel"><div class="accordion-panel-inner">La sección Minería resume servicios especializados para contratistas que requieren acreditación de empresa, trabajadores, documentos y reportabilidad.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn" type="button">
+              <span>¿Qué aporta Sello Crecer? <small>Reconocimiento de cumplimiento y buenas prácticas.</small></span>
+              <b class="accordion-icon">+</b>
+            </button>
+            <div class="accordion-panel"><div class="accordion-panel-inner">Sello Crecer ayuda a comunicar estándares de cumplimiento laboral, previsional, documental y de gestión preventiva frente a clientes y mandantes.</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1310,6 +1366,21 @@
         panel.style.maxHeight = item.classList.contains('active') ? panel.scrollHeight + 'px' : null;
       });
     });
+
+    const revealCards = document.querySelectorAll('.reveal-card');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.16 });
+      revealCards.forEach(card => revealObserver.observe(card));
+    } else {
+      revealCards.forEach(card => card.classList.add('is-visible'));
+    }
 
     const parallaxCards = document.querySelectorAll('.js-parallax-card');
     function updateParallaxCards() {
