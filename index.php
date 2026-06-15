@@ -251,7 +251,7 @@
       33% { opacity:0; transform:scale(1.09); }
       100% { opacity:0; transform:scale(1.09); }
     }
-    .hero::after {
+    .hero::before {
       content:"";
       position:absolute;
       inset:0;
