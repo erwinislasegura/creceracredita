@@ -234,32 +234,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="wrap">
-      <span><strong>Crecer Acredita</strong> · Reducimos el riesgo de tu cadena de contratistas</span>
-      <span>creceracredita@crecerconsultores.cl · +56 9 2181 6236</span>
-    </div>
-  </div>
-
-  <header class="header">
-    <nav class="nav wrap" aria-label="Menú principal">
-      <a class="brand" href="inicio.html" aria-label="Crecer Acredita">
-        <span class="brand-mark"><span class="brand-placeholder">Crecer Acredita</span></span>
-      </a>
-      <ul class="menu" id="menu">
-        <li><a href="inicio.html" class="">Inicio</a></li>
-<li><a href="nosotros.html" class="">Nosotros</a></li>
-<li><a href="servicios.html" class="active">Servicios</a></li>
-<li><a href="mineria.html" class="">Minería</a></li>
-<li><a href="sello-crecer.html" class="">Sello Crecer</a></li>
-<li><a href="contacto.html" class="">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="https://wa.me/56921816236" target="_blank" rel="noopener">WhatsApp</a>
-        <button class="hamb" id="hamb" aria-label="Abrir menú">☰</button>
-      </div>
-    </nav>
-  </header>
+  <?php $activePage = 'servicios'; include __DIR__ . '/includes/site-header.php'; ?>
 
 <main>
 
@@ -269,8 +244,8 @@ footer a:hover{color:#fff}
         <h1>Soluciones para fortalecer el cumplimiento y reducir contingencias.</h1>
         <p class="lead">Acompañamos a organizaciones y contratistas con procesos de acreditación, monitoreo, reportabilidad, auditoría y soporte especializado.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="contacto.html">Solicitar información</a>
-          <a class="btn btn-mustard" href="mineria.html">Ver línea minería</a>
+          <a class="btn btn-primary" href="contacto.php">Solicitar información</a>
+          <a class="btn btn-mustard" href="mineria.php">Ver línea minería</a>
         </div>
       </div>
     </section>
@@ -280,25 +255,25 @@ footer a:hover{color:#fff}
         <span class="eyebrow">Soluciones principales</span>
         <h2>Un modelo preventivo, claro y orientado a resultados.</h2>
         <div class="grid-4">
-          <article class="service-card">
+          <article class="service-card" id="acreditacion">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
             <h3>Acreditación de Contratistas</h3>
             <p class="text-muted">Administración y validación de documentación requerida para empresas contratistas y subcontratistas.</p>
             <ul><li>Control documental</li><li>Alertas de vencimiento</li><li>Gestión de regularizaciones</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="riesgo">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Gestión Integral del Riesgo</h3>
             <p class="text-muted">Evaluación de riesgo laboral, previsional, documental, legal, operacional y reputacional.</p>
             <ul><li>Alertas preventivas</li><li>Indicadores de riesgo</li><li>Planes de mitigación</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="auditorias">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
             <h3>Auditorías y Cumplimiento Legal</h3>
             <p class="text-muted">Revisión de antecedentes laborales y previsionales para detectar incumplimientos oportunamente.</p>
             <ul><li>Prevenir multas</li><li>Reducir contingencias</li><li>Fortalecer fiscalización</li></ul>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="plataforma">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/></svg></div>
             <h3>Plataforma y Soporte</h3>
             <p class="text-muted">Acceso centralizado a información, monitoreo permanente y mesa de ayuda especializada.</p>
@@ -351,28 +326,7 @@ footer a:hover{color:#fff}
 
 </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-logo">
-        <div class="footer-logo-placeholder" aria-label="Crecer Acredita">Crecer Acredita</div>
-        <p>Transformamos el cumplimiento en confianza. Más de 20 años de experiencia respaldando soluciones de cumplimiento para empresas.</p>
-      </div>
-      <div>
-        <h4>Menú</h4>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="mineria.html">Crecer Acredita Minería</a>
-        <a href="sello-crecer.html">Sello Crecer</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="mailto:creceracredita@crecerconsultores.cl">creceracredita@crecerconsultores.cl</a>
-        <a href="https://wa.me/56921816236" target="_blank" rel="noopener">+56 9 2181 6236</a>
-        <span>Santiago, Chile</span>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/includes/site-footer.php'; ?>
 
 
 <script>
