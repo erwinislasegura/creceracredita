@@ -9,9 +9,19 @@ $menuItems = $menuItems ?? [
 ];
 ?>
 <style>
-  .footer-menu { margin:0; padding:0; list-style:none; }
-  .footer-menu li { margin:5px 0; }
-  .footer-menu a { display:inline; }
+  /* Shared site chrome: this include owns the footer styling for every page. */
+  footer { background:#071E41 !important; color:rgba(255,255,255,.74) !important; padding:32px 0 !important; }
+  .footer-grid { display:grid !important; grid-template-columns:1.2fr .8fr .8fr !important; gap:22px !important; }
+  .footer-logo .logo-placeholder,
+  .footer-logo-placeholder { width:220px !important; min-height:52px !important; margin-bottom:10px !important; padding:8px 14px !important; background:#fff !important; border:1px solid rgba(255,255,255,.12) !important; border-radius:12px !important; color:var(--navy) !important; display:flex !important; align-items:center !important; justify-content:center !important; font-size:18px !important; font-weight:750 !important; letter-spacing:-.01em !important; text-align:center !important; text-transform:none !important; }
+  footer h4 { color:#fff !important; margin:0 0 8px !important; font-size:14.5px !important; font-weight:650 !important; }
+  footer a { display:block !important; margin:5px 0 !important; color:rgba(255,255,255,.74) !important; text-decoration:none !important; }
+  footer a:hover { color:#fff !important; }
+  footer span { display:block !important; margin:5px 0 !important; }
+  .footer-menu { margin:0 !important; padding:0 !important; list-style:none !important; }
+  .footer-menu li { margin:5px 0 !important; }
+  .footer-menu a { display:block !important; }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns:1fr !important; } }
 </style>
 <footer>
   <div class="wrap footer-grid">
