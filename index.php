@@ -1608,6 +1608,12 @@
       }
     ];
 
+    const assessmentEndpoint = 'public/api/assessment/store';
+
+    function questionId(moduleIndex, questionIndex) {
+      return modules.slice(0, moduleIndex).reduce((total, module) => total + module.qs.length, 0) + questionIndex + 1;
+    }
+
     const qWrap = document.getElementById('questions');
     qWrap.innerHTML = modules.map((m, mi) => `
       <section class="question-group">
@@ -1616,9 +1622,9 @@
           <div class="question">
             <span>${q}</span>
             <div class="answers">
-              <label><input type="radio" name="m${mi}q${qi}" value="10" required><span>Sí</span></label>
-              <label><input type="radio" name="m${mi}q${qi}" value="5" required><span>Parcial</span></label>
-              <label><input type="radio" name="m${mi}q${qi}" value="0" required><span>No</span></label>
+              <label><input type="radio" name="m${mi}q${qi}" data-question-id="${questionId(mi, qi)}" value="10" required><span>Sí</span></label>
+              <label><input type="radio" name="m${mi}q${qi}" data-question-id="${questionId(mi, qi)}" value="5" required><span>Parcial</span></label>
+              <label><input type="radio" name="m${mi}q${qi}" data-question-id="${questionId(mi, qi)}" value="0" required><span>No</span></label>
             </div>
           </div>
         `).join('')}
@@ -1645,44 +1651,79 @@
       stepBar2.classList.remove('active');
     });
 
-    document.getElementById('riskForm').addEventListener('submit', e => {
+    document.getElementById('riskForm').addEventListener('submit', async e => {
       e.preventDefault();
-      let final = 0;
+      const submitButton = e.target.querySelector('button[type="submit"]');
+      const originalSubmitText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Guardando...';
 
-      modules.forEach((m, mi) => {
-        let raw = 0;
-        m.qs.forEach((_, qi) => {
-          const selected = document.querySelector(`input[name="m${mi}q${qi}"]:checked`);
-          raw += Number(selected?.value || 0);
+      try {
+        const formData = new FormData(e.target);
+        const answers = {};
+
+        modules.forEach((m, mi) => {
+          m.qs.forEach((_, qi) => {
+            const selected = document.querySelector(`input[name="m${mi}q${qi}"]:checked`);
+            if (selected) answers[questionId(mi, qi)] = Number(selected.value);
+          });
         });
-        final += (raw / (m.qs.length * 10)) * 100 * m.weight;
-      });
 
-      final = Math.round(final);
-      const data = Object.fromEntries(new FormData(e.target).entries());
-      const result = buildResult(final, data.industria);
+        const payload = {
+          company_name: formData.get('empresa') || '',
+          company_rut: formData.get('rut') || '',
+          contact_name: formData.get('contacto') || '',
+          position: formData.get('cargo') || '',
+          email: formData.get('correo') || '',
+          phone: formData.get('telefono') || '',
+          workers_count: formData.get('trabajadores') || '',
+          industry: formData.get('industria') || '',
+          city: formData.get('ciudad') || '',
+          answers
+        };
 
-      localStorage.setItem('crecerAcreditaLead', JSON.stringify({
-        ...data,
-        puntaje:final,
-        nivel:result.title,
-        fecha:new Date().toISOString()
-      }));
+        const response = await fetch(assessmentEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const saved = await response.json();
 
-      document.getElementById('scoreCircle').textContent = final;
-      document.getElementById('scoreCircle').className = 'score ' + result.className;
-      document.getElementById('riskTitle').textContent = result.title;
-      document.getElementById('riskMsg').textContent = result.message;
-      document.getElementById('resultCta').textContent = result.cta;
-      document.getElementById('resultCta').href = result.href;
-      document.getElementById('specialMsg').innerHTML = result.extra;
+        if (!response.ok || !saved.success) {
+          throw new Error(saved.message || 'No fue posible guardar la autoevaluación.');
+        }
 
-      questionsStep.style.display = 'none';
-      resultStep.style.display = 'block';
-      stepBar3.classList.add('active');
+        const final = Math.round(Number(saved.final_score));
+        const result = buildResult(final, payload.industry, saved.recommendation, saved.risk_level);
+
+        localStorage.setItem('crecerAcreditaLead', JSON.stringify({
+          ...payload,
+          client_id:saved.client_id,
+          puntaje:final,
+          nivel:saved.risk_level,
+          fecha:new Date().toISOString()
+        }));
+
+        document.getElementById('scoreCircle').textContent = final;
+        document.getElementById('scoreCircle').className = 'score ' + result.className;
+        document.getElementById('riskTitle').textContent = result.title;
+        document.getElementById('riskMsg').textContent = result.message;
+        document.getElementById('resultCta').textContent = result.cta;
+        document.getElementById('resultCta').href = result.href;
+        document.getElementById('specialMsg').innerHTML = result.extra;
+
+        questionsStep.style.display = 'none';
+        resultStep.style.display = 'block';
+        stepBar3.classList.add('active');
+      } catch (error) {
+        alert(error.message || 'No fue posible guardar la autoevaluación en el CRM.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalSubmitText;
+      }
     });
 
-    function buildResult(score, industry) {
+    function buildResult(score, industry, serverRecommendation = null, serverRiskLevel = null) {
       let r;
 
       if (score >= 85) {
@@ -1713,6 +1754,9 @@
           extra:''
         };
       }
+
+      if (serverRiskLevel) r.title = serverRiskLevel;
+      if (serverRecommendation) r.message = serverRecommendation;
 
       if ((industry || '').toLowerCase().includes('minería')) {
         r.href = 'mineria.php#mineria';
