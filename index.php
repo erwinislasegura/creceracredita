@@ -120,7 +120,7 @@
       white-space:nowrap;
     }
     .btn:hover { transform:translateY(-1px); }
-    .btn-primary { background:linear-gradient(135deg, var(--green), var(--green-2)); color:#fff; box-shadow:0 10px 22px rgba(11,143,99,.16); }
+    .btn-primary { background:var(--green); color:#fff; box-shadow:0 10px 22px rgba(11,143,99,.14); }
     .btn-outline { background:#fff; color:var(--navy); border-color:var(--line); }
     .btn-navy { background:var(--navy); color:#fff; }
     .btn-mustard { background:var(--mustard); color:#172033; }
@@ -179,7 +179,7 @@
       padding:8px 14px;
       border:1px solid rgba(6,43,95,.14);
       border-radius:12px;
-      background:linear-gradient(135deg, rgba(6,43,95,.08), rgba(11,143,99,.10));
+      background:#F8FAFC;
       color:var(--navy);
       font-weight:700;
       letter-spacing:-.02em;
@@ -217,10 +217,7 @@
     .hero {
       position:relative;
       overflow:hidden;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(214,165,26,.13), transparent 24%),
-        radial-gradient(circle at 7% 13%, rgba(11,143,99,.08), transparent 26%),
-        linear-gradient(180deg, #F9FBFE 0%, #fff 78%);
+      background:#F8FAFC;
     }
     .hero::after {
       content:"";
@@ -229,7 +226,7 @@
       top:0;
       width:300px;
       height:300px;
-      background:linear-gradient(135deg, var(--navy), var(--green));
+      background:var(--navy);
       clip-path:polygon(35% 0,100% 0,100% 100%);
       opacity:.92;
     }
@@ -267,7 +264,7 @@
       position:absolute;
       inset:0 0 auto 0;
       height:4px;
-      background:linear-gradient(90deg, var(--green), var(--mustard), var(--navy));
+      background:var(--green);
     }
     .hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:17px; }
     .hero-kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
@@ -307,7 +304,7 @@
     .slide-overlay {
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(6,43,95,.12) 0%, rgba(6,43,95,.78) 60%, rgba(6,43,95,.95) 100%);
+      background:rgba(6,43,95,.78);
     }
     .slide-content {
       position:relative;
@@ -413,7 +410,7 @@
       position:absolute;
       inset:0 0 auto 0;
       height:4px;
-      background:linear-gradient(90deg, var(--green), var(--mustard));
+      background:var(--green);
     }
     .service-card ul { margin:11px 0 0; padding-left:17px; color:var(--muted); }
     .service-card li { margin:4px 0; }
@@ -425,7 +422,7 @@
       display:grid;
       place-items:center;
       color:var(--green);
-      background:linear-gradient(135deg, rgba(11,143,99,.10), rgba(214,165,26,.14));
+      background:#F7FAFC;
       margin-bottom:13px;
     }
     .icon svg {
@@ -439,9 +436,8 @@
     }
 
     .experience {
-      background:
-        linear-gradient(90deg, rgba(6,43,95,.94), rgba(6,43,95,.82)),
-        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80');
+      background-color:rgba(6,43,95,.88);
+      background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80');
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
@@ -534,7 +530,7 @@
       position:absolute;
       inset:auto 0 0 0;
       padding:15px;
-      background:linear-gradient(180deg, rgba(6,43,95,0) 0%, rgba(6,43,95,.82) 100%);
+      background:rgba(6,43,95,.78);
       color:#fff;
     }
     .photo-card .overlay strong { display:block; font-size:13.5px; margin-bottom:3px; font-weight:650; }
@@ -562,16 +558,15 @@
       position:absolute;
       inset:auto 0 0 0;
       padding:13px 15px;
-      background:linear-gradient(180deg, rgba(6,43,95,0) 0%, rgba(6,43,95,.83) 100%);
+      background:rgba(6,43,95,.78);
       color:#fff;
       font-size:12.5px;
       font-weight:600;
     }
 
     .mining {
-      background:
-        linear-gradient(90deg, rgba(6,43,95,.95), rgba(6,43,95,.86)),
-        url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80');
+      background-color:rgba(6,43,95,.90);
+      background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80');
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
@@ -604,7 +599,7 @@
       align-items:center;
       justify-content:space-between;
       gap:13px;
-      background:linear-gradient(180deg,#fff,var(--soft));
+      background:#fff;
       border:1px solid var(--line);
       border-radius:14px;
       padding:14px;
@@ -622,7 +617,7 @@
     .level:nth-child(2) .badge::before { background:#A8AFB8; }
     .level:nth-child(3) .badge::before { background:var(--mustard); }
 
-    .why { background:linear-gradient(180deg,#fff,var(--soft)); }
+    .why { background:#fff; }
     .why-list { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-top:17px; }
     .why-item { padding:17px; }
     .why-item b { display:block; color:var(--navy); margin-bottom:4px; font-size:13.8px; font-weight:650; }
@@ -645,7 +640,7 @@
       position:absolute;
       inset:0 0 auto 0;
       height:4px;
-      background:linear-gradient(90deg, var(--green), var(--mustard));
+      background:var(--green);
     }
     .contact-cta h2 { color:#fff; margin-bottom:8px; }
     .contact-cta p { color:rgba(255,255,255,.76); margin-bottom:0; }
@@ -750,9 +745,8 @@
     .modal-aside {
       position:relative;
       padding:26px 24px;
-      background:
-        linear-gradient(180deg, rgba(6,43,95,.96), rgba(6,43,95,.91)),
-        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80');
+      background-color:rgba(6,43,95,.94);
+      background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80');
       background-size:cover;
       background-position:center;
       color:#fff;
@@ -862,7 +856,7 @@
       background:var(--line);
       overflow:hidden;
     }
-    .step.active { background:linear-gradient(90deg,var(--green),var(--mustard)); }
+    .step.active { background:var(--green); }
     .form-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:11px; }
     .field label {
       display:block;
@@ -935,9 +929,7 @@
       border-top:1px solid var(--line);
     }
     .result-card {
-      background:
-        radial-gradient(circle at 80% 10%, rgba(214,165,26,.16), transparent 26%),
-        linear-gradient(180deg, #fff, var(--soft));
+      background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
       padding:24px;
@@ -1026,7 +1018,7 @@
           </div>
         </div>
 
-        <div class="hero-slider" aria-label="Resumen de soluciones">
+        <div class="hero-slider" aria-label="Mensajes principales">
           <div class="slide active">
             <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80');"></div>
             <div class="slide-overlay"></div>
@@ -1038,6 +1030,38 @@
               </div>
               <a class="btn btn-mustard" href="servicios.php">Explorar servicios</a>
             </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div>
+                <span class="slide-tag">Servicios</span>
+                <h2>Acreditación y gestión integral del riesgo</h2>
+                <p>Revisa soluciones para control documental, auditorías, cumplimiento legal y soporte especializado.</p>
+              </div>
+              <a class="btn btn-mustard" href="servicios.php#acreditacion">Ver acreditación</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div>
+                <span class="slide-tag">Especialidades</span>
+                <h2>Minería y Sello Crecer</h2>
+                <p>Accede a la línea especializada para minería o conoce el reconocimiento de buenas prácticas.</p>
+              </div>
+              <a class="btn btn-mustard" href="mineria.php#mineria">Ver minería</a>
+            </div>
+          </div>
+
+          <div class="dots">
+            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
           </div>
         </div>
       </div>
@@ -1094,6 +1118,37 @@
             <h3>Sello Crecer</h3>
             <p class="text-muted">Reconocimiento para contratistas con mejores estándares.</p>
             <a class="btn btn-outline" href="sello-crecer.php#sello">Conocer el sello</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="secciones">
+      <div class="wrap">
+        <span class="eyebrow">Referencias del sitio</span>
+        <h2>Profundiza por área según tu necesidad.</h2>
+        <p class="lead">El inicio presenta una visión ejecutiva. Usa estos accesos para revisar información más completa en cada sección.</p>
+
+        <div class="grid-4">
+          <article class="service-card">
+            <h3>Nosotros</h3>
+            <p class="text-muted">Conoce la experiencia, enfoque preventivo y principios de trabajo de Crecer Acredita.</p>
+            <a class="btn btn-outline" href="nosotros.php#nosotros">Ver nosotros</a>
+          </article>
+          <article class="service-card">
+            <h3>Servicios</h3>
+            <p class="text-muted">Revisa el modelo de acreditación, auditoría, cumplimiento y soporte operativo.</p>
+            <a class="btn btn-outline" href="servicios.php#servicios">Ver servicios</a>
+          </article>
+          <article class="service-card">
+            <h3>Minería</h3>
+            <p class="text-muted">Explora soluciones para contratistas que operan bajo estándares de compañías mineras.</p>
+            <a class="btn btn-outline" href="mineria.php#mineria">Ver minería</a>
+          </article>
+          <article class="service-card">
+            <h3>Sello Crecer</h3>
+            <p class="text-muted">Conoce los niveles de reconocimiento y el valor de certificar buenas prácticas.</p>
+            <a class="btn btn-outline" href="sello-crecer.php#sello">Ver sello</a>
           </article>
         </div>
       </div>
