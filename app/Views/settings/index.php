@@ -1,0 +1,1 @@
+<?php $title='Configuración'; ?><div class="panel"><h2>Crecer Acredita</h2><p>Configure la conexión en <code>config/database.php</code>. Los parámetros de marca y zona horaria están en <code>config/app.php</code>.</p><p><b>Slogan:</b> Transformamos el cumplimiento en confianza.</p></div>

@@ -1,0 +1,3 @@
+<?php
+namespace App\Controllers; use App\Models\User;
+class AuthController { public function login(){\render('auth/login',[], 'auth');} public function authenticate(){\verify_csrf(); $u=(new User)->findByEmail($_POST['email']??''); if($u && $u['status']==='active' && password_verify($_POST['password']??'',$u['password_hash'])){session_regenerate_id(true); $_SESSION['user']=['id'=>$u['id'],'name'=>$u['name'],'email'=>$u['email'],'role_name'=>$u['role_name']]; \redirect('/dashboard');} \flash('error','Credenciales inválidas o usuario inactivo.'); \redirect('/login');} public function logout(){session_destroy(); \redirect('/login');}}

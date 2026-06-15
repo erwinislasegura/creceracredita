@@ -1,0 +1,3 @@
+<?php
+namespace App\Controllers; use App\Models\Lead; use App\Models\User;
+class LeadController { public function index(){ $m=new Lead; \render('leads/index',['leads'=>$m->search($_GET),'users'=>(new User)->all(),'filters'=>$_GET]); } public function show($id){$m=new Lead; \render('leads/show',['lead'=>$m->find($id),'result'=>$m->result($id),'answers'=>$m->answers($id),'logs'=>$m->logs($id)]);} public function edit($id){$m=new Lead; \render('leads/edit',['lead'=>$m->find($id),'users'=>(new User)->all(),'statuses'=>$m->statuses]);} public function update($id){\verify_csrf(); if(!\can('edit_leads')) exit('No autorizado'); (new Lead)->update($id,$_POST); \flash('success','Lead actualizado correctamente.'); \redirect('/leads/'.$id);} }
