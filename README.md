@@ -22,7 +22,7 @@ Sistema web PHP 8+ con arquitectura MVC propia para gestionar empresas/leads que
 
 ## Instalación
 
-1. Crear una base de datos MySQL, por ejemplo `crecer_acredita_crm`.
+1. Crear una base de datos MySQL, por ejemplo `crecer`.
 2. Importar `database/schema.sql`.
 3. Importar `database/seeders.sql`.
 4. Configurar credenciales en `config/database.php` o mediante variables de entorno:
