@@ -162,6 +162,8 @@
     .academia-crecer-section .ac-slide { min-width: 100%; display: grid; grid-template-columns: .92fr 1fr; background: #fff; color: var(--ink); }
     .academia-crecer-section .ac-slide img { height: 360px; object-fit: cover; }
     .academia-crecer-section .ac-slide-copy { padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; justify-content: center; }
+    .academia-crecer-section .ac-slide-copy .ac-eyebrow { color: var(--green-2); }
+    .academia-crecer-section .ac-slide-copy h3 { color: var(--navy); }
     .academia-crecer-section .ac-slide-copy p { color: var(--muted); line-height: 1.62; }
     .academia-crecer-section .ac-slider-controls { position: absolute; right: 18px; bottom: 18px; display: flex; gap: 8px; }
     .academia-crecer-section .ac-slider-btn { width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--green); color: #fff; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-sm); }
@@ -183,12 +185,6 @@
     .academia-crecer-section .ac-accordion-item.active .ac-accordion-icon { background: var(--green); color: #fff; transform: rotate(45deg); }
     .academia-crecer-section .ac-accordion-panel { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
     .academia-crecer-section .ac-accordion-panel-inner { padding: 0 18px 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-
-    .academia-crecer-section .ac-gallery { display: grid; grid-template-columns: 1.1fr .9fr 1fr; grid-auto-rows: 190px; gap: 14px; margin-top: 26px; }
-    .academia-crecer-section .ac-gallery img { height: 100%; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow-sm); transition: .25s ease; }
-    .academia-crecer-section .ac-gallery img:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow); }
-    .academia-crecer-section .ac-gallery img:nth-child(1) { grid-row: span 2; }
-    .academia-crecer-section .ac-gallery img:nth-child(4) { grid-column: span 2; }
 
     .academia-crecer-section .ac-highlight { background: linear-gradient(135deg, #fff, var(--soft)); border: 1px solid var(--line); border-radius: 24px; padding: 30px; box-shadow: var(--shadow); }
     .academia-crecer-section .ac-highlight-media { display: grid; grid-template-columns: .95fr 1fr; gap: 24px; align-items: center; }
@@ -219,8 +215,6 @@
       .academia-crecer-section .ac-slide { grid-template-columns: 1fr; }
       .academia-crecer-section .ac-image-stack { grid-template-columns: 1fr; }
       .academia-crecer-section .ac-image-stack img:first-child { margin-top: 0; }
-      .academia-crecer-section .ac-gallery { grid-template-columns: 1fr; grid-auto-rows: 220px; }
-      .academia-crecer-section .ac-gallery img:nth-child(n) { grid-column: auto; grid-row: auto; }
       .academia-crecer-section .ac-slide img { height: 230px; }
       .academia-crecer-section .ac-dots { bottom: 18px; }
       .academia-crecer-section .ac-card,
@@ -386,20 +380,6 @@
             <div class="ac-card"><h3>Proyección</h3><p class="ac-muted">Equipos preparados para crecer.</p></div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ac-section">
-    <div class="ac-wrap" data-reveal>
-      <span class="ac-eyebrow">Galería</span>
-      <h2 class="ac-title">Más imágenes para una experiencia cercana y dinámica.</h2>
-      <div class="ac-gallery">
-        <img src="imagenes/2.png" alt="Sesión de aprendizaje colaborativo" loading="lazy">
-        <img src="imagenes/3.png" alt="Profesionales revisando indicadores" loading="lazy">
-        <img src="imagenes/8.png" alt="Equipo en jornada de capacitación" loading="lazy">
-        <img src="imagenes/12.png" alt="Reunión de planificación y mejora continua" loading="lazy">
-        <img src="imagenes/17.png" alt="Participantes de Academia Crecer trabajando en grupo" loading="lazy">
       </div>
     </div>
   </div>
