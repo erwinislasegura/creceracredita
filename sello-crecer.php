@@ -178,9 +178,8 @@ p:last-child{margin-bottom:0}
 .glass ul{color:rgba(255,255,255,.80);padding-left:18px;margin:10px 0 0}
 .glass li{margin:5px 0}
 .level-card{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow-sm)}
-.medal{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:inset 0 -8px 18px rgba(0,0,0,.14),0 10px 18px rgba(0,32,96,.10)}
-.medal svg{width:28px;height:28px;fill:currentColor}
-.bronze{background:#B77D3B}.silver{background:#A8AFB8}.gold{background:var(--mustard);color:#fff}
+.medal{width:64px;height:64px;display:grid;place-items:center;filter:drop-shadow(0 10px 18px rgba(0,32,96,.12))}
+.medal img{width:100%;height:100%;object-fit:contain;display:block}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
 .contact-card{background:var(--navy);color:#fff;border-radius:20px;padding:26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .contact-card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--mustard))}
@@ -291,11 +290,11 @@ footer a:hover{color:#fff}
         <div>
           <span class="eyebrow">Categorías</span>
           <h2>Tres niveles de reconocimiento.</h2>
-          <div class="level-card"><div class="medal bronze"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></div><div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado.</p></div></div>
+          <div class="level-card"><div class="medal"><img src="sello/oro.png" alt="" aria-hidden="true"></div><div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva.</p></div></div>
           <div style="height:10px"></div>
-          <div class="level-card"><div class="medal silver"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></div><div><h3>Sello Crecer Plata</h3><p class="text-muted">Cumplimiento consistente y controlado.</p></div></div>
+          <div class="level-card"><div class="medal"><img src="sello/plata.png" alt="" aria-hidden="true"></div><div><h3>Sello Crecer Plata</h3><p class="text-muted">Cumplimiento consistente y controlado.</p></div></div>
           <div style="height:10px"></div>
-          <div class="level-card"><div class="medal gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></div><div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva.</p></div></div>
+          <div class="level-card"><div class="medal"><img src="sello/bronce.png" alt="" aria-hidden="true"></div><div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado.</p></div></div>
         </div>
         <div class="card-feature">
           <span class="eyebrow">Beneficios</span>
