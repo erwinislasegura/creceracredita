@@ -109,7 +109,7 @@
       justify-content: center;
       min-height: 40px;
       padding: 9px 15px;
-      border-radius: 10px;
+      border-radius: 9px;
       border: 1px solid transparent;
       font-size: 13.5px;
       font-weight: 650;
@@ -123,14 +123,15 @@
     }
 
     .academia-crecer-section .ac-btn-primary {
-      background: linear-gradient(135deg, var(--green), var(--green-2));
+      background: var(--green);
       color: #fff;
-      box-shadow: 0 10px 22px rgba(11, 143, 99, .18);
+      box-shadow: 0 12px 22px rgba(131, 10, 61, .22), 0 2px 5px rgba(15, 23, 42, .10);
     }
 
     .academia-crecer-section .ac-btn-mustard {
       background: var(--mustard);
       color: #172033;
+      box-shadow: 0 12px 22px rgba(176, 23, 79, .20), 0 2px 5px rgba(15, 23, 42, .10);
     }
 
     .academia-crecer-section .ac-section {

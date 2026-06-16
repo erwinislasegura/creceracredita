@@ -72,14 +72,14 @@ p:last-child{margin-bottom:0}
 .divider{height:1px;background:var(--line);margin:22px 0}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:40px;padding:9px 15px;border-radius:10px;border:1px solid transparent;
+  min-height:40px;padding:9px 15px;border-radius:9px;border:1px solid transparent;
   font-size:13.5px;font-weight:650;cursor:pointer;transition:.2s ease;white-space:nowrap
 }
 .btn:hover{transform:translateY(-1px)}
-.btn-primary{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;box-shadow:0 10px 22px rgba(131,10,61,.16)}
-.btn-outline{background:#fff;color:var(--navy);border-color:var(--line)}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-mustard{background:var(--mustard);color:#fff}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 12px 22px rgba(131,10,61,.22),0 2px 5px rgba(15,23,42,.10)}
+.btn-outline{background:#fff;color:var(--navy);border-color:var(--line);box-shadow:0 10px 18px rgba(0,32,96,.09),0 2px 4px rgba(15,23,42,.06)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 12px 22px rgba(0,32,96,.22),0 2px 5px rgba(15,23,42,.10)}
+.btn-mustard{background:var(--mustard);color:#fff;box-shadow:0 12px 22px rgba(176,23,79,.22),0 2px 5px rgba(15,23,42,.10)}
 .topbar{background:var(--navy-dark);color:rgba(255,255,255,.78);font-size:12px;border-bottom:1px solid rgba(255,255,255,.10)}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:7px 0}
 .topbar strong{color:#fff;font-weight:650}
@@ -95,7 +95,7 @@ p:last-child{margin-bottom:0}
 .menu a{display:block;padding:8px 9px;border-radius:9px;font-size:12.8px;font-weight:600;color:#29364E}
 .menu a:hover,.menu a.active{background:var(--soft);color:var(--navy)}
 .nav-actions{display:flex;align-items:center;gap:8px}
-.hamb{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--navy);cursor:pointer}
+.hamb{display:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px;color:var(--navy);cursor:pointer;box-shadow:0 10px 18px rgba(0,32,96,.09),0 2px 4px rgba(15,23,42,.06)}
 .page-hero{
   position:relative;overflow:hidden;color:#fff;
   background:
