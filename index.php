@@ -551,6 +551,100 @@
     }
     .dot.active { background:var(--mustard); }
 
+
+    .section-flow {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(176,23,79,.09), transparent 28%),
+        linear-gradient(180deg,#FFFFFF 0%,#F7F9FC 100%);
+      overflow:hidden;
+    }
+    .section-head {
+      display:grid;
+      grid-template-columns:minmax(0, .9fr) minmax(260px, .45fr);
+      gap:24px;
+      align-items:end;
+      margin-bottom:22px;
+    }
+    .section-head .lead { margin-bottom:0; }
+    .flow-badge {
+      justify-self:end;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(0,32,96,.10);
+      color:var(--navy);
+      box-shadow:var(--shadow-sm);
+      font-size:13px;
+      font-weight:750;
+    }
+    .flow-badge::before {
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 6px rgba(131,10,61,.10);
+    }
+    .journey-grid {
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+    .journey-grid::before {
+      content:"";
+      position:absolute;
+      left:11%;
+      right:11%;
+      top:34px;
+      height:2px;
+      background:linear-gradient(90deg,rgba(131,10,61,.16),rgba(0,32,96,.24),rgba(176,23,79,.16));
+      z-index:0;
+    }
+    .journey-card {
+      position:relative;
+      z-index:1;
+      min-height:245px;
+      padding:22px;
+      border-radius:20px;
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(0,32,96,.10);
+      box-shadow:0 18px 42px rgba(0,32,96,.09);
+    }
+    .journey-step {
+      width:68px;
+      height:68px;
+      display:grid;
+      place-items:center;
+      margin-bottom:18px;
+      border-radius:20px;
+      background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;
+      font-size:18px;
+      font-weight:850;
+      box-shadow:0 14px 28px rgba(0,32,96,.20);
+    }
+    .journey-card:nth-child(even) .journey-step { background:linear-gradient(135deg,var(--green),var(--mustard)); }
+    .journey-card p { margin-bottom:16px; }
+    .service-card .card-step {
+      position:absolute;
+      right:16px;
+      top:16px;
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:rgba(131,10,61,.10);
+      color:var(--green);
+      font-size:12px;
+      font-weight:850;
+    }
+
     .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
 
@@ -1475,7 +1569,9 @@
       .contact-cta,
       .mid-cta-grid,
       .footer-grid { grid-template-columns:1fr; }
-      .grid-4 { grid-template-columns:repeat(2,1fr); }
+      .grid-4, .journey-grid { grid-template-columns:repeat(2,1fr); }
+      .section-head { grid-template-columns:1fr; }
+      .flow-badge { justify-self:start; }
       .why-list, .image-band { grid-template-columns:1fr; }
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
@@ -1509,7 +1605,8 @@
       .hero-copy, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
       .mid-cta-card { padding:8px 0; }
-      .hero-kpis, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
+      .hero-kpis, .grid-4, .journey-grid, .form-grid, .image-stack { grid-template-columns:1fr; }
+      .journey-grid::before { display:none; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
       .modal-head, .modal-body { padding:18px; }
@@ -1653,6 +1750,7 @@
 
         <div class="grid-4">
           <article class="service-card motion-card reveal-card">
+            <span class="card-step">01</span>
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
             <h3>Acreditación de Contratistas</h3>
             <p class="text-muted">Control documental y seguimiento de observaciones.</p>
@@ -1660,6 +1758,7 @@
           </article>
 
           <article class="service-card motion-card reveal-card">
+            <span class="card-step">02</span>
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Gestión Integral del Riesgo</h3>
             <p class="text-muted">Indicadores, alertas preventivas y planes de mitigación.</p>
@@ -1667,6 +1766,7 @@
           </article>
 
           <article class="service-card motion-card reveal-card">
+            <span class="card-step">03</span>
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/></svg></div>
             <h3>Crecer Acredita Minería</h3>
             <p class="text-muted">Soporte para exigencias documentales de la industria minera.</p>
@@ -1674,6 +1774,7 @@
           </article>
 
           <article class="service-card motion-card reveal-card">
+            <span class="card-step">04</span>
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <h3>Sello Crecer</h3>
             <p class="text-muted">Reconocimiento para contratistas con mejores estándares.</p>
@@ -1707,29 +1808,38 @@
       </div>
     </section>
 
-    <section class="section" id="secciones">
+    <section class="section section-flow" id="secciones">
       <div class="wrap">
-        <span class="eyebrow">Referencias del sitio</span>
-        <h2>Profundiza por área según tu necesidad.</h2>
-        <p class="lead">El inicio presenta una visión ejecutiva. Usa estos accesos para revisar información más completa en cada sección.</p>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Referencias del sitio</span>
+            <h2>Profundiza por área según tu necesidad.</h2>
+            <p class="lead">El inicio presenta una visión ejecutiva. Usa estos accesos para revisar información más completa en cada sección.</p>
+          </div>
+          <span class="flow-badge">Ruta sugerida de navegación</span>
+        </div>
 
-        <div class="grid-4">
-          <article class="service-card motion-card reveal-card">
+        <div class="journey-grid" aria-label="Flujo lógico de navegación por áreas">
+          <article class="journey-card motion-card reveal-card">
+            <span class="journey-step">01</span>
             <h3>Nosotros</h3>
             <p class="text-muted">Conoce la experiencia, enfoque preventivo y principios de trabajo de Crecer Acredita.</p>
             <a class="btn btn-outline" href="nosotros.php#nosotros">Ver nosotros</a>
           </article>
-          <article class="service-card motion-card reveal-card">
+          <article class="journey-card motion-card reveal-card">
+            <span class="journey-step">02</span>
             <h3>Servicios</h3>
             <p class="text-muted">Revisa el modelo de acreditación, auditoría, cumplimiento y soporte operativo.</p>
             <a class="btn btn-outline" href="servicios.php#servicios">Ver servicios</a>
           </article>
-          <article class="service-card motion-card reveal-card">
+          <article class="journey-card motion-card reveal-card">
+            <span class="journey-step">03</span>
             <h3>Minería</h3>
             <p class="text-muted">Explora soluciones para contratistas que operan bajo estándares de compañías mineras.</p>
             <a class="btn btn-outline" href="mineria.php#mineria">Ver minería</a>
           </article>
-          <article class="service-card motion-card reveal-card">
+          <article class="journey-card motion-card reveal-card">
+            <span class="journey-step">04</span>
             <h3>Sello Crecer</h3>
             <p class="text-muted">Conoce los niveles de reconocimiento y el valor de certificar buenas prácticas.</p>
             <a class="btn btn-outline" href="sello-crecer.php#sello">Ver sello</a>
