@@ -368,7 +368,7 @@
       .hero-bg-rotator span:first-child { opacity:1; }
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-    .hero-copy .hero-certifications { display:none; }
+    .hero-certifications:not(.hero-certifications-panel) { display:none !important; }
     .hero-certifications-panel {
       position:absolute;
       right:-42px;
@@ -1423,6 +1423,14 @@
         </div>
 
         <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
+          <span class="hero-certifications-title">Certificaciones</span>
+          <div class="hero-certifications-row">
+            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
+          </div>
+        </div>
+
+        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
           <span class="hero-certifications-title">Certificaciones</span>
           <div class="hero-certifications-row">
             <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
