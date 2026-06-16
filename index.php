@@ -876,18 +876,13 @@
       box-shadow:var(--shadow-sm);
     }
     .medal-icon {
-      width:48px;
-      height:48px;
-      border-radius:50%;
+      width:64px;
+      height:64px;
       display:grid;
       place-items:center;
-      color:#fff;
-      box-shadow:inset 0 -8px 18px rgba(0,0,0,.14), 0 10px 18px rgba(0,32,96,.10);
+      filter:drop-shadow(0 10px 18px rgba(0,32,96,.12));
     }
-    .medal-icon svg { width:28px; height:28px; fill:currentColor; }
-    .medal-bronze { background:#B77D3B; }
-    .medal-silver { background:#A8AFB8; }
-    .medal-gold { background:var(--mustard); }
+    .medal-icon img { width:100%; height:100%; object-fit:contain; display:block; }
 
     .why { background:#fff; }
     .why-list { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-top:17px; }
@@ -1406,16 +1401,16 @@
           <p class="lead">El Sello Crecer comunica estándares de cumplimiento laboral, previsional, documental y de gestión preventiva frente a clientes y empresas mandantes.</p>
           <div class="recognition-levels" aria-label="Tres niveles de reconocimiento del Sello Crecer">
             <article class="recognition-level">
-              <span class="medal-icon medal-bronze" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
-              <div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado y brechas principales bajo seguimiento.</p></div>
+              <span class="medal-icon" aria-hidden="true"><img src="sello/oro.png" alt=""></span>
+              <div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva para diferenciarse.</p></div>
             </article>
             <article class="recognition-level">
-              <span class="medal-icon medal-silver" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
+              <span class="medal-icon" aria-hidden="true"><img src="sello/plata.png" alt=""></span>
               <div><h3>Sello Crecer Plata</h3><p class="text-muted">Cumplimiento consistente, controlado y con procesos preventivos activos.</p></div>
             </article>
             <article class="recognition-level">
-              <span class="medal-icon medal-gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
-              <div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva para diferenciarse.</p></div>
+              <span class="medal-icon" aria-hidden="true"><img src="sello/bronce.png" alt=""></span>
+              <div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado y brechas principales bajo seguimiento.</p></div>
             </article>
           </div>
           <div class="mid-cta-actions"><a class="btn btn-primary" href="sello-crecer.php#sello">Conocer Sello Crecer</a></div>
