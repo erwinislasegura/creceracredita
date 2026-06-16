@@ -368,6 +368,63 @@
       .hero-bg-rotator span:first-child { opacity:1; }
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+    .certifications-band {
+      background:linear-gradient(180deg,#fff 0%, #F7F9FC 100%);
+      border-bottom:1px solid var(--line);
+      padding:22px 0;
+    }
+    .certifications-panel {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:24px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px 24px;
+      box-shadow:var(--shadow-sm);
+      position:relative;
+      overflow:hidden;
+    }
+    .certifications-panel::before {
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:4px;
+      background:linear-gradient(180deg,var(--green),var(--mustard));
+    }
+    .certifications-copy h2 {
+      font-size:clamp(18px, 2vw, 23px);
+      margin-bottom:7px;
+    }
+    .certifications-copy p {
+      color:var(--muted);
+      margin:0;
+      max-width:700px;
+      font-size:14px;
+    }
+    .certifications-logos {
+      display:grid;
+      grid-template-columns:repeat(2, 132px);
+      gap:10px;
+      align-items:center;
+    }
+    .certification-logo-card {
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 13px;
+      border-radius:15px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      box-shadow:inset 0 0 0 2px rgba(255,255,255,.65);
+    }
+    .certification-logo-card img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
     .kpi {
       display:flex;
       align-items:center;
@@ -1297,6 +1354,9 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
+      .certifications-panel { grid-template-columns:1fr; gap:16px; padding:18px; }
+      .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+      .certification-logo-card { height:76px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
@@ -1387,6 +1447,22 @@
             <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
             <button class="dot" data-slide="1" aria-label="Slide 2"></button>
             <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certifications-band" id="certificaciones">
+      <div class="wrap">
+        <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
+          <div class="certifications-copy">
+            <span class="eyebrow">Certificaciones</span>
+            <h2>Respaldo verificable para generar confianza desde el primer contacto.</h2>
+            <p>Nuestras certificaciones refuerzan el compromiso con estándares de gestión, evaluación y cumplimiento para entregar un servicio serio, trazable y confiable.</p>
+          </div>
+          <div class="certifications-logos">
+            <span class="certification-logo-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+            <span class="certification-logo-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
           </div>
         </div>
       </div>
