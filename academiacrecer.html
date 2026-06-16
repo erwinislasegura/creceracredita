@@ -34,7 +34,20 @@
       color: #fff;
       display: grid;
       align-items: center;
-      background: var(--navy);
+      background-color: var(--navy);
+      overflow: hidden;
+    }
+
+    .academia-crecer-section .ac-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('imagenes/15.png');
+      background-size: cover;
+      background-position: center right;
+      background-attachment: fixed;
+      opacity: .18;
+      pointer-events: none;
     }
 
     .academia-crecer-section .ac-hero::after,
@@ -195,8 +208,8 @@
       .academia-crecer-section .ac-highlight-media { grid-template-columns: 1fr; }
       .academia-crecer-section .ac-grid-3,
       .academia-crecer-section .ac-metric-row { grid-template-columns: 1fr 1fr; }
-      .academia-crecer-section .ac-hero,
       .academia-crecer-section .ac-band { background-attachment: scroll; }
+      .academia-crecer-section .ac-hero::before { background-attachment: scroll; }
       .academia-crecer-section .ac-hero-card img { height: 320px; }
     }
 
