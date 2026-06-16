@@ -184,7 +184,7 @@ p:last-child{margin-bottom:0}
   color:#fff;
   background:
     linear-gradient(90deg,rgba(0,24,70,.94),rgba(0,32,96,.80)),
-    url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1800&q=80');
+    var(--section-accent-img);
   background-size:cover;background-position:center;background-attachment:fixed
 }
 .parallax-mining h2,.parallax-mining h3{color:#fff}
@@ -248,7 +248,7 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80');}</style>
+  <style>.page-hero{--hero-img:url('imagenes/10.png');--section-accent-img:url('imagenes/11.png');}</style>
 </head>
 <body>
 
