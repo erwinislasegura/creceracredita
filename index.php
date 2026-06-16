@@ -302,7 +302,7 @@
       color:#fff;
       max-width:760px;
       margin:0 auto 18px;
-      font-size:clamp(31px, 4.2vw, 52px);
+      font-size:clamp(28px, 3.4vw, 44px);
       line-height:1.05;
       font-weight:650;
       letter-spacing:-.048em;
@@ -334,11 +334,12 @@
       animation-fill-mode:both;
     }
     .hero-actions .btn-primary {
-      background:#fff;
+      background:linear-gradient(135deg,#fff 0%,#fff7fb 100%);
       color:#001846;
       border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 18px 36px rgba(0,0,0,.24), 0 3px 8px rgba(0,0,0,.16);
-      font-weight:800;
+      box-shadow:0 18px 36px rgba(0,0,0,.24), 0 0 0 6px rgba(255,255,255,.16), 0 3px 8px rgba(0,0,0,.16);
+      font-weight:850;
+      font-size:15px;
       transform-origin:center;
       animation-name:heroBtnInLeft;
     }
@@ -821,6 +822,73 @@
     .level:nth-child(2) .badge::before { background:#A8AFB8; }
     .level:nth-child(3) .badge::before { background:var(--mustard); }
 
+
+
+    .seal-preview {
+      background:linear-gradient(180deg,#fff 0%, var(--soft) 100%);
+      overflow:hidden;
+    }
+    .seal-preview-grid {
+      display:grid;
+      grid-template-columns:minmax(0,.95fr) minmax(320px,1.05fr);
+      gap:28px;
+      align-items:center;
+    }
+    .seal-preview-visual {
+      position:relative;
+      min-height:430px;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:var(--navy);
+    }
+    .seal-preview-visual img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .seal-preview-visual::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,32,96,.10),rgba(0,24,70,.72));
+    }
+    .seal-preview-caption {
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      z-index:2;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.62);
+      box-shadow:0 18px 42px rgba(0,0,0,.18);
+    }
+    .seal-preview-caption strong { display:block; color:var(--navy); margin-bottom:5px; }
+    .seal-preview-caption span { color:var(--muted); font-size:13px; }
+    .recognition-levels { display:grid; gap:11px; margin:20px 0 0; }
+    .recognition-level {
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:14px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      box-shadow:var(--shadow-sm);
+    }
+    .medal-icon {
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      box-shadow:inset 0 -8px 18px rgba(0,0,0,.14), 0 10px 18px rgba(0,32,96,.10);
+    }
+    .medal-icon svg { width:28px; height:28px; fill:currentColor; }
+    .medal-bronze { background:#B77D3B; }
+    .medal-silver { background:#A8AFB8; }
+    .medal-gold { background:var(--mustard); }
+
     .why { background:#fff; }
     .why-list { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-top:17px; }
     .why-item { padding:17px; }
@@ -1212,6 +1280,7 @@
       .exp-grid,
       .faq-grid,
       .seal-grid,
+      .seal-preview-grid,
       .mining-grid,
       .contact-cta,
       .mid-cta-grid,
@@ -1324,6 +1393,36 @@
             <button class="dot" data-slide="1" aria-label="Slide 2"></button>
             <button class="dot" data-slide="2" aria-label="Slide 3"></button>
           </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section seal-preview" id="sello-resumen">
+      <div class="wrap seal-preview-grid">
+        <div class="reveal-card">
+          <span class="eyebrow">Sello Crecer</span>
+          <h2>Reconocimiento visible para empresas contratistas confiables.</h2>
+          <p class="lead">El Sello Crecer comunica estándares de cumplimiento laboral, previsional, documental y de gestión preventiva frente a clientes y empresas mandantes.</p>
+          <div class="recognition-levels" aria-label="Tres niveles de reconocimiento del Sello Crecer">
+            <article class="recognition-level">
+              <span class="medal-icon medal-bronze" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
+              <div><h3>Sello Crecer Bronce</h3><p class="text-muted">Cumplimiento básico acreditado y brechas principales bajo seguimiento.</p></div>
+            </article>
+            <article class="recognition-level">
+              <span class="medal-icon medal-silver" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
+              <div><h3>Sello Crecer Plata</h3><p class="text-muted">Cumplimiento consistente, controlado y con procesos preventivos activos.</p></div>
+            </article>
+            <article class="recognition-level">
+              <span class="medal-icon medal-gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8l-2 5h-4L8 2Zm2.2 6h3.6l4.4 2.6A7 7 0 1 1 5.8 10.6L10.2 8Zm1.8 3.2 1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4 1.1-2.3Z"/></svg></span>
+              <div><h3>Sello Crecer Oro</h3><p class="text-muted">Excelencia en cumplimiento y gestión preventiva para diferenciarse.</p></div>
+            </article>
+          </div>
+          <div class="mid-cta-actions"><a class="btn btn-primary" href="sello-crecer.php#sello">Conocer Sello Crecer</a></div>
+        </div>
+        <div class="seal-preview-visual reveal-card">
+          <img src="imagenes/13.png" alt="Reconocimiento y certificación del Sello Crecer">
+          <div class="seal-preview-caption"><strong>Tres niveles de reconocimiento</strong><span>Medallas Bronce, Plata y Oro para comunicar confianza operacional.</span></div>
         </div>
       </div>
     </section>
