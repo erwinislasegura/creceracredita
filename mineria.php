@@ -103,7 +103,10 @@ p:last-child{margin-bottom:0}
     linear-gradient(90deg,rgba(0,24,70,.96),rgba(0,32,96,.82)),
     var(--hero-img);
   background-size:cover;background-position:center;background-attachment:fixed;
-  padding:72px 0 64px
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  padding:110px 0 96px
 }
 .page-hero:after{
   content:"";position:absolute;right:-120px;top:-80px;width:310px;height:310px;border-radius:50%;
