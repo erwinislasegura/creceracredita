@@ -30,8 +30,8 @@ $activePage = $activePage ?? 'inicio';
   .header .menu a:hover { background:var(--soft) !important; color:var(--navy) !important; }
   .header .menu a.active { background:rgba(131,10,61,.10) !important; color:var(--green) !important; box-shadow:inset 0 0 0 1px rgba(131,10,61,.14) !important; }
   .nav-actions { display:flex !important; align-items:center !important; justify-content:flex-end !important; gap:8px !important; flex:0 0 auto !important; }
-  .header .btn-outline { background:#fff !important; color:var(--navy) !important; border-color:rgba(0,32,96,.16) !important; box-shadow:0 8px 18px rgba(0,32,96,.06) !important; white-space:nowrap !important; }
-  .hamb { display:none !important; background:#fff !important; border:1px solid var(--line) !important; border-radius:10px !important; padding:8px 10px !important; color:var(--navy) !important; cursor:pointer !important; }
+  .header .btn-outline { background:#fff !important; color:var(--navy) !important; border-color:rgba(0,32,96,.16) !important; box-shadow:0 10px 18px rgba(0,32,96,.09), 0 2px 4px rgba(15,23,42,.06) !important; white-space:nowrap !important; }
+  .hamb { display:none !important; background:#fff !important; border:1px solid var(--line) !important; border-radius:9px !important; padding:8px 10px !important; color:var(--navy) !important; cursor:pointer !important; }
   @media (max-width: 900px) {
     .topbar .wrap { flex-direction:column !important; align-items:flex-start !important; }
     .nav { height:72px !important; }

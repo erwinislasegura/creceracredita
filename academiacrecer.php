@@ -51,13 +51,14 @@
       justify-content:center;
       min-height:40px;
       padding:9px 15px;
-      border-radius:10px;
+      border-radius:9px;
       border:1px solid transparent;
       font-size:13.5px;
       font-weight:650;
       text-decoration:none;
       transition:.2s ease;
       cursor:pointer;
+      box-shadow:0 10px 18px rgba(0,32,96,.09), 0 2px 4px rgba(15,23,42,.06);
     }
     .btn:hover { transform:translateY(-1px); }
   </style>
