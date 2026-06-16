@@ -369,38 +369,39 @@
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
     .hero-certifications {
+      position:absolute;
+      right:0;
+      bottom:34px;
+      z-index:3;
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:flex-end;
       gap:14px;
-      flex-wrap:wrap;
-      margin:24px auto 0;
+      pointer-events:none;
     }
     .hero-certification-card {
-      min-width:154px;
-      min-height:86px;
+      width:138px;
+      height:138px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:12px 16px;
-      border-radius:16px;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(255,255,255,.68);
-      box-shadow:0 18px 36px rgba(0,0,0,.22), 0 0 0 1px rgba(0,32,96,.05);
+      padding:18px;
+      border-radius:50%;
+      background:rgba(255,255,255,.96);
+      border:4px solid rgba(255,255,255,.82);
+      box-shadow:0 22px 42px rgba(0,0,0,.28), inset 0 0 0 2px rgba(131,10,61,.16);
       backdrop-filter:blur(10px);
+      transform:rotate(-7deg);
+    }
+    .hero-certification-card:nth-child(2) {
+      transform:rotate(6deg);
+      margin-left:-22px;
     }
     .hero-certification-card img {
       width:auto;
-      max-width:142px;
-      max-height:62px;
+      max-width:104px;
+      max-height:82px;
       object-fit:contain;
-    }
-    .hero-certification-note {
-      flex-basis:100%;
-      color:rgba(255,255,255,.82);
-      font-size:12.5px;
-      font-weight:650;
-      letter-spacing:.01em;
     }
     .kpi {
       display:flex;
@@ -1330,7 +1331,10 @@
       .nav { height:66px; }
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
-      .hero-grid { padding:36px 0 54px; gap:20px; }
+      .hero-grid { padding:36px 0 156px; gap:20px; }
+      .hero-certifications { right:50%; bottom:34px; justify-content:center; transform:translateX(50%); }
+      .hero-certification-card { width:118px; height:118px; padding:16px; }
+      .hero-certification-card img { max-width:88px; max-height:70px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
@@ -1381,6 +1385,11 @@
             <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
             <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
           </div>
+        </div>
+
+        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
+          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
         </div>
 
         <div class="hero-slider" aria-label="Mensajes principales">
