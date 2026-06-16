@@ -371,20 +371,19 @@
     .certifications-band {
       position:relative;
       z-index:5;
-      margin-top:-34px;
-      padding:0 0 18px;
-      background:linear-gradient(180deg, transparent 0 34px, #F7F9FC 34px 100%);
+      padding:34px 0 24px;
+      background:linear-gradient(180deg,#F7F9FC 0%,#fff 100%);
     }
     .certifications-panel {
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:18px;
+      grid-template-columns:minmax(0,1fr) minmax(360px, .72fr);
+      gap:28px;
       align-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px 20px;
-      box-shadow:var(--shadow-sm);
+      background:linear-gradient(135deg,#FFFFFF 0%,#FBFCFF 100%);
+      border:1px solid rgba(0,32,96,.10);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 20px 52px rgba(0,32,96,.12);
       position:relative;
       overflow:hidden;
     }
@@ -392,39 +391,64 @@
       content:"";
       position:absolute;
       inset:0 auto 0 0;
-      width:4px;
+      width:6px;
       background:linear-gradient(180deg,var(--green),var(--mustard));
     }
+    .certifications-panel::after {
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      right:-82px;
+      top:-96px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(176,23,79,.16),rgba(176,23,79,0) 68%);
+      pointer-events:none;
+    }
+    .certifications-copy { position:relative; z-index:1; }
     .certifications-copy h2 {
-      font-size:clamp(16px, 1.7vw, 20px);
-      margin-bottom:5px;
+      font-size:clamp(22px, 2.4vw, 31px);
+      line-height:1.12;
+      letter-spacing:-.03em;
+      margin-bottom:9px;
+      color:var(--navy);
     }
     .certifications-copy p {
       color:var(--muted);
       margin:0;
-      max-width:660px;
-      font-size:13.5px;
+      max-width:680px;
+      font-size:15px;
+      line-height:1.65;
     }
     .certifications-logos {
+      position:relative;
+      z-index:1;
       display:grid;
-      grid-template-columns:repeat(2, 118px);
-      gap:9px;
-      align-items:center;
+      grid-template-columns:repeat(2, minmax(150px, 1fr));
+      gap:16px;
+      align-items:stretch;
     }
     .certification-logo-card {
-      height:68px;
+      min-height:132px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:9px 11px;
-      border-radius:13px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      box-shadow:inset 0 0 0 2px rgba(255,255,255,.65);
+      padding:18px 20px;
+      border-radius:20px;
+      background:#fff;
+      border:1px solid rgba(0,32,96,.12);
+      box-shadow:0 14px 34px rgba(0,32,96,.10), inset 0 0 0 2px rgba(255,255,255,.72);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .certification-logo-card:hover {
+      transform:translateY(-3px);
+      border-color:rgba(131,10,61,.28);
+      box-shadow:0 18px 42px rgba(0,32,96,.14);
     }
     .certification-logo-card img {
       width:100%;
       height:100%;
+      max-height:104px;
       object-fit:contain;
     }
     .kpi {
@@ -971,6 +995,108 @@
     .contact-cta h2 { color:#fff; margin-bottom:8px; }
     .contact-cta p { color:rgba(255,255,255,.76); margin-bottom:0; }
 
+    .clients-carousel-section {
+      padding:46px 0 54px;
+      background:linear-gradient(180deg,#fff 0%,#F7F9FC 100%);
+      overflow:hidden;
+    }
+    .clients-carousel-head {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:18px;
+      align-items:end;
+      margin-bottom:22px;
+    }
+    .clients-carousel-head h2 {
+      color:var(--navy);
+      font-size:clamp(23px, 2.6vw, 34px);
+      letter-spacing:-.035em;
+      margin-bottom:8px;
+    }
+    .clients-carousel-head p {
+      color:var(--muted);
+      max-width:690px;
+      margin:0;
+      font-size:15px;
+      line-height:1.65;
+    }
+    .clients-carousel-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(0,32,96,.10);
+      color:var(--navy);
+      box-shadow:var(--shadow-sm);
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .clients-carousel-badge::before {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--mustard);
+      box-shadow:0 0 0 5px rgba(176,23,79,.10);
+    }
+    .clients-carousel-shell {
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(0,32,96,.10);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:0 18px 48px rgba(0,32,96,.10);
+      padding:22px 0;
+    }
+    .clients-carousel-shell::before,
+    .clients-carousel-shell::after {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:96px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .clients-carousel-shell::before { left:0; background:linear-gradient(90deg,#fff,rgba(255,255,255,0)); }
+    .clients-carousel-shell::after { right:0; background:linear-gradient(270deg,#fff,rgba(255,255,255,0)); }
+    .clients-carousel-track {
+      display:flex;
+      width:max-content;
+      gap:16px;
+      padding:0 16px;
+      animation:clientsMarquee 34s linear infinite;
+    }
+    .clients-carousel-shell:hover .clients-carousel-track { animation-play-state:paused; }
+    .client-logo-card {
+      flex:0 0 150px;
+      height:112px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      border-radius:18px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      box-shadow:inset 0 0 0 2px rgba(255,255,255,.70);
+    }
+    .client-logo-card img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      filter:saturate(.92) contrast(1.03);
+    }
+    @keyframes clientsMarquee {
+      from { transform:translateX(0); }
+      to { transform:translateX(calc(-50%)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .clients-carousel-track { animation:none; flex-wrap:wrap; justify-content:center; width:auto; }
+    }
+
     footer {
       background:#001846;
       color:rgba(255,255,255,.74);
@@ -1356,10 +1482,17 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
-      .certifications-band { margin-top:-26px; padding-bottom:16px; background:linear-gradient(180deg, transparent 0 26px, #F7F9FC 26px 100%); }
-      .certifications-panel { grid-template-columns:1fr; gap:14px; padding:16px; }
-      .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); }
-      .certification-logo-card { height:64px; }
+      .certifications-band { padding:28px 0 18px; }
+      .certifications-panel { grid-template-columns:1fr; gap:18px; padding:20px; border-radius:20px; }
+      .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+      .certification-logo-card { min-height:104px; padding:14px; }
+      .certification-logo-card img { max-height:82px; }
+      .clients-carousel-section { padding:34px 0 42px; }
+      .clients-carousel-head { grid-template-columns:1fr; align-items:start; }
+      .clients-carousel-badge { width:max-content; }
+      .clients-carousel-shell { border-radius:20px; padding:16px 0; }
+      .clients-carousel-shell::before, .clients-carousel-shell::after { width:44px; }
+      .client-logo-card { flex-basis:124px; height:94px; padding:14px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
@@ -1403,51 +1536,6 @@
             <div class="kpi"><strong>20+</strong><span>años de experiencia</span></div>
             <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
             <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
-          </div>
-
-          <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-            <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
-          </div>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
           </div>
         </div>
 
@@ -1505,8 +1593,8 @@
         <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
           <div class="certifications-copy">
             <span class="eyebrow">Certificaciones</span>
-            <h2>Certificaciones que respaldan nuestra gestión.</h2>
-            <p>Estos sellos refuerzan nuestro compromiso con un servicio serio, trazable y alineado a estándares de evaluación y cumplimiento.</p>
+            <h2>Respaldo visible para una gestión confiable.</h2>
+            <p>Destacamos acreditaciones y registros que refuerzan nuestro estándar de servicio, trazabilidad y acompañamiento para empresas contratistas y mandantes.</p>
           </div>
           <div class="certifications-logos">
             <span class="certification-logo-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
@@ -1515,7 +1603,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="section seal-preview" id="sello-resumen">
       <div class="wrap seal-preview-grid">
@@ -1716,6 +1803,39 @@
         </div>
       </div>
     </section>
+
+    <?php
+      $clientLogos = glob(__DIR__ . '/clientes/*.{png,jpg,jpeg,webp,svg}', GLOB_BRACE) ?: [];
+      natcasesort($clientLogos);
+      $clientLogos = array_values($clientLogos);
+    ?>
+    <?php if (!empty($clientLogos)): ?>
+      <section class="clients-carousel-section" id="clientes" aria-label="Clientes que confían en Crecer Acredita">
+        <div class="wrap">
+          <div class="clients-carousel-head">
+            <div>
+              <span class="eyebrow">Clientes</span>
+              <h2>Empresas que han confiado en nuestra gestión.</h2>
+              <p>Una muestra de organizaciones que acompañamos con control documental, cumplimiento y soporte preventivo.</p>
+            </div>
+            <span class="clients-carousel-badge">Confianza operacional</span>
+          </div>
+          <div class="clients-carousel-shell">
+            <div class="clients-carousel-track">
+              <?php foreach (array_merge($clientLogos, $clientLogos) as $logoPath): ?>
+                <?php
+                  $logoFile = basename($logoPath);
+                  $logoAlt = 'Cliente Crecer Acredita ' . pathinfo($logoFile, PATHINFO_FILENAME);
+                ?>
+                <span class="client-logo-card">
+                  <img src="clientes/<?= htmlspecialchars($logoFile, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($logoAlt, ENT_QUOTES, 'UTF-8') ?>">
+                </span>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      </section>
+    <?php endif; ?>
   </main>
 
   <?php include __DIR__ . '/includes/site-footer.php'; ?>
