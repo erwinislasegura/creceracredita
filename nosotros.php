@@ -166,7 +166,7 @@ p:last-child{margin-bottom:0}
   color:#fff;
   background:
     linear-gradient(90deg,rgba(0,24,70,.94),rgba(0,32,96,.80)),
-    url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1800&q=80');
+    var(--section-accent-img);
   background-size:cover;background-position:center;background-attachment:fixed
 }
 .parallax-mining h2,.parallax-mining h3{color:#fff}
@@ -228,7 +228,7 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80');}</style>
+  <style>.page-hero{--hero-img:url('imagenes/7.png');--section-accent-img:url('imagenes/8.png');}</style>
 </head>
 <body>
 
@@ -258,7 +258,7 @@ footer a:hover{color:#fff}
         </div>
 
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Equipo profesional revisando cumplimiento">
+          <img src="imagenes/8.png" alt="Equipo profesional revisando cumplimiento">
           <div class="image-card-caption">
             <strong>Experiencia aplicada al cumplimiento</strong>
             <span>Soluciones prácticas para la gestión y control de contratistas.</span>

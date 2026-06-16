@@ -169,7 +169,7 @@ p:last-child{margin-bottom:0}
   color:#fff;
   background:
     linear-gradient(90deg,rgba(0,24,70,.94),rgba(0,32,96,.80)),
-    url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1800&q=80');
+    var(--section-accent-img);
   background-size:cover;background-position:center;background-attachment:fixed
 }
 .parallax-mining h2,.parallax-mining h3{color:#fff}
@@ -232,7 +232,7 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=1800&q=80');}</style>
+  <style>.page-hero{--hero-img:url('imagenes/12.png');--section-accent-img:url('imagenes/13.png');}</style>
 </head>
 <body>
 
@@ -261,7 +261,7 @@ footer a:hover{color:#fff}
           <p class="text-muted">Permite a contratistas fortalecer su posicionamiento y a empresas mandantes identificar proveedores de menor riesgo.</p>
         </div>
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=1200&q=80" alt="Certificación y confianza empresarial">
+          <img src="imagenes/13.png" alt="Certificación y confianza empresarial">
           <div class="image-card-caption">
             <strong>Cumplimiento que diferencia</strong>
             <span>Reconocimiento de buenas prácticas para contratistas confiables.</span>
