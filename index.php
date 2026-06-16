@@ -996,7 +996,7 @@
     .contact-cta p { color:rgba(255,255,255,.76); margin-bottom:0; }
 
     .clients-carousel-section {
-      padding:46px 0 54px;
+      padding:52px 0 60px;
       background:linear-gradient(180deg,#fff 0%,#F7F9FC 100%);
       overflow:hidden;
     }
@@ -1049,7 +1049,7 @@
       border-radius:24px;
       background:#fff;
       box-shadow:0 18px 48px rgba(0,32,96,.10);
-      padding:22px 0;
+      padding:28px 0;
     }
     .clients-carousel-shell::before,
     .clients-carousel-shell::after {
@@ -1066,28 +1066,32 @@
     .clients-carousel-track {
       display:flex;
       width:max-content;
-      gap:16px;
-      padding:0 16px;
-      animation:clientsMarquee 34s linear infinite;
+      gap:34px;
+      padding:0 34px;
+      animation:clientsMarquee 38s linear infinite;
     }
     .clients-carousel-shell:hover .clients-carousel-track { animation-play-state:paused; }
     .client-logo-card {
-      flex:0 0 150px;
-      height:112px;
+      flex:0 0 196px;
+      height:136px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:18px;
-      border-radius:18px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      box-shadow:inset 0 0 0 2px rgba(255,255,255,.70);
+      padding:8px;
+      border:0;
+      background:transparent;
+      box-shadow:none;
     }
     .client-logo-card img {
       width:100%;
       height:100%;
       object-fit:contain;
-      filter:saturate(.92) contrast(1.03);
+      filter:saturate(.96) contrast(1.04);
+      transition:transform .22s ease, filter .22s ease;
+    }
+    .client-logo-card:hover img {
+      transform:scale(1.05);
+      filter:saturate(1.05) contrast(1.08);
     }
     @keyframes clientsMarquee {
       from { transform:translateX(0); }
@@ -1487,12 +1491,13 @@
       .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
       .certification-logo-card { min-height:104px; padding:14px; }
       .certification-logo-card img { max-height:82px; }
-      .clients-carousel-section { padding:34px 0 42px; }
+      .clients-carousel-section { padding:38px 0 46px; }
       .clients-carousel-head { grid-template-columns:1fr; align-items:start; }
       .clients-carousel-badge { width:max-content; }
-      .clients-carousel-shell { border-radius:20px; padding:16px 0; }
+      .clients-carousel-shell { border-radius:20px; padding:20px 0; }
       .clients-carousel-shell::before, .clients-carousel-shell::after { width:44px; }
-      .client-logo-card { flex-basis:124px; height:94px; padding:14px; }
+      .clients-carousel-track { gap:22px; padding:0 22px; }
+      .client-logo-card { flex-basis:152px; height:110px; padding:6px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
