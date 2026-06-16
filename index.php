@@ -1379,6 +1379,12 @@
             <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
             <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
           </div>
+
+          <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
+            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
+            <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
+          </div>
         </div>
 
         <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
