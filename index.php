@@ -551,50 +551,6 @@
     }
     .dot.active { background:var(--mustard); }
 
-    .risk-strip { margin-top:-31px; position:relative; z-index:4; }
-    .risk-box {
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:22px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      align-items:center;
-      padding:20px 30px;
-    }
-    .risk-box > div:first-child { display:none; }
-    .risk-card-mini { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
-    .risk-pill {
-      min-height:88px;
-      background:var(--soft);
-      border:0;
-      border-radius:14px;
-      padding:18px 20px;
-    }
-    .risk-pill i { display:block; width:9px; height:9px; border-radius:50%; margin-bottom:9px; }
-    .risk-pill:nth-child(1) i { background:var(--green); }
-    .risk-pill:nth-child(2) i { background:var(--mustard); }
-    .risk-pill:nth-child(3) i { background:var(--danger); }
-    .risk-pill strong { display:block; color:var(--navy); font-size:13px; margin-bottom:1px; font-weight:650; }
-    .risk-pill span { color:var(--muted); font-size:11.5px; }
-    .hero-proof {
-      min-height:88px;
-      background:var(--soft);
-      border-radius:14px;
-      padding:18px 20px;
-    }
-    .hero-proof strong {
-      display:block;
-      color:var(--navy);
-      font-size:clamp(25px, 2.4vw, 30px);
-      line-height:1;
-      letter-spacing:-.04em;
-      margin-bottom:10px;
-    }
-    .hero-proof span { color:#4b5567; font-size:12.5px; font-weight:700; }
-
     .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
 
@@ -1459,7 +1415,6 @@
 
     @media (max-width:960px) {
       .hero-grid,
-      .risk-box,
       .split,
       .exp-grid,
       .faq-grid,
@@ -1470,7 +1425,6 @@
       .mid-cta-grid,
       .footer-grid { grid-template-columns:1fr; }
       .grid-4 { grid-template-columns:repeat(2,1fr); }
-      .risk-box { grid-template-columns:repeat(2,1fr); }
       .why-list, .image-band { grid-template-columns:1fr; }
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
@@ -1499,11 +1453,10 @@
       .clients-carousel-track { gap:22px; padding:0 22px; }
       .client-logo-card { flex-basis:152px; height:110px; padding:6px; }
       .section { padding:42px 0; }
-      .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
+      .hero-copy, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
       .mid-cta-card { padding:8px 0; }
-      .hero-kpis, .risk-card-mini, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
-      .risk-box { grid-template-columns:1fr; padding:16px; }
+      .hero-kpis, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
       .modal-head, .modal-body { padding:18px; }
@@ -1635,23 +1588,6 @@
         <div class="seal-preview-visual reveal-card">
           <img src="imagenes/13.png" alt="Reconocimiento y certificación del Sello Crecer">
           <div class="seal-preview-caption"><strong>Tres niveles de reconocimiento</strong><span>Medallas Bronce, Plata y Oro para comunicar confianza operacional.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="risk-strip" id="evaluacion">
-      <div class="wrap">
-        <div class="risk-box">
-          <div class="risk-intro">
-            <span class="eyebrow">Autoevaluación de Riesgo Crecer</span>
-            <h2>Diagnóstico preliminar en pocos minutos.</h2>
-            <p class="lead">Evalúa de forma inicial el cumplimiento laboral, previsional, documental y de seguridad de tu organización.</p>
-            <button class="btn btn-primary" data-open-eval>Iniciar evaluación gratuita</button>
-          </div>
-          <div class="hero-proof"><strong>20+</strong><span>años de experiencia</span></div>
-          <div class="hero-proof"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
-          <div class="hero-proof"><strong>100%</strong><span>diagnóstico trazable</span></div>
-          <div class="hero-proof"><strong>0-100</strong><span>score inicial</span></div>
         </div>
       </div>
     </section>
