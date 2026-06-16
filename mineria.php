@@ -169,15 +169,27 @@ p:last-child{margin-bottom:0}
 .parallax-mining{
   color:#fff;
   background:
-    linear-gradient(90deg,rgba(0,24,70,.94),rgba(0,32,96,.80)),
+    radial-gradient(circle at 12% 18%,rgba(176,23,79,.32),transparent 27%),
+    linear-gradient(115deg,rgba(0,24,70,.96) 0%,rgba(0,32,96,.88) 52%,rgba(0,24,70,.68) 100%),
     var(--section-accent-img);
-  background-size:cover;background-position:center;background-attachment:fixed
+  background-size:cover;background-position:center;background-attachment:fixed;
+  position:relative;overflow:hidden
 }
+.parallax-mining:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 34%,rgba(0,24,70,.34));pointer-events:none}
+.parallax-mining .wrap{position:relative;z-index:1}
 .parallax-mining h2,.parallax-mining h3{color:#fff}
-.parallax-mining .lead{color:rgba(255,255,255,.80)}
-.glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px;backdrop-filter:blur(8px)}
-.glass ul{color:rgba(255,255,255,.80);padding-left:18px;margin:10px 0 0}
-.glass li{margin:5px 0}
+.parallax-mining .lead{color:rgba(255,255,255,.82)}
+.mining-intro{display:grid;grid-template-columns:minmax(0,1.05fr) 360px;gap:28px;align-items:end;margin-bottom:24px}
+.mining-proof{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:20px;box-shadow:0 22px 50px rgba(0,24,70,.28);backdrop-filter:blur(10px)}
+.mining-proof strong{display:block;font-size:30px;line-height:1;color:#fff;margin-bottom:7px;letter-spacing:-.03em}
+.mining-proof span{display:block;color:rgba(255,255,255,.78);font-size:13px;font-weight:600}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.20);border-radius:20px;padding:24px;backdrop-filter:blur(10px);box-shadow:0 20px 46px rgba(0,24,70,.24)}
+.glass h3{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.glass h3:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--mustard);box-shadow:0 0 0 6px rgba(176,23,79,.18)}
+.glass p,.glass ul{color:rgba(255,255,255,.82)}
+.glass ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}
+.glass li{position:relative;padding-left:25px;margin:0}
+.glass li:before{content:"✓";position:absolute;left:0;top:0;color:#fff;background:rgba(176,23,79,.88);width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700}
 .level-card{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow-sm)}
 .medal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700}
 .bronze{background:#B77D3B}.silver{background:#A8AFB8}.gold{background:var(--mustard);color:#fff}
@@ -215,7 +227,7 @@ footer a:hover{color:#fff}
   .brand{flex-basis:auto}
 }
 @media(max-width:960px){
-  .grid-2,.contact-grid,.cta,.footer-grid{grid-template-columns:1fr}
+  .grid-2,.contact-grid,.cta,.footer-grid,.mining-intro{grid-template-columns:1fr}
   .grid-4,.grid-3,.values-list{grid-template-columns:repeat(2,1fr)}
   .page-hero,.parallax-mining{background-attachment:scroll}
 }
@@ -255,9 +267,17 @@ footer a:hover{color:#fff}
 
     <section class="section parallax-mining">
       <div class="wrap">
-        <span class="eyebrow">Alta exigencia operacional</span>
-        <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
-        <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
+        <div class="mining-intro">
+          <div>
+            <span class="eyebrow">Alta exigencia operacional</span>
+            <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
+            <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
+          </div>
+          <div class="mining-proof">
+            <strong>Control 360°</strong>
+            <span>Acreditación, documentación, riesgos y reportabilidad para una operación más segura.</span>
+          </div>
+        </div>
         <div class="grid-2">
           <div class="glass">
             <h3>Servicios especializados</h3>
