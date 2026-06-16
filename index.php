@@ -371,9 +371,8 @@
     .certifications-band {
       position:relative;
       z-index:5;
-      margin-top:-34px;
-      padding:0 0 18px;
-      background:linear-gradient(180deg, transparent 0 34px, #F7F9FC 34px 100%);
+      padding:26px 0 18px;
+      background:#F7F9FC;
     }
     .certifications-panel {
       display:grid;
@@ -383,7 +382,7 @@
       background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
-      padding:16px 20px;
+      padding:18px 22px;
       box-shadow:var(--shadow-sm);
       position:relative;
       overflow:hidden;
@@ -1356,7 +1355,6 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
-      .certifications-band { margin-top:-26px; padding-bottom:16px; background:linear-gradient(180deg, transparent 0 26px, #F7F9FC 26px 100%); }
       .certifications-panel { grid-template-columns:1fr; gap:14px; padding:16px; }
       .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); }
       .certification-logo-card { height:64px; }
@@ -1403,51 +1401,6 @@
             <div class="kpi"><strong>20+</strong><span>años de experiencia</span></div>
             <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
             <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
-          </div>
-
-          <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-            <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
-          </div>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
           </div>
         </div>
 
@@ -1500,6 +1453,7 @@
       </div>
     </section>
 
+
     <section class="certifications-band" id="certificaciones">
       <div class="wrap">
         <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
@@ -1515,7 +1469,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="section seal-preview" id="sello-resumen">
       <div class="wrap seal-preview-grid">
