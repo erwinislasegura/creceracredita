@@ -12,44 +12,63 @@
       --line: #E3E9F2;
       --soft: #F7F9FC;
       --white: #FFFFFF;
-      --shadow: 0 14px 36px rgba(6, 43, 95, .10);
-      --shadow-sm: 0 7px 22px rgba(6, 43, 95, .07);
+      --shadow: 0 18px 46px rgba(6, 43, 95, .12);
+      --shadow-sm: 0 8px 24px rgba(6, 43, 95, .08);
       font-family: 'Inter', Arial, sans-serif;
       background: #fff;
       color: var(--ink);
       overflow: hidden;
     }
 
-    .academia-crecer-section * {
-      box-sizing: border-box;
-    }
-
-    .academia-crecer-section .ac-wrap {
-      width: min(1140px, calc(100% - 34px));
-      margin: 0 auto;
-    }
+    .academia-crecer-section * { box-sizing: border-box; }
+    .academia-crecer-section .ac-wrap { width: min(1140px, calc(100% - 34px)); margin: 0 auto; }
+    .academia-crecer-section img { width: 100%; display: block; }
+    .academia-crecer-section h2,
+    .academia-crecer-section h3,
+    .academia-crecer-section p { margin-top: 0; }
 
     .academia-crecer-section .ac-hero {
       position: relative;
-      padding: 72px 0 64px;
+      min-height: 560px;
+      padding: 78px 0 68px;
       color: #fff;
-      background:
-        linear-gradient(90deg, rgba(4, 29, 66, .96), rgba(6, 43, 95, .84)),
-        url('imagenes/20.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      display: grid;
+      align-items: center;
+      background-color: var(--navy);
+      overflow: hidden;
     }
 
-    .academia-crecer-section .ac-hero::after {
+    .academia-crecer-section .ac-hero::before {
       content: "";
       position: absolute;
-      right: -120px;
-      top: -80px;
-      width: 320px;
-      height: 320px;
+      inset: 0;
+      background-image: url('imagenes/15.png');
+      background-size: cover;
+      background-position: center right;
+      background-attachment: fixed;
+      opacity: .18;
+      pointer-events: none;
+    }
+
+    .academia-crecer-section .ac-hero::after,
+    .academia-crecer-section .ac-band::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -120px auto;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      border: 42px solid rgba(214, 165, 26, .15);
+      border: 42px solid rgba(255, 255, 255, .09);
+      pointer-events: none;
+    }
+
+    .academia-crecer-section .ac-hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .78fr);
+      gap: 38px;
+      align-items: center;
     }
 
     .academia-crecer-section .ac-eyebrow {
@@ -57,615 +76,317 @@
       align-items: center;
       gap: 9px;
       font-size: 10.5px;
-      font-weight: 700;
+      font-weight: 750;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--green-2);
       margin-bottom: 10px;
     }
 
-    .academia-crecer-section .ac-eyebrow::before {
-      content: "";
-      width: 22px;
-      height: 2px;
-      background: var(--mustard);
-      border-radius: 2px;
-      display: block;
-    }
-
-    .academia-crecer-section h2,
-    .academia-crecer-section h3,
-    .academia-crecer-section p {
-      margin-top: 0;
-    }
-
-    .academia-crecer-section .ac-hero h2 {
-      color: #fff;
-      font-size: clamp(29px, 4vw, 42px);
-      line-height: 1.04;
-      letter-spacing: -.038em;
-      font-weight: 650;
-      max-width: 780px;
-      margin-bottom: 14px;
-    }
-
-    .academia-crecer-section .ac-hero p {
-      color: rgba(255, 255, 255, .78);
-      font-size: clamp(14.5px, 1.5vw, 16px);
-      max-width: 760px;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-
-    .academia-crecer-section .ac-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .academia-crecer-section .ac-hero .ac-eyebrow,
+    .academia-crecer-section .ac-band .ac-eyebrow { color: #fff; }
+    .academia-crecer-section .ac-eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--mustard); border-radius: 2px; display: block; }
+    .academia-crecer-section .ac-hero h2 { color: #fff; font-size: clamp(33px, 5vw, 56px); line-height: 1.02; letter-spacing: -.05em; font-weight: 700; margin-bottom: 16px; }
+    .academia-crecer-section .ac-hero p { color: rgba(255, 255, 255, .82); font-size: clamp(15px, 1.5vw, 17px); max-width: 680px; line-height: 1.65; margin-bottom: 24px; }
+    .academia-crecer-section .ac-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .academia-crecer-section .ac-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
-      padding: 9px 15px;
-      border-radius: 9px;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 10px;
       border: 1px solid transparent;
       font-size: 13.5px;
-      font-weight: 650;
+      font-weight: 700;
       text-decoration: none;
       transition: .2s ease;
       cursor: pointer;
     }
 
-    .academia-crecer-section .ac-btn:hover {
-      transform: translateY(-1px);
+    .academia-crecer-section .ac-btn:hover { transform: translateY(-2px); }
+    .academia-crecer-section .ac-btn-primary { background: var(--green); color: #fff; box-shadow: 0 12px 22px rgba(131, 10, 61, .24); }
+    .academia-crecer-section .ac-btn-mustard { background: #fff; color: var(--navy); box-shadow: 0 12px 22px rgba(0, 0, 0, .16); }
+
+    .academia-crecer-section .ac-hero-card {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 28px;
+      padding: 12px;
+      background: rgba(255, 255, 255, .10);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, .24);
+      backdrop-filter: blur(10px);
+      transform: translateY(var(--ac-parallax, 0));
+      transition: transform .1s linear;
     }
 
-    .academia-crecer-section .ac-btn-primary {
-      background: var(--green);
-      color: #fff;
-      box-shadow: 0 12px 22px rgba(131, 10, 61, .22), 0 2px 5px rgba(15, 23, 42, .10);
-    }
+    .academia-crecer-section .ac-hero-card img { height: 390px; object-fit: cover; border-radius: 22px; }
+    .academia-crecer-section .ac-floating-note { margin: -58px 18px 0; position: relative; padding: 17px; border-radius: 18px; background: #fff; color: var(--navy); box-shadow: var(--shadow); }
+    .academia-crecer-section .ac-floating-note b { display: block; margin-bottom: 4px; color: var(--green); }
+    .academia-crecer-section .ac-floating-note span { color: var(--muted); font-size: 13px; }
 
-    .academia-crecer-section .ac-btn-mustard {
-      background: var(--mustard);
-      color: #172033;
-      box-shadow: 0 12px 22px rgba(176, 23, 79, .20), 0 2px 5px rgba(15, 23, 42, .10);
-    }
+    .academia-crecer-section .ac-section { padding: 60px 0; position: relative; }
+    .academia-crecer-section .ac-section-soft { background: var(--soft); }
+    .academia-crecer-section .ac-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: center; }
+    .academia-crecer-section .ac-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .academia-crecer-section .ac-title { color: var(--navy); font-size: clamp(24px, 3vw, 34px); line-height: 1.08; letter-spacing: -.032em; font-weight: 700; max-width: 820px; margin-bottom: 12px; }
+    .academia-crecer-section .ac-lead { color: var(--muted); font-size: clamp(14.5px, 1.5vw, 16px); line-height: 1.65; max-width: 780px; margin-bottom: 18px; }
+    .academia-crecer-section .ac-muted { color: var(--muted); font-size: 14.5px; line-height: 1.62; }
 
-    .academia-crecer-section .ac-section {
-      padding: 56px 0;
-    }
+    .academia-crecer-section .ac-card,
+    .academia-crecer-section .ac-card-feature { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); }
+    .academia-crecer-section .ac-card-feature { position: relative; padding: 30px; box-shadow: var(--shadow); overflow: hidden; }
+    .academia-crecer-section .ac-card-feature::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--green), var(--mustard), var(--navy)); }
+    .academia-crecer-section h3 { color: var(--navy); font-size: 16px; line-height: 1.25; letter-spacing: -.01em; font-weight: 700; margin-bottom: 8px; }
 
-    .academia-crecer-section .ac-section-soft {
-      background: var(--soft);
-    }
+    .academia-crecer-section .ac-image-stack { display: grid; grid-template-columns: .85fr 1fr; gap: 14px; align-items: stretch; }
+    .academia-crecer-section .ac-image-stack img { height: 100%; min-height: 250px; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
+    .academia-crecer-section .ac-image-stack img:first-child { margin-top: 34px; }
 
-    .academia-crecer-section .ac-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: start;
-    }
-
-    .academia-crecer-section .ac-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .academia-crecer-section .ac-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .academia-crecer-section .ac-card-feature {
-      position: relative;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .academia-crecer-section .ac-card-feature::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--green), var(--mustard), var(--navy));
-    }
-
-    .academia-crecer-section h3 {
-      color: var(--navy);
-      font-size: 16px;
-      line-height: 1.25;
-      letter-spacing: -.01em;
-      font-weight: 650;
-      margin-bottom: 8px;
-    }
-
-    .academia-crecer-section .ac-title {
-      color: var(--navy);
-      font-size: clamp(22px, 2.7vw, 29px);
-      line-height: 1.1;
-      letter-spacing: -.026em;
-      font-weight: 650;
-      max-width: 800px;
-      margin-bottom: 12px;
-    }
-
-    .academia-crecer-section .ac-lead {
-      color: var(--muted);
-      font-size: clamp(14.5px, 1.5vw, 16px);
-      line-height: 1.6;
-      max-width: 780px;
-      margin-bottom: 18px;
-    }
-
-    .academia-crecer-section .ac-muted {
-      color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.6;
-    }
-
-    .academia-crecer-section .ac-list {
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.65;
-    }
-
-    .academia-crecer-section .ac-list li {
-      margin: 5px 0;
-    }
-
-    .academia-crecer-section .ac-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      display: grid;
-      place-items: center;
-      color: var(--green);
-      background: linear-gradient(135deg, rgba(11, 143, 99, .10), rgba(214, 165, 26, .14));
-      margin-bottom: 13px;
-      font-size: 19px;
-      font-weight: 700;
-    }
+    .academia-crecer-section .ac-metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+    .academia-crecer-section .ac-metric { padding: 18px; border-radius: 18px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+    .academia-crecer-section .ac-metric b { display: block; color: var(--green); font-size: 24px; line-height: 1; margin-bottom: 7px; }
+    .academia-crecer-section .ac-metric span { color: var(--muted); font-size: 13px; line-height: 1.45; }
 
     .academia-crecer-section .ac-band {
+      position: relative;
       color: #fff;
       background:
-        linear-gradient(90deg, rgba(4, 29, 66, .94), rgba(6, 43, 95, .84)),
+        linear-gradient(90deg, rgba(4, 29, 66, .94), rgba(6, 43, 95, .78)),
         url('imagenes/6.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 58px 0;
+      padding: 66px 0;
+      overflow: hidden;
     }
 
     .academia-crecer-section .ac-band h2,
-    .academia-crecer-section .ac-band h3 {
-      color: #fff;
-    }
+    .academia-crecer-section .ac-band h3 { color: #fff; }
+    .academia-crecer-section .ac-band .ac-lead { color: rgba(255, 255, 255, .82); }
+    .academia-crecer-section .ac-slider { position: relative; margin-top: 24px; overflow: hidden; border-radius: 26px; box-shadow: 0 24px 70px rgba(0, 0, 0, .22); }
+    .academia-crecer-section .ac-track { display: flex; transition: transform .5s ease; }
+    .academia-crecer-section .ac-slide { min-width: 100%; display: grid; grid-template-columns: .92fr 1fr; background: #fff; color: var(--ink); }
+    .academia-crecer-section .ac-slide img { height: 360px; object-fit: cover; }
+    .academia-crecer-section .ac-slide-copy { padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; justify-content: center; }
+    .academia-crecer-section .ac-slide-copy .ac-eyebrow { color: var(--green-2); }
+    .academia-crecer-section .ac-slide-copy h3 { color: var(--navy); }
+    .academia-crecer-section .ac-slide-copy p { color: var(--muted); line-height: 1.62; }
+    .academia-crecer-section .ac-slider-controls { position: absolute; right: 18px; bottom: 18px; display: flex; gap: 8px; }
+    .academia-crecer-section .ac-slider-btn { width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--green); color: #fff; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-sm); }
+    .academia-crecer-section .ac-dots { position: absolute; left: 18px; bottom: 26px; display: flex; gap: 7px; }
+    .academia-crecer-section .ac-dot { width: 9px; height: 9px; border-radius: 999px; border: 0; background: rgba(0, 32, 96, .22); cursor: pointer; }
+    .academia-crecer-section .ac-dot.active { width: 24px; background: var(--green); }
 
-    .academia-crecer-section .ac-band .ac-lead {
-      color: rgba(255, 255, 255, .80);
-    }
+    .academia-crecer-section .ac-program-card { min-height: 220px; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; overflow: hidden; position: relative; background-size: cover; background-position: center; box-shadow: var(--shadow); }
+    .academia-crecer-section .ac-program-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 32, 96, .14), rgba(0, 24, 70, .86)); }
+    .academia-crecer-section .ac-program-card > * { position: relative; z-index: 1; }
+    .academia-crecer-section .ac-program-card p { margin-bottom: 0; color: rgba(255,255,255,.82); font-size: 13.5px; }
 
-    .academia-crecer-section .ac-glass {
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .15);
-      border-radius: 16px;
-      padding: 22px;
-      backdrop-filter: blur(8px);
-    }
+    .academia-crecer-section .ac-accordion { display: grid; gap: 10px; margin-top: 18px; }
+    .academia-crecer-section .ac-accordion-item { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .academia-crecer-section .ac-accordion-btn { width: 100%; border: 0; background: #fff; cursor: pointer; padding: 17px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; color: var(--navy); }
+    .academia-crecer-section .ac-accordion-btn span { display: block; font-size: 14.5px; font-weight: 700; }
+    .academia-crecer-section .ac-accordion-btn small { display: block; margin-top: 3px; color: var(--muted); font-size: 12.5px; font-weight: 450; }
+    .academia-crecer-section .ac-accordion-icon { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--green); font-weight: 800; flex: 0 0 28px; transition: .2s ease; }
+    .academia-crecer-section .ac-accordion-item.active .ac-accordion-icon { background: var(--green); color: #fff; transform: rotate(45deg); }
+    .academia-crecer-section .ac-accordion-panel { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
+    .academia-crecer-section .ac-accordion-panel-inner { padding: 0 18px 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-    .academia-crecer-section .ac-glass p,
-    .academia-crecer-section .ac-glass li {
-      color: rgba(255, 255, 255, .82);
-    }
+    .academia-crecer-section .ac-highlight { background: linear-gradient(135deg, #fff, var(--soft)); border: 1px solid var(--line); border-radius: 24px; padding: 30px; box-shadow: var(--shadow); }
+    .academia-crecer-section .ac-highlight-media { display: grid; grid-template-columns: .95fr 1fr; gap: 24px; align-items: center; }
+    .academia-crecer-section .ac-highlight-media img { height: 330px; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
 
-    .academia-crecer-section .ac-accordion {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .academia-crecer-section .ac-accordion-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .academia-crecer-section .ac-accordion-btn {
-      width: 100%;
-      border: 0;
-      background: #fff;
-      cursor: pointer;
-      padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      text-align: left;
-      color: var(--navy);
-    }
-
-    .academia-crecer-section .ac-accordion-btn span {
-      display: block;
-      font-size: 14.5px;
-      font-weight: 650;
-    }
-
-    .academia-crecer-section .ac-accordion-btn small {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 12.5px;
-      font-weight: 450;
-    }
-
-    .academia-crecer-section .ac-accordion-icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--soft);
-      color: var(--green);
-      font-weight: 700;
-      flex: 0 0 26px;
-      transition: .2s ease;
-    }
-
-    .academia-crecer-section .ac-accordion-item.active .ac-accordion-icon {
-      background: var(--green);
-      color: #fff;
-      transform: rotate(45deg);
-    }
-
-    .academia-crecer-section .ac-accordion-panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .28s ease;
-    }
-
-    .academia-crecer-section .ac-accordion-panel-inner {
-      padding: 0 18px 18px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .academia-crecer-section .ac-highlight {
-      background: linear-gradient(180deg, #fff, var(--soft));
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .academia-crecer-section .ac-highlight strong {
-      color: var(--navy);
-    }
-
-    .academia-crecer-section .ac-pill-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .academia-crecer-section .ac-pill {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      padding: 16px;
-      box-shadow: var(--shadow-sm);
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.45;
-    }
-
-    .academia-crecer-section .ac-pill b {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 5px;
-      font-weight: 650;
+    @media (prefers-reduced-motion: no-preference) {
+      .academia-crecer-section [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+      .academia-crecer-section [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 960px) {
+      .academia-crecer-section .ac-hero-grid,
       .academia-crecer-section .ac-grid-2,
+      .academia-crecer-section .ac-highlight-media { grid-template-columns: 1fr; }
       .academia-crecer-section .ac-grid-3,
-      .academia-crecer-section .ac-pill-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .academia-crecer-section .ac-hero,
-      .academia-crecer-section .ac-band {
-        background-attachment: scroll;
-      }
+      .academia-crecer-section .ac-metric-row { grid-template-columns: 1fr 1fr; }
+      .academia-crecer-section .ac-band { background-attachment: scroll; }
+      .academia-crecer-section .ac-hero::before { background-attachment: scroll; }
+      .academia-crecer-section .ac-hero-card img { height: 320px; }
     }
 
     @media (max-width: 680px) {
-      .academia-crecer-section .ac-wrap {
-        width: min(100% - 24px, 1140px);
-      }
-
-      .academia-crecer-section .ac-hero {
-        padding: 54px 0 48px;
-      }
-
-      .academia-crecer-section .ac-section {
-        padding: 42px 0;
-      }
-
-      .academia-crecer-section .ac-grid-2,
+      .academia-crecer-section .ac-wrap { width: min(100% - 24px, 1140px); }
+      .academia-crecer-section .ac-hero { min-height: auto; padding: 54px 0 48px; }
+      .academia-crecer-section .ac-section { padding: 42px 0; }
       .academia-crecer-section .ac-grid-3,
-      .academia-crecer-section .ac-pill-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .academia-crecer-section .ac-metric-row,
+      .academia-crecer-section .ac-slide { grid-template-columns: 1fr; }
+      .academia-crecer-section .ac-image-stack { grid-template-columns: 1fr; }
+      .academia-crecer-section .ac-image-stack img:first-child { margin-top: 0; }
+      .academia-crecer-section .ac-slide img { height: 230px; }
+      .academia-crecer-section .ac-dots { bottom: 18px; }
       .academia-crecer-section .ac-card,
       .academia-crecer-section .ac-card-feature,
-      .academia-crecer-section .ac-highlight {
-        padding: 20px;
-        border-radius: 16px;
-      }
+      .academia-crecer-section .ac-highlight { padding: 20px; border-radius: 16px; }
     }
   </style>
 
-  <div class="ac-hero">
-    <div class="ac-wrap">
-      <span class="ac-eyebrow">Academia Crecer</span>
-      <h2>Formación para una gestión responsable, segura y sostenible.</h2>
-      <p>
-        Una plataforma de formación y desarrollo creada para fortalecer las competencias de empresas contratistas y subcontratistas, promoviendo una cultura de cumplimiento, seguridad, gestión responsable y mejora continua.
-      </p>
-      <div class="ac-actions">
-        <a class="ac-btn ac-btn-primary" href="#academia-programas">Ver áreas de formación</a>
-        <a class="ac-btn ac-btn-mustard" href="#academia-sello">Conocer Sello Crecer</a>
+  <div class="ac-hero" data-parallax>
+    <div class="ac-wrap ac-hero-grid">
+      <div data-reveal>
+        <span class="ac-eyebrow">Academia Crecer</span>
+        <h2>Formación viva para empresas más seguras y competitivas.</h2>
+        <p>Capacitaciones prácticas para contratistas y subcontratistas que necesitan cumplir, liderar y mejorar sin perder foco en la operación diaria.</p>
+        <div class="ac-actions">
+          <a class="ac-btn ac-btn-primary" href="#academia-programas">Explorar programas</a>
+          <a class="ac-btn ac-btn-mustard" href="#academia-beneficios">Ver beneficios</a>
+        </div>
+      </div>
+
+      <div class="ac-hero-card" data-reveal>
+        <img src="imagenes/18.png" alt="Equipo de trabajo participando en una experiencia formativa de Academia Crecer" loading="eager">
+        <div class="ac-floating-note">
+          <b>Aprendizaje aplicado</b>
+          <span>Metodologías ágiles, casos reales y seguimiento para instalar capacidades.</span>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="ac-section">
     <div class="ac-wrap ac-grid-2">
-      <div class="ac-card-feature">
-        <span class="ac-eyebrow">Qué es Academia Crecer</span>
-        <h2 class="ac-title">Formación práctica para profesionalizar la gestión de contratistas.</h2>
-        <p class="ac-lead">
-          Academia Crecer entrega conocimientos, herramientas de gestión y metodologías que permiten a las empresas cumplir con los estándares exigidos por sus clientes, la normativa vigente y las mejores prácticas del mercado.
-        </p>
-        <p class="ac-muted">
-          Más que una instancia de capacitación, busca impulsar un cambio de mentalidad: avanzar desde una visión centrada solo en el cumplimiento documental hacia una gestión integral que genere valor, sostenibilidad y competitividad.
-        </p>
+      <div class="ac-card-feature" data-reveal>
+        <span class="ac-eyebrow">Qué es</span>
+        <h2 class="ac-title">Una academia para profesionalizar la gestión contratista.</h2>
+        <p class="ac-lead">Academia Crecer combina formación, herramientas y acompañamiento para transformar el cumplimiento en una ventaja competitiva.</p>
+        <p class="ac-muted">Su foco está en instalar hábitos de gestión, seguridad, liderazgo y mejora continua que puedan aplicarse de inmediato en cada organización.</p>
       </div>
 
-      <div class="ac-card">
-        <span class="ac-eyebrow">Por qué nace</span>
-        <h3>Una respuesta a los desafíos reales de las empresas contratistas.</h3>
-        <p class="ac-muted">
-          Muchas empresas enfrentan brechas relacionadas con cumplimiento legal, gestión documental, prevención de riesgos, administración de personas y adaptación a los estándares de empresas mandantes.
-        </p>
-        <p class="ac-muted">
-          Academia Crecer complementa los procesos de acreditación, entregando acompañamiento formativo para desarrollar capacidades permanentes que fortalezcan la gestión y reduzcan riesgos operacionales, laborales y legales.
-        </p>
+      <div class="ac-image-stack" data-reveal>
+        <img src="imagenes/11.png" alt="Personas revisando documentación de gestión empresarial" loading="lazy">
+        <img src="imagenes/15.png" alt="Equipo colaborando en una capacitación corporativa" loading="lazy">
+      </div>
+    </div>
+
+    <div class="ac-wrap ac-metric-row" data-reveal>
+      <div class="ac-metric"><b>01</b><span>Diagnóstico de brechas y necesidades formativas.</span></div>
+      <div class="ac-metric"><b>02</b><span>Rutas de aprendizaje por rol y nivel de madurez.</span></div>
+      <div class="ac-metric"><b>03</b><span>Actividades dinámicas, talleres y recursos descargables.</span></div>
+      <div class="ac-metric"><b>04</b><span>Medición de avances y reconocimiento con Sello Crecer.</span></div>
+    </div>
+  </div>
+
+  <div class="ac-band" id="academia-programas" data-parallax>
+    <div class="ac-wrap" data-reveal>
+      <span class="ac-eyebrow">Áreas de formación</span>
+      <h2 class="ac-title">Programas visuales, breves y orientados a la acción.</h2>
+      <p class="ac-lead">Menos teoría acumulada y más experiencias útiles para equipos que deben cumplir estándares exigentes.</p>
+
+      <div class="ac-slider" aria-label="Slider de programas Academia Crecer">
+        <div class="ac-track">
+          <article class="ac-slide">
+            <img src="imagenes/5.png" alt="Capacitación en cumplimiento legal y laboral" loading="lazy">
+            <div class="ac-slide-copy">
+              <span class="ac-eyebrow">Programa 01</span>
+              <h3>Cumplimiento legal y laboral</h3>
+              <p>Normativa, subcontratación, requisitos documentales y preparación para auditorías.</p>
+            </div>
+          </article>
+          <article class="ac-slide">
+            <img src="imagenes/9.png" alt="Formación en seguridad y prevención de riesgos" loading="lazy">
+            <div class="ac-slide-copy">
+              <span class="ac-eyebrow">Programa 02</span>
+              <h3>Seguridad y salud en el trabajo</h3>
+              <p>Cultura preventiva, gestión de incidentes, autocuidado y liderazgo en terreno.</p>
+            </div>
+          </article>
+          <article class="ac-slide">
+            <img src="imagenes/13.png" alt="Taller de liderazgo y gestión de equipos" loading="lazy">
+            <div class="ac-slide-copy">
+              <span class="ac-eyebrow">Programa 03</span>
+              <h3>Liderazgo y gestión de personas</h3>
+              <p>Comunicación, coordinación de equipos, clima laboral y resolución de conflictos.</p>
+            </div>
+          </article>
+        </div>
+        <div class="ac-dots" aria-label="Paginación del slider"></div>
+        <div class="ac-slider-controls">
+          <button class="ac-slider-btn" type="button" data-slider="prev" aria-label="Programa anterior">‹</button>
+          <button class="ac-slider-btn" type="button" data-slider="next" aria-label="Programa siguiente">›</button>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="ac-section ac-section-soft">
     <div class="ac-wrap">
-      <span class="ac-eyebrow">Objetivos</span>
-      <h2 class="ac-title">Fortalecer competencias, reducir riesgos y elevar estándares.</h2>
-
-      <div class="ac-pill-grid">
-        <div class="ac-pill"><b>Competencias de gestión</b> Fortalecer capacidades en empresas contratistas y subcontratistas.</div>
-        <div class="ac-pill"><b>Cultura de cumplimiento</b> Promover responsabilidad empresarial y cumplimiento normativo.</div>
-        <div class="ac-pill"><b>Reducción de riesgos</b> Disminuir riesgos laborales, legales y reputacionales.</div>
-        <div class="ac-pill"><b>Seguridad ocupacional</b> Mejorar estándares de seguridad y salud en el trabajo.</div>
-        <div class="ac-pill"><b>Liderazgo efectivo</b> Potenciar jefaturas, supervisores y equipos responsables.</div>
-        <div class="ac-pill"><b>Relaciones laborales</b> Fomentar entornos respetuosos, productivos y sostenibles.</div>
-        <div class="ac-pill"><b>Competitividad</b> Generar organizaciones más preparadas y competitivas.</div>
-        <div class="ac-pill"><b>Transformación cultural</b> Acompañar procesos de mejora continua y cambio organizacional.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ac-section">
-    <div class="ac-wrap ac-grid-2">
-      <div>
-        <span class="ac-eyebrow">Dirigida a</span>
-        <h2 class="ac-title">Una academia pensada para toda la cadena de valor.</h2>
-        <p class="ac-lead">
-          Academia Crecer está orientada a organizaciones que participan en cadenas de suministro, servicios tercerizados y procesos de acreditación de contratistas.
-        </p>
-      </div>
-
-      <div class="ac-card">
-        <ul class="ac-list">
-          <li>Empresas contratistas y subcontratistas.</li>
-          <li>Gerentes y dueños de empresas.</li>
-          <li>Jefaturas y supervisores.</li>
-          <li>Profesionales de recursos humanos.</li>
-          <li>Encargados de prevención de riesgos.</li>
-          <li>Administradores de contratos.</li>
-          <li>Equipos operativos y administrativos.</li>
-          <li>Organizaciones de cadenas de suministro y servicios tercerizados.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="ac-band" id="academia-programas">
-    <div class="ac-wrap">
-      <span class="ac-eyebrow">Áreas de formación</span>
-      <h2 class="ac-title">Programas diseñados para fortalecer la gestión empresarial.</h2>
-      <p class="ac-lead">
-        Academia Crecer aborda áreas críticas para que las empresas puedan cumplir, prevenir, liderar y mejorar sus procesos de manera sostenible.
-      </p>
-
+      <span class="ac-eyebrow">Rutas destacadas</span>
+      <h2 class="ac-title">Módulos que mantienen la línea gráfica y suman movimiento.</h2>
       <div class="ac-grid-3">
-        <div class="ac-glass">
-          <h3>Cumplimiento Legal y Laboral</h3>
-          <p>Normativa laboral, obligaciones legales, subcontratación, gestión documental y requisitos de empresas mandantes.</p>
-        </div>
-
-        <div class="ac-glass">
-          <h3>Seguridad y Salud en el Trabajo</h3>
-          <p>Cultura preventiva, identificación de riesgos, gestión de incidentes y estándares de seguridad.</p>
-        </div>
-
-        <div class="ac-glass">
-          <h3>Liderazgo y Gestión de Personas</h3>
-          <p>Comunicación efectiva, manejo de equipos, resolución de conflictos y fortalecimiento del clima laboral.</p>
-        </div>
-
-        <div class="ac-glass">
-          <h3>Desarrollo Organizacional</h3>
-          <p>Gestión del cambio, cultura organizacional, mejora continua y capacidades internas.</p>
-        </div>
-
-        <div class="ac-glass">
-          <h3>Gestión Empresarial</h3>
-          <p>Herramientas para optimizar procesos, mejorar la planificación y aumentar la competitividad.</p>
-        </div>
-
-        <div class="ac-glass">
-          <h3>Sostenibilidad y Responsabilidad Empresarial</h3>
-          <p>Prácticas responsables que contribuyen al desarrollo sostenible de las organizaciones y sus comunidades.</p>
-        </div>
+        <article class="ac-program-card" style="background-image:url('imagenes/1.png')" data-reveal><h3>Gestión documental</h3><p>Orden, trazabilidad y control de requisitos.</p></article>
+        <article class="ac-program-card" style="background-image:url('imagenes/7.png')" data-reveal><h3>Mejora continua</h3><p>Procesos simples para sostener estándares.</p></article>
+        <article class="ac-program-card" style="background-image:url('imagenes/16.png')" data-reveal><h3>Sostenibilidad</h3><p>Prácticas responsables para toda la cadena.</p></article>
       </div>
     </div>
   </div>
 
-  <div class="ac-section">
+  <div class="ac-section" id="academia-beneficios">
     <div class="ac-wrap ac-grid-2">
-      <div class="ac-card-feature">
-        <span class="ac-eyebrow">Metodología</span>
-        <h2 class="ac-title">Aprendizaje práctico, aplicable y medible.</h2>
-        <p class="ac-lead">
-          Academia Crecer combina distintas metodologías para asegurar una experiencia de aprendizaje efectiva, orientada a la aplicación inmediata en la organización.
-        </p>
+      <div data-reveal>
+        <span class="ac-eyebrow">Beneficios</span>
+        <h2 class="ac-title">Impacto medible, presentado en acordeones simples.</h2>
+        <p class="ac-lead">Cada eje resume lo esencial y permite al usuario explorar sin cargar la página con demasiado texto.</p>
       </div>
 
-      <div class="ac-card">
-        <ul class="ac-list">
-          <li>Cursos online y presenciales.</li>
-          <li>Talleres interactivos.</li>
-          <li>Seminarios y charlas especializadas.</li>
-          <li>Material de apoyo descargable.</li>
-          <li>Casos prácticos y experiencias reales.</li>
-          <li>Evaluaciones y seguimiento de aprendizaje.</li>
-          <li>Certificaciones de participación y aprobación.</li>
-        </ul>
+      <div class="ac-accordion" data-reveal>
+        <div class="ac-accordion-item active">
+          <button class="ac-accordion-btn" type="button">
+            <span>Cumplimiento y acreditación <small>Auditorías, requisitos y menor exposición.</small></span>
+            <b class="ac-accordion-icon">+</b>
+          </button>
+          <div class="ac-accordion-panel"><div class="ac-accordion-panel-inner">Equipos mejor preparados para responder a exigencias legales, laborales y documentales.</div></div>
+        </div>
+
+        <div class="ac-accordion-item">
+          <button class="ac-accordion-btn" type="button">
+            <span>Seguridad y liderazgo <small>Cultura preventiva y supervisión efectiva.</small></span>
+            <b class="ac-accordion-icon">+</b>
+          </button>
+          <div class="ac-accordion-panel"><div class="ac-accordion-panel-inner">Herramientas para prevenir incidentes, coordinar equipos y fortalecer la toma de decisiones.</div></div>
+        </div>
+
+        <div class="ac-accordion-item">
+          <button class="ac-accordion-btn" type="button">
+            <span>Reputación y competitividad <small>Diferenciación frente a mandantes.</small></span>
+            <b class="ac-accordion-icon">+</b>
+          </button>
+          <div class="ac-accordion-panel"><div class="ac-accordion-panel-inner">Mayor confianza para licitaciones, relaciones comerciales y procesos de mejora continua.</div></div>
+        </div>
+
+        <div class="ac-accordion-item">
+          <button class="ac-accordion-btn" type="button">
+            <span>Sello Crecer <small>Reconocimiento al avance formativo.</small></span>
+            <b class="ac-accordion-icon">+</b>
+          </button>
+          <div class="ac-accordion-panel"><div class="ac-accordion-panel-inner">Una distinción que comunica compromiso con estándares, personas y gestión responsable.</div></div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="ac-section ac-section-soft" id="academia-sello">
     <div class="ac-wrap">
-      <div class="ac-highlight">
-        <span class="ac-eyebrow">Sello Crecer</span>
-        <h2 class="ac-title">Reconocimiento al compromiso y la excelencia.</h2>
-        <p class="ac-lead">
-          Uno de los principales diferenciadores de Academia Crecer es la obtención del Sello Crecer, una distinción que reconoce a las empresas que demuestran compromiso activo con el desarrollo de sus equipos, la mejora continua y el cumplimiento de altos estándares de gestión.
-        </p>
-        <p class="ac-muted">
-          El Sello Crecer acredita que la organización no solo cumple con los requisitos exigidos por sus clientes y la normativa vigente, sino que además participa activamente en procesos de formación orientados al fortalecimiento de su cultura organizacional, liderazgo, seguridad, cumplimiento legal y sostenibilidad.
-        </p>
-
-        <div class="ac-grid-3" style="margin-top:18px;">
-          <div class="ac-card"><h3>Diferenciación</h3><p class="ac-muted">Permite destacar frente a clientes y empresas mandantes.</p></div>
-          <div class="ac-card"><h3>Reputación</h3><p class="ac-muted">Evidencia una cultura de mejora continua y responsabilidad.</p></div>
-          <div class="ac-card"><h3>Competitividad</h3><p class="ac-muted">Aumenta el valor de la empresa en procesos de licitación.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ac-section">
-    <div class="ac-wrap ac-grid-2">
-      <div>
-        <span class="ac-eyebrow">Beneficios</span>
-        <h2 class="ac-title">Impacto real en la gestión y competitividad.</h2>
-        <p class="ac-lead">
-          Las organizaciones que participan en Academia Crecer desarrollan capacidades internas, fortalecen sus procesos y elevan su estándar de cumplimiento.
-        </p>
-      </div>
-
-      <div class="ac-accordion">
-        <div class="ac-accordion-item active">
-          <button class="ac-accordion-btn" type="button">
-            <span>Beneficios de cumplimiento <small>Normativa, auditorías y acreditación.</small></span>
-            <b class="ac-accordion-icon">+</b>
-          </button>
-          <div class="ac-accordion-panel">
-            <div class="ac-accordion-panel-inner">
-              Mayor cumplimiento normativo, disminución de riesgos legales y multas, mejor preparación para auditorías y procesos de acreditación.
-            </div>
+      <div class="ac-highlight ac-highlight-media" data-reveal>
+        <img src="imagenes/19.png" alt="Reconocimiento Sello Crecer para empresas comprometidas" loading="lazy">
+        <div>
+          <span class="ac-eyebrow">Sello Crecer</span>
+          <h2 class="ac-title">Reconocimiento al compromiso y la excelencia.</h2>
+          <p class="ac-lead">El Sello Crecer destaca a empresas que participan activamente en formación, fortalecen su cultura y elevan sus estándares de gestión.</p>
+          <div class="ac-grid-3">
+            <div class="ac-card"><h3>Diferenciación</h3><p class="ac-muted">Más valor ante clientes y mandantes.</p></div>
+            <div class="ac-card"><h3>Confianza</h3><p class="ac-muted">Evidencia de mejora continua.</p></div>
+            <div class="ac-card"><h3>Proyección</h3><p class="ac-muted">Equipos preparados para crecer.</p></div>
           </div>
         </div>
-
-        <div class="ac-accordion-item">
-          <button class="ac-accordion-btn" type="button">
-            <span>Beneficios organizacionales <small>Personas, liderazgo y cultura.</small></span>
-            <b class="ac-accordion-icon">+</b>
-          </button>
-          <div class="ac-accordion-panel">
-            <div class="ac-accordion-panel-inner">
-              Fortalecimiento de la cultura de seguridad, mejora en la gestión de personas, desarrollo de liderazgos más efectivos y relaciones laborales más saludables.
-            </div>
-          </div>
-        </div>
-
-        <div class="ac-accordion-item">
-          <button class="ac-accordion-btn" type="button">
-            <span>Beneficios competitivos <small>Confianza, reputación y valor de mercado.</small></span>
-            <b class="ac-accordion-icon">+</b>
-          </button>
-          <div class="ac-accordion-panel">
-            <div class="ac-accordion-panel-inner">
-              Incremento de la competitividad, mayor confianza por parte de clientes y empresas mandantes, y acceso al Sello Crecer como reconocimiento de excelencia.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ac-section ac-section-soft">
-    <div class="ac-wrap ac-grid-2">
-      <div class="ac-card-feature">
-        <span class="ac-eyebrow">Complemento estratégico</span>
-        <h2 class="ac-title">Academia Crecer no reemplaza la acreditación: la potencia.</h2>
-        <p class="ac-lead">
-          Mientras la acreditación verifica el cumplimiento de requisitos y estándares, Academia Crecer desarrolla las capacidades necesarias para que dicho cumplimiento sea sostenible en el tiempo.
-        </p>
-        <p class="ac-muted">
-          Para las empresas mandantes, representa una herramienta estratégica para elevar el estándar de su ecosistema de proveedores y contratistas, contribuyendo a una gestión más segura, eficiente y sostenible.
-        </p>
-      </div>
-
-      <div class="ac-card">
-        <span class="ac-eyebrow">Nuestra visión</span>
-        <h3>Formación como herramienta de crecimiento.</h3>
-        <p class="ac-muted">
-          Queremos contribuir a la construcción de empresas más responsables, seguras, competitivas y sostenibles, transformando la formación en una herramienta de crecimiento para las personas, las organizaciones y toda la cadena de valor.
-        </p>
-        <p class="ac-muted">
-          Academia Crecer representa nuestro compromiso con el aprendizaje continuo, la excelencia operacional, el cumplimiento responsable y la generación de valor sostenible.
-        </p>
       </div>
     </div>
   </div>
@@ -709,7 +430,78 @@
         });
       });
 
+      const track = section.querySelector('.ac-track');
+      const slides = Array.from(section.querySelectorAll('.ac-slide'));
+      const dotsWrap = section.querySelector('.ac-dots');
+      let currentSlide = 0;
+      let autoplay;
+
+      function updateSlider(index) {
+        if (!track || !slides.length) return;
+        currentSlide = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        section.querySelectorAll('.ac-dot').forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === currentSlide);
+        });
+      }
+
+      function startAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(() => updateSlider(currentSlide + 1), 5200);
+      }
+
+      if (dotsWrap && slides.length) {
+        slides.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'ac-dot';
+          dot.setAttribute('aria-label', `Ir al programa ${index + 1}`);
+          dot.addEventListener('click', () => {
+            updateSlider(index);
+            startAutoplay();
+          });
+          dotsWrap.appendChild(dot);
+        });
+        section.querySelector('[data-slider="prev"]').addEventListener('click', () => {
+          updateSlider(currentSlide - 1);
+          startAutoplay();
+        });
+        section.querySelector('[data-slider="next"]').addEventListener('click', () => {
+          updateSlider(currentSlide + 1);
+          startAutoplay();
+        });
+        updateSlider(0);
+        startAutoplay();
+      }
+
+      const revealItems = section.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .16 });
+        revealItems.forEach(item => observer.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+      }
+
+      const parallaxItems = section.querySelectorAll('[data-parallax], .ac-hero-card');
+      function parallax() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        parallaxItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const movement = Math.max(-22, Math.min(22, (window.innerHeight / 2 - rect.top) * .035));
+          item.style.setProperty('--ac-parallax', `${movement}px`);
+        });
+      }
+
       window.addEventListener('resize', refreshHeights);
+      window.addEventListener('scroll', parallax, { passive: true });
+      parallax();
     })();
   </script>
 </section>
