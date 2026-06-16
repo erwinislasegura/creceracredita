@@ -163,18 +163,37 @@ p:last-child{margin-bottom:0}
 .accordion-panel-inner{padding:0 18px 18px;color:var(--muted);font-size:14px}
 .accordion-panel-inner ul{margin:10px 0 0;padding-left:18px}
 .accordion-panel-inner li{margin:5px 0}
-.parallax-mining{
-  color:#fff;
+.mining-unified{
+  position:relative;overflow:hidden;color:#fff;
   background:
-    linear-gradient(90deg,rgba(0,24,70,.94),rgba(0,32,96,.80)),
-    var(--section-accent-img);
-  background-size:cover;background-position:center;background-attachment:fixed
+    linear-gradient(115deg,rgba(0,24,70,.96) 0%,rgba(0,32,96,.88) 55%,rgba(0,24,70,.72) 100%),
+    var(--hero-img);
+  background-size:cover;background-position:center;background-attachment:fixed;
+  padding:72px 0 60px
 }
-.parallax-mining h2,.parallax-mining h3{color:#fff}
-.parallax-mining .lead{color:rgba(255,255,255,.80)}
-.glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px;backdrop-filter:blur(8px)}
-.glass ul{color:rgba(255,255,255,.80);padding-left:18px;margin:10px 0 0}
-.glass li{margin:5px 0}
+.mining-unified:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,24,70,.05),rgba(0,24,70,.20) 46%,rgba(0,24,70,.38));pointer-events:none}
+.mining-unified:after{content:"";position:absolute;right:-120px;top:-80px;width:310px;height:310px;border-radius:50%;border:42px solid rgba(176,23,79,.15);pointer-events:none}
+.mining-unified .wrap{position:relative;z-index:1}
+.mining-hero-block{max-width:780px;margin-bottom:52px}
+.mining-unified h1,.mining-unified h2{color:#fff}
+.mining-unified .lead{color:rgba(255,255,255,.82)}
+.mining-detail{border-top:3px solid rgba(176,23,79,.82);padding-top:42px}
+.mining-detail-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.78fr);gap:30px;align-items:center;margin-bottom:24px}
+.mining-summary{background:rgba(255,255,255,.96);color:var(--ink);border:1px solid rgba(255,255,255,.30);border-radius:20px;padding:24px;box-shadow:0 22px 52px rgba(0,24,70,.24);position:relative;overflow:hidden}
+.mining-summary:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--mustard),var(--navy))}
+.mining-summary h3{color:var(--navy);margin-bottom:8px}
+.mining-summary p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.mining-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mining-metric{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:13px 11px}
+.mining-metric b{display:block;color:var(--green);font-size:18px;line-height:1;margin-bottom:5px}
+.mining-metric span{display:block;color:var(--muted);font-size:11.5px;font-weight:650;line-height:1.25}
+.glass{background:rgba(255,255,255,.96);color:var(--ink);border:1px solid rgba(227,233,242,.95);border-radius:20px;padding:24px;box-shadow:0 18px 44px rgba(0,24,70,.20);position:relative;overflow:hidden}
+.glass:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--mustard))}
+.glass h3{color:var(--navy);margin-bottom:12px}
+.glass p,.glass ul{color:var(--muted)}
+.glass ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}
+.glass li{position:relative;padding-left:24px;margin:0}
+.glass li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mustard);box-shadow:0 0 0 4px rgba(176,23,79,.10)}
 .level-card{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow-sm)}
 .medal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700}
 .bronze{background:#B77D3B}.silver{background:#A8AFB8}.gold{background:var(--mustard);color:#fff}
@@ -212,9 +231,9 @@ footer a:hover{color:#fff}
   .brand{flex-basis:auto}
 }
 @media(max-width:960px){
-  .grid-2,.contact-grid,.cta,.footer-grid{grid-template-columns:1fr}
+  .grid-2,.contact-grid,.cta,.footer-grid,.mining-detail-head{grid-template-columns:1fr}
   .grid-4,.grid-3,.values-list{grid-template-columns:repeat(2,1fr)}
-  .page-hero,.parallax-mining{background-attachment:scroll}
+  .page-hero,.parallax-mining,.mining-unified{background-attachment:scroll}
 }
 @media(max-width:680px){
   .wrap{width:min(100% - 24px,var(--max))}
@@ -224,13 +243,14 @@ footer a:hover{color:#fff}
   .brand-mark img{width:188px;max-height:44px}
   .section{padding:42px 0}
   .page-hero{padding:54px 0 48px}
-  .grid-4,.grid-3,.values-list,.form-grid{grid-template-columns:1fr}
+  .mining-unified{padding:54px 0 42px}
+  .grid-4,.grid-3,.values-list,.form-grid,.mining-metrics{grid-template-columns:1fr}
   .span-2{grid-column:auto}
   .image-card{min-height:300px}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('imagenes/4.png');--section-accent-img:url('imagenes/5.png');}</style>
+  <style>.mining-unified{--hero-img:url('imagenes/4.png');}</style>
 </head>
 <body>
 
@@ -238,39 +258,52 @@ footer a:hover{color:#fff}
 
 <main>
 
-    <section class="page-hero" id="mineria">
+    <section class="mining-unified" id="mineria">
       <div class="wrap">
-        <span class="eyebrow">Crecer Acredita Minería</span>
-        <h1>Especialistas en cumplimiento para la industria minera.</h1>
-        <p class="lead">La industria minera exige altos estándares de control, seguridad y cumplimiento. Por ello desarrollamos una línea especializada para contratistas y subcontratistas que prestan servicios a compañías mineras.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="contacto.php">Solicitar asesoría</a>
-          <a class="btn btn-mustard" href="sello-crecer.php">Conocer Sello Crecer</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section parallax-mining">
-      <div class="wrap">
-        <span class="eyebrow">Alta exigencia operacional</span>
-        <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
-        <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
-        <div class="grid-2">
-          <div class="glass">
-            <h3>Servicios especializados</h3>
-            <ul>
-              <li>Acreditación multiplataforma de empresas contratistas.</li>
-              <li>Acreditación de trabajadores.</li>
-              <li>Control documental para ingreso a faena.</li>
-              <li>Cumplimiento laboral y previsional.</li>
-              <li>Gestión de riesgos de contratistas.</li>
-              <li>Reportabilidad ejecutiva.</li>
-              <li>Monitoreo permanente de cumplimiento.</li>
-            </ul>
+        <div class="mining-hero-block">
+          <span class="eyebrow">Crecer Acredita Minería</span>
+          <h1>Especialistas en cumplimiento para la industria minera.</h1>
+          <p class="lead">La industria minera exige altos estándares de control, seguridad y cumplimiento. Por ello desarrollamos una línea especializada para contratistas y subcontratistas que prestan servicios a compañías mineras.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contacto.php">Solicitar asesoría</a>
+            <a class="btn btn-mustard" href="sello-crecer.php">Conocer Sello Crecer</a>
           </div>
-          <div class="glass">
-            <h3>Modelo preventivo para minería</h3>
-            <p>El enfoque permite centralizar información, anticipar observaciones, preparar auditorías y reducir la exposición a riesgos legales, laborales y operacionales.</p>
+        </div>
+
+        <div class="mining-detail">
+          <div class="mining-detail-head">
+            <div>
+              <span class="eyebrow">Alta exigencia operacional</span>
+              <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
+              <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
+            </div>
+            <aside class="mining-summary" aria-label="Resumen del modelo minero">
+              <h3>Modelo integral para contratistas mineros</h3>
+              <p>Ordenamos la acreditación, la documentación crítica y los riesgos operacionales en una gestión clara y trazable.</p>
+              <div class="mining-metrics">
+                <div class="mining-metric"><b>360°</b><span>control documental</span></div>
+                <div class="mining-metric"><b>24/7</b><span>seguimiento activo</span></div>
+                <div class="mining-metric"><b>0-100</b><span>score inicial</span></div>
+              </div>
+            </aside>
+          </div>
+          <div class="grid-2">
+            <div class="glass">
+              <h3>Servicios especializados</h3>
+              <ul>
+                <li>Acreditación multiplataforma de empresas contratistas.</li>
+                <li>Acreditación de trabajadores.</li>
+                <li>Control documental para ingreso a faena.</li>
+                <li>Cumplimiento laboral y previsional.</li>
+                <li>Gestión de riesgos de contratistas.</li>
+                <li>Reportabilidad ejecutiva.</li>
+                <li>Monitoreo permanente de cumplimiento.</li>
+              </ul>
+            </div>
+            <div class="glass">
+              <h3>Modelo preventivo para minería</h3>
+              <p>El enfoque permite centralizar información, anticipar observaciones, preparar auditorías y reducir la exposición a riesgos legales, laborales y operacionales.</p>
+            </div>
           </div>
         </div>
       </div>
