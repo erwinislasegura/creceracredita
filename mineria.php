@@ -169,27 +169,32 @@ p:last-child{margin-bottom:0}
 .parallax-mining{
   color:#fff;
   background:
-    radial-gradient(circle at 12% 18%,rgba(176,23,79,.32),transparent 27%),
-    linear-gradient(115deg,rgba(0,24,70,.96) 0%,rgba(0,32,96,.88) 52%,rgba(0,24,70,.68) 100%),
+    linear-gradient(115deg,rgba(0,24,70,.96) 0%,rgba(0,32,96,.90) 56%,rgba(0,24,70,.76) 100%),
     var(--section-accent-img);
   background-size:cover;background-position:center;background-attachment:fixed;
   position:relative;overflow:hidden
 }
-.parallax-mining:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 34%,rgba(0,24,70,.34));pointer-events:none}
+.parallax-mining:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0) 38%,rgba(0,24,70,.28));pointer-events:none}
+.parallax-mining:after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--green),var(--mustard),var(--navy-2));opacity:.95}
 .parallax-mining .wrap{position:relative;z-index:1}
 .parallax-mining h2,.parallax-mining h3{color:#fff}
 .parallax-mining .lead{color:rgba(255,255,255,.82)}
-.mining-intro{display:grid;grid-template-columns:minmax(0,1.05fr) 360px;gap:28px;align-items:end;margin-bottom:24px}
-.mining-proof{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:20px;box-shadow:0 22px 50px rgba(0,24,70,.28);backdrop-filter:blur(10px)}
-.mining-proof strong{display:block;font-size:30px;line-height:1;color:#fff;margin-bottom:7px;letter-spacing:-.03em}
-.mining-proof span{display:block;color:rgba(255,255,255,.78);font-size:13px;font-weight:600}
-.glass{background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.20);border-radius:20px;padding:24px;backdrop-filter:blur(10px);box-shadow:0 20px 46px rgba(0,24,70,.24)}
-.glass h3{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.glass h3:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--mustard);box-shadow:0 0 0 6px rgba(176,23,79,.18)}
-.glass p,.glass ul{color:rgba(255,255,255,.82)}
+.mining-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:30px;align-items:center;margin-bottom:26px}
+.mining-summary{background:rgba(255,255,255,.96);color:var(--ink);border:1px solid rgba(255,255,255,.24);border-radius:20px;padding:24px;box-shadow:0 22px 52px rgba(0,24,70,.24);position:relative;overflow:hidden}
+.mining-summary:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--mustard),var(--navy))}
+.mining-summary h3{color:var(--navy);margin-bottom:8px}
+.mining-summary p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.mining-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mining-metric{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:13px 11px}
+.mining-metric b{display:block;color:var(--green);font-size:18px;line-height:1;margin-bottom:5px}
+.mining-metric span{display:block;color:var(--muted);font-size:11.5px;font-weight:650;line-height:1.25}
+.glass{background:rgba(255,255,255,.96);color:var(--ink);border:1px solid rgba(227,233,242,.95);border-radius:20px;padding:24px;box-shadow:0 18px 44px rgba(0,24,70,.20);position:relative;overflow:hidden}
+.glass:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--green),var(--mustard))}
+.glass h3{color:var(--navy);margin-bottom:12px}
+.glass p,.glass ul{color:var(--muted)}
 .glass ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}
-.glass li{position:relative;padding-left:25px;margin:0}
-.glass li:before{content:"✓";position:absolute;left:0;top:0;color:#fff;background:rgba(176,23,79,.88);width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700}
+.glass li{position:relative;padding-left:24px;margin:0}
+.glass li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mustard);box-shadow:0 0 0 4px rgba(176,23,79,.10)}
 .level-card{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:var(--shadow-sm)}
 .medal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700}
 .bronze{background:#B77D3B}.silver{background:#A8AFB8}.gold{background:var(--mustard);color:#fff}
@@ -238,8 +243,8 @@ footer a:hover{color:#fff}
   .brand-mark{width:188px;height:44px}
   .brand-mark img{width:188px;max-height:44px}
   .section{padding:42px 0}
-  .page-hero{min-height:440px;padding:86px 0 72px}
-  .grid-4,.grid-3,.values-list,.form-grid{grid-template-columns:1fr}
+  .page-hero{padding:54px 0 48px}
+  .grid-4,.grid-3,.values-list,.form-grid,.mining-metrics{grid-template-columns:1fr}
   .span-2{grid-column:auto}
   .image-card{min-height:300px}
   .cta{padding:20px;border-radius:18px}
@@ -273,10 +278,15 @@ footer a:hover{color:#fff}
             <h2>Experiencia que comprende las exigencias de las operaciones mineras.</h2>
             <p class="lead">Conocemos la importancia de mantener procesos robustos de acreditación, control documental y cumplimiento normativo para resguardar continuidad operacional y minimizar contingencias.</p>
           </div>
-          <div class="mining-proof">
-            <strong>Control 360°</strong>
-            <span>Acreditación, documentación, riesgos y reportabilidad para una operación más segura.</span>
-          </div>
+          <aside class="mining-summary" aria-label="Resumen del modelo minero">
+            <h3>Modelo integral para contratistas mineros</h3>
+            <p>Ordenamos la acreditación, la documentación crítica y los riesgos operacionales en una gestión clara y trazable.</p>
+            <div class="mining-metrics">
+              <div class="mining-metric"><b>360°</b><span>control documental</span></div>
+              <div class="mining-metric"><b>24/7</b><span>seguimiento activo</span></div>
+              <div class="mining-metric"><b>0-100</b><span>score inicial</span></div>
+            </div>
+          </aside>
         </div>
         <div class="grid-2">
           <div class="glass">
