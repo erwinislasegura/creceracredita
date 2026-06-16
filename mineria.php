@@ -103,7 +103,10 @@ p:last-child{margin-bottom:0}
     linear-gradient(90deg,rgba(0,24,70,.96),rgba(0,32,96,.82)),
     var(--hero-img);
   background-size:cover;background-position:center;background-attachment:fixed;
-  padding:72px 0 64px
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  padding:110px 0 96px
 }
 .page-hero:after{
   content:"";position:absolute;right:-120px;top:-80px;width:310px;height:310px;border-radius:50%;
@@ -223,7 +226,7 @@ footer a:hover{color:#fff}
   .brand-mark{width:188px;height:44px}
   .brand-mark img{width:188px;max-height:44px}
   .section{padding:42px 0}
-  .page-hero{padding:54px 0 48px}
+  .page-hero{min-height:440px;padding:86px 0 72px}
   .grid-4,.grid-3,.values-list,.form-grid{grid-template-columns:1fr}
   .span-2{grid-column:auto}
   .image-card{min-height:300px}
