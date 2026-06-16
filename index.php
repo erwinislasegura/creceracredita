@@ -368,6 +368,40 @@
       .hero-bg-rotator span:first-child { opacity:1; }
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+    .hero-certifications {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin:24px auto 0;
+    }
+    .hero-certification-card {
+      min-width:154px;
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(255,255,255,.68);
+      box-shadow:0 18px 36px rgba(0,0,0,.22), 0 0 0 1px rgba(0,32,96,.05);
+      backdrop-filter:blur(10px);
+    }
+    .hero-certification-card img {
+      width:auto;
+      max-width:142px;
+      max-height:62px;
+      object-fit:contain;
+    }
+    .hero-certification-note {
+      flex-basis:100%;
+      color:rgba(255,255,255,.82);
+      font-size:12.5px;
+      font-weight:650;
+      letter-spacing:.01em;
+    }
     .kpi {
       display:flex;
       align-items:center;
@@ -1340,6 +1374,12 @@
             <div class="kpi"><strong>20+</strong><span>años de experiencia</span></div>
             <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
             <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
+          </div>
+
+          <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
+            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
+            <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
           </div>
         </div>
 
