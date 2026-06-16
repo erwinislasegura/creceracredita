@@ -230,7 +230,7 @@ footer a:hover{color:#fff}
   .cta{padding:20px;border-radius:18px}
 }
 </style>
-  <style>.page-hero{--hero-img:url('imagenes/4.png');--section-accent-img:url('imagenes/5.png');}</style>
+  <style>.page-hero{--hero-img:url('imagenes/4.png');}.parallax-mining{--section-accent-img:url('imagenes/5.png');}</style>
 </head>
 <body>
 
