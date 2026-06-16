@@ -1588,6 +1588,7 @@
       </div>
     </section>
 
+
     <section class="certifications-band" id="certificaciones">
       <div class="wrap">
         <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
