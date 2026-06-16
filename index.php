@@ -369,19 +369,21 @@
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
     .certifications-band {
-      background:linear-gradient(180deg,#fff 0%, #F7F9FC 100%);
-      border-bottom:1px solid var(--line);
-      padding:22px 0;
+      position:relative;
+      z-index:5;
+      margin-top:-34px;
+      padding:0 0 18px;
+      background:linear-gradient(180deg, transparent 0 34px, #F7F9FC 34px 100%);
     }
     .certifications-panel {
       display:grid;
       grid-template-columns:minmax(0,1fr) auto;
-      gap:24px;
+      gap:18px;
       align-items:center;
       background:#fff;
       border:1px solid var(--line);
-      border-radius:20px;
-      padding:20px 24px;
+      border-radius:18px;
+      padding:16px 20px;
       box-shadow:var(--shadow-sm);
       position:relative;
       overflow:hidden;
@@ -394,28 +396,28 @@
       background:linear-gradient(180deg,var(--green),var(--mustard));
     }
     .certifications-copy h2 {
-      font-size:clamp(18px, 2vw, 23px);
-      margin-bottom:7px;
+      font-size:clamp(16px, 1.7vw, 20px);
+      margin-bottom:5px;
     }
     .certifications-copy p {
       color:var(--muted);
       margin:0;
-      max-width:700px;
-      font-size:14px;
+      max-width:660px;
+      font-size:13.5px;
     }
     .certifications-logos {
       display:grid;
-      grid-template-columns:repeat(2, 132px);
-      gap:10px;
+      grid-template-columns:repeat(2, 118px);
+      gap:9px;
       align-items:center;
     }
     .certification-logo-card {
-      height:82px;
+      height:68px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:11px 13px;
-      border-radius:15px;
+      padding:9px 11px;
+      border-radius:13px;
       background:var(--soft);
       border:1px solid var(--line);
       box-shadow:inset 0 0 0 2px rgba(255,255,255,.65);
@@ -1354,9 +1356,10 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
-      .certifications-panel { grid-template-columns:1fr; gap:16px; padding:18px; }
+      .certifications-band { margin-top:-26px; padding-bottom:16px; background:linear-gradient(180deg, transparent 0 26px, #F7F9FC 26px 100%); }
+      .certifications-panel { grid-template-columns:1fr; gap:14px; padding:16px; }
       .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); }
-      .certification-logo-card { height:76px; }
+      .certification-logo-card { height:64px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
@@ -1502,8 +1505,8 @@
         <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
           <div class="certifications-copy">
             <span class="eyebrow">Certificaciones</span>
-            <h2>Respaldo verificable para generar confianza desde el primer contacto.</h2>
-            <p>Nuestras certificaciones refuerzan el compromiso con estándares de gestión, evaluación y cumplimiento para entregar un servicio serio, trazable y confiable.</p>
+            <h2>Certificaciones que respaldan nuestra gestión.</h2>
+            <p>Estos sellos refuerzan nuestro compromiso con un servicio serio, trazable y alineado a estándares de evaluación y cumplimiento.</p>
           </div>
           <div class="certifications-logos">
             <span class="certification-logo-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
