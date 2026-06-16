@@ -952,42 +952,82 @@
     .contact-cta p { color:rgba(255,255,255,.76); margin-bottom:0; }
 
     .clients-carousel-section {
-      padding:52px 0 60px;
-      background:linear-gradient(180deg,#fff 0%,#F7F9FC 100%);
+      position:relative;
+      padding:62px 0 70px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(176,23,79,.10), transparent 30%),
+        linear-gradient(180deg,#fff 0%,#F7F9FC 100%);
       overflow:hidden;
     }
+    .clients-carousel-section::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(0,32,96,.16),transparent);
+    }
+    .clients-carousel-panel {
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(0,32,96,.10);
+      border-radius:28px;
+      background:linear-gradient(135deg,#fff 0%,#FBFCFF 100%);
+      box-shadow:0 24px 62px rgba(0,32,96,.12);
+      padding:30px 0 32px;
+    }
+    .clients-carousel-panel::before {
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:6px;
+      background:linear-gradient(180deg,var(--green),var(--mustard));
+    }
+    .clients-carousel-panel::after {
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      right:-120px;
+      top:-128px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(0,32,96,.10),rgba(0,32,96,0) 70%);
+      pointer-events:none;
+    }
     .clients-carousel-head {
+      position:relative;
+      z-index:1;
       display:grid;
       grid-template-columns:minmax(0,1fr) auto;
-      gap:18px;
+      gap:20px;
       align-items:end;
-      margin-bottom:22px;
+      padding:0 32px 24px;
     }
     .clients-carousel-head h2 {
       color:var(--navy);
-      font-size:clamp(23px, 2.6vw, 34px);
-      letter-spacing:-.035em;
-      margin-bottom:8px;
+      font-size:clamp(25px, 2.8vw, 38px);
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
     }
     .clients-carousel-head p {
       color:var(--muted);
-      max-width:690px;
+      max-width:740px;
       margin:0;
-      font-size:15px;
-      line-height:1.65;
+      font-size:15.5px;
+      line-height:1.7;
     }
     .clients-carousel-badge {
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:10px 14px;
+      padding:11px 15px;
       border-radius:999px;
       background:#fff;
       border:1px solid rgba(0,32,96,.10);
       color:var(--navy);
       box-shadow:var(--shadow-sm);
       font-size:13px;
-      font-weight:700;
+      font-weight:750;
       white-space:nowrap;
     }
     .clients-carousel-badge::before {
@@ -1000,12 +1040,12 @@
     }
     .clients-carousel-shell {
       position:relative;
+      z-index:1;
       overflow:hidden;
-      border:1px solid rgba(0,32,96,.10);
-      border-radius:24px;
-      background:#fff;
-      box-shadow:0 18px 48px rgba(0,32,96,.10);
-      padding:28px 0;
+      border-top:1px solid rgba(0,32,96,.08);
+      border-bottom:1px solid rgba(0,32,96,.08);
+      background:rgba(255,255,255,.72);
+      padding:30px 0;
     }
     .clients-carousel-shell::before,
     .clients-carousel-shell::after {
@@ -1013,7 +1053,7 @@
       position:absolute;
       top:0;
       bottom:0;
-      width:96px;
+      width:118px;
       z-index:2;
       pointer-events:none;
     }
@@ -1022,18 +1062,19 @@
     .clients-carousel-track {
       display:flex;
       width:max-content;
-      gap:34px;
-      padding:0 34px;
-      animation:clientsMarquee 38s linear infinite;
+      gap:40px;
+      padding:0 40px;
+      animation:clientsMarquee 40s linear infinite;
+      will-change:transform;
     }
     .clients-carousel-shell:hover .clients-carousel-track { animation-play-state:paused; }
     .client-logo-card {
-      flex:0 0 196px;
-      height:136px;
+      flex:0 0 210px;
+      height:142px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:8px;
+      padding:6px;
       border:0;
       background:transparent;
       box-shadow:none;
@@ -1042,12 +1083,22 @@
       width:100%;
       height:100%;
       object-fit:contain;
-      filter:saturate(.96) contrast(1.04);
+      filter:saturate(.95) contrast(1.04);
       transition:transform .22s ease, filter .22s ease;
     }
     .client-logo-card:hover img {
-      transform:scale(1.05);
-      filter:saturate(1.05) contrast(1.08);
+      transform:scale(1.06);
+      filter:saturate(1.08) contrast(1.08);
+    }
+    .clients-carousel-footnote {
+      position:relative;
+      z-index:1;
+      margin:18px 32px 0;
+      padding-top:16px;
+      border-top:1px solid rgba(0,32,96,.08);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:650;
     }
     @keyframes clientsMarquee {
       from { transform:translateX(0); }
@@ -1445,13 +1496,15 @@
       .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
       .certification-logo-card { min-height:104px; padding:14px; }
       .certification-logo-card img { max-height:82px; }
-      .clients-carousel-section { padding:38px 0 46px; }
-      .clients-carousel-head { grid-template-columns:1fr; align-items:start; }
+      .clients-carousel-section { padding:42px 0 50px; }
+      .clients-carousel-panel { border-radius:22px; padding:22px 0 24px; }
+      .clients-carousel-head { grid-template-columns:1fr; align-items:start; padding:0 20px 20px; }
       .clients-carousel-badge { width:max-content; }
-      .clients-carousel-shell { border-radius:20px; padding:20px 0; }
+      .clients-carousel-shell { padding:22px 0; }
       .clients-carousel-shell::before, .clients-carousel-shell::after { width:44px; }
-      .clients-carousel-track { gap:22px; padding:0 22px; }
-      .client-logo-card { flex-basis:152px; height:110px; padding:6px; }
+      .clients-carousel-track { gap:24px; padding:0 24px; }
+      .client-logo-card { flex-basis:164px; height:116px; padding:4px; }
+      .clients-carousel-footnote { margin:16px 20px 0; }
       .section { padding:42px 0; }
       .hero-copy, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
@@ -1754,26 +1807,29 @@
     <?php if (!empty($clientLogos)): ?>
       <section class="clients-carousel-section" id="clientes" aria-label="Clientes que confían en Crecer Acredita">
         <div class="wrap">
-          <div class="clients-carousel-head">
-            <div>
-              <span class="eyebrow">Clientes</span>
-              <h2>Empresas que han confiado en nuestra gestión.</h2>
-              <p>Una muestra de organizaciones que acompañamos con control documental, cumplimiento y soporte preventivo.</p>
+          <div class="clients-carousel-panel reveal-card">
+            <div class="clients-carousel-head">
+              <div>
+                <span class="eyebrow">Clientes</span>
+                <h2>Confianza de empresas que exigen cumplimiento y trazabilidad.</h2>
+                <p>Un recorrido por organizaciones que han confiado en Crecer Acredita para fortalecer control documental, cumplimiento y soporte preventivo.</p>
+              </div>
+              <span class="clients-carousel-badge"><?= count($clientLogos) ?> empresas destacadas</span>
             </div>
-            <span class="clients-carousel-badge">Confianza operacional</span>
-          </div>
-          <div class="clients-carousel-shell">
-            <div class="clients-carousel-track">
-              <?php foreach (array_merge($clientLogos, $clientLogos) as $logoPath): ?>
-                <?php
-                  $logoFile = basename($logoPath);
-                  $logoAlt = 'Cliente Crecer Acredita ' . pathinfo($logoFile, PATHINFO_FILENAME);
-                ?>
-                <span class="client-logo-card">
-                  <img src="clientes/<?= htmlspecialchars($logoFile, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($logoAlt, ENT_QUOTES, 'UTF-8') ?>">
-                </span>
-              <?php endforeach; ?>
+            <div class="clients-carousel-shell">
+              <div class="clients-carousel-track">
+                <?php foreach (array_merge($clientLogos, $clientLogos) as $logoPath): ?>
+                  <?php
+                    $logoFile = basename($logoPath);
+                    $logoAlt = 'Cliente Crecer Acredita ' . pathinfo($logoFile, PATHINFO_FILENAME);
+                  ?>
+                  <span class="client-logo-card">
+                    <img src="clientes/<?= htmlspecialchars($logoFile, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($logoAlt, ENT_QUOTES, 'UTF-8') ?>">
+                  </span>
+                <?php endforeach; ?>
+              </div>
             </div>
+            <p class="clients-carousel-footnote">Selección de marcas que reflejan experiencia, continuidad y confianza operacional.</p>
           </div>
         </div>
       </section>
