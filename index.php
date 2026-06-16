@@ -371,20 +371,19 @@
     .certifications-band {
       position:relative;
       z-index:5;
-      margin-top:-34px;
-      padding:0 0 18px;
-      background:linear-gradient(180deg, transparent 0 34px, #F7F9FC 34px 100%);
+      padding:34px 0 24px;
+      background:linear-gradient(180deg,#F7F9FC 0%,#fff 100%);
     }
     .certifications-panel {
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:18px;
+      grid-template-columns:minmax(0,1fr) minmax(360px, .72fr);
+      gap:28px;
       align-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px 20px;
-      box-shadow:var(--shadow-sm);
+      background:linear-gradient(135deg,#FFFFFF 0%,#FBFCFF 100%);
+      border:1px solid rgba(0,32,96,.10);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 20px 52px rgba(0,32,96,.12);
       position:relative;
       overflow:hidden;
     }
@@ -392,39 +391,64 @@
       content:"";
       position:absolute;
       inset:0 auto 0 0;
-      width:4px;
+      width:6px;
       background:linear-gradient(180deg,var(--green),var(--mustard));
     }
+    .certifications-panel::after {
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      right:-82px;
+      top:-96px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(176,23,79,.16),rgba(176,23,79,0) 68%);
+      pointer-events:none;
+    }
+    .certifications-copy { position:relative; z-index:1; }
     .certifications-copy h2 {
-      font-size:clamp(16px, 1.7vw, 20px);
-      margin-bottom:5px;
+      font-size:clamp(22px, 2.4vw, 31px);
+      line-height:1.12;
+      letter-spacing:-.03em;
+      margin-bottom:9px;
+      color:var(--navy);
     }
     .certifications-copy p {
       color:var(--muted);
       margin:0;
-      max-width:660px;
-      font-size:13.5px;
+      max-width:680px;
+      font-size:15px;
+      line-height:1.65;
     }
     .certifications-logos {
+      position:relative;
+      z-index:1;
       display:grid;
-      grid-template-columns:repeat(2, 118px);
-      gap:9px;
-      align-items:center;
+      grid-template-columns:repeat(2, minmax(150px, 1fr));
+      gap:16px;
+      align-items:stretch;
     }
     .certification-logo-card {
-      height:68px;
+      min-height:132px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:9px 11px;
-      border-radius:13px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      box-shadow:inset 0 0 0 2px rgba(255,255,255,.65);
+      padding:18px 20px;
+      border-radius:20px;
+      background:#fff;
+      border:1px solid rgba(0,32,96,.12);
+      box-shadow:0 14px 34px rgba(0,32,96,.10), inset 0 0 0 2px rgba(255,255,255,.72);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .certification-logo-card:hover {
+      transform:translateY(-3px);
+      border-color:rgba(131,10,61,.28);
+      box-shadow:0 18px 42px rgba(0,32,96,.14);
     }
     .certification-logo-card img {
       width:100%;
       height:100%;
+      max-height:104px;
       object-fit:contain;
     }
     .kpi {
@@ -526,50 +550,6 @@
       cursor:pointer;
     }
     .dot.active { background:var(--mustard); }
-
-    .risk-strip { margin-top:-31px; position:relative; z-index:4; }
-    .risk-box {
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:22px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      align-items:center;
-      padding:20px 30px;
-    }
-    .risk-box > div:first-child { display:none; }
-    .risk-card-mini { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
-    .risk-pill {
-      min-height:88px;
-      background:var(--soft);
-      border:0;
-      border-radius:14px;
-      padding:18px 20px;
-    }
-    .risk-pill i { display:block; width:9px; height:9px; border-radius:50%; margin-bottom:9px; }
-    .risk-pill:nth-child(1) i { background:var(--green); }
-    .risk-pill:nth-child(2) i { background:var(--mustard); }
-    .risk-pill:nth-child(3) i { background:var(--danger); }
-    .risk-pill strong { display:block; color:var(--navy); font-size:13px; margin-bottom:1px; font-weight:650; }
-    .risk-pill span { color:var(--muted); font-size:11.5px; }
-    .hero-proof {
-      min-height:88px;
-      background:var(--soft);
-      border-radius:14px;
-      padding:18px 20px;
-    }
-    .hero-proof strong {
-      display:block;
-      color:var(--navy);
-      font-size:clamp(25px, 2.4vw, 30px);
-      line-height:1;
-      letter-spacing:-.04em;
-      margin-bottom:10px;
-    }
-    .hero-proof span { color:#4b5567; font-size:12.5px; font-weight:700; }
 
     .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
@@ -971,6 +951,163 @@
     .contact-cta h2 { color:#fff; margin-bottom:8px; }
     .contact-cta p { color:rgba(255,255,255,.76); margin-bottom:0; }
 
+    .clients-carousel-section {
+      position:relative;
+      padding:62px 0 70px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(176,23,79,.10), transparent 30%),
+        linear-gradient(180deg,#fff 0%,#F7F9FC 100%);
+      overflow:hidden;
+    }
+    .clients-carousel-section::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(0,32,96,.16),transparent);
+    }
+    .clients-carousel-panel {
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(0,32,96,.10);
+      border-radius:28px;
+      background:linear-gradient(135deg,#fff 0%,#FBFCFF 100%);
+      box-shadow:0 24px 62px rgba(0,32,96,.12);
+      padding:30px 0 32px;
+    }
+    .clients-carousel-panel::before {
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:6px;
+      background:linear-gradient(180deg,var(--green),var(--mustard));
+    }
+    .clients-carousel-panel::after {
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      right:-120px;
+      top:-128px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(0,32,96,.10),rgba(0,32,96,0) 70%);
+      pointer-events:none;
+    }
+    .clients-carousel-head {
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:20px;
+      align-items:end;
+      padding:0 32px 24px;
+    }
+    .clients-carousel-head h2 {
+      color:var(--navy);
+      font-size:clamp(25px, 2.8vw, 38px);
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .clients-carousel-head p {
+      color:var(--muted);
+      max-width:740px;
+      margin:0;
+      font-size:15.5px;
+      line-height:1.7;
+    }
+    .clients-carousel-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 15px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(0,32,96,.10);
+      color:var(--navy);
+      box-shadow:var(--shadow-sm);
+      font-size:13px;
+      font-weight:750;
+      white-space:nowrap;
+    }
+    .clients-carousel-badge::before {
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--mustard);
+      box-shadow:0 0 0 5px rgba(176,23,79,.10);
+    }
+    .clients-carousel-shell {
+      position:relative;
+      z-index:1;
+      overflow:hidden;
+      border-top:1px solid rgba(0,32,96,.08);
+      border-bottom:1px solid rgba(0,32,96,.08);
+      background:rgba(255,255,255,.72);
+      padding:30px 0;
+    }
+    .clients-carousel-shell::before,
+    .clients-carousel-shell::after {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:118px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .clients-carousel-shell::before { left:0; background:linear-gradient(90deg,#fff,rgba(255,255,255,0)); }
+    .clients-carousel-shell::after { right:0; background:linear-gradient(270deg,#fff,rgba(255,255,255,0)); }
+    .clients-carousel-track {
+      display:flex;
+      width:max-content;
+      gap:40px;
+      padding:0 40px;
+      animation:clientsMarquee 40s linear infinite;
+      will-change:transform;
+    }
+    .clients-carousel-shell:hover .clients-carousel-track { animation-play-state:paused; }
+    .client-logo-card {
+      flex:0 0 210px;
+      height:142px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px;
+      border:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    .client-logo-card img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      filter:saturate(.95) contrast(1.04);
+      transition:transform .22s ease, filter .22s ease;
+    }
+    .client-logo-card:hover img {
+      transform:scale(1.06);
+      filter:saturate(1.08) contrast(1.08);
+    }
+    .clients-carousel-footnote {
+      position:relative;
+      z-index:1;
+      margin:18px 32px 0;
+      padding-top:16px;
+      border-top:1px solid rgba(0,32,96,.08);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:650;
+    }
+    @keyframes clientsMarquee {
+      from { transform:translateX(0); }
+      to { transform:translateX(calc(-50%)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .clients-carousel-track { animation:none; flex-wrap:wrap; justify-content:center; width:auto; }
+    }
+
     footer {
       background:#001846;
       color:rgba(255,255,255,.74);
@@ -1329,7 +1466,6 @@
 
     @media (max-width:960px) {
       .hero-grid,
-      .risk-box,
       .split,
       .exp-grid,
       .faq-grid,
@@ -1340,7 +1476,6 @@
       .mid-cta-grid,
       .footer-grid { grid-template-columns:1fr; }
       .grid-4 { grid-template-columns:repeat(2,1fr); }
-      .risk-box { grid-template-columns:repeat(2,1fr); }
       .why-list, .image-band { grid-template-columns:1fr; }
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
@@ -1356,16 +1491,25 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 54px; gap:20px; }
-      .certifications-band { margin-top:-26px; padding-bottom:16px; background:linear-gradient(180deg, transparent 0 26px, #F7F9FC 26px 100%); }
-      .certifications-panel { grid-template-columns:1fr; gap:14px; padding:16px; }
-      .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); }
-      .certification-logo-card { height:64px; }
+      .certifications-band { padding:28px 0 18px; }
+      .certifications-panel { grid-template-columns:1fr; gap:18px; padding:20px; border-radius:20px; }
+      .certifications-logos { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+      .certification-logo-card { min-height:104px; padding:14px; }
+      .certification-logo-card img { max-height:82px; }
+      .clients-carousel-section { padding:42px 0 50px; }
+      .clients-carousel-panel { border-radius:22px; padding:22px 0 24px; }
+      .clients-carousel-head { grid-template-columns:1fr; align-items:start; padding:0 20px 20px; }
+      .clients-carousel-badge { width:max-content; }
+      .clients-carousel-shell { padding:22px 0; }
+      .clients-carousel-shell::before, .clients-carousel-shell::after { width:44px; }
+      .clients-carousel-track { gap:24px; padding:0 24px; }
+      .client-logo-card { flex-basis:164px; height:116px; padding:4px; }
+      .clients-carousel-footnote { margin:16px 20px 0; }
       .section { padding:42px 0; }
-      .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
+      .hero-copy, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
       .mid-cta-parallax { min-height:420px; }
       .mid-cta-card { padding:8px 0; }
-      .hero-kpis, .risk-card-mini, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
-      .risk-box { grid-template-columns:1fr; padding:16px; }
+      .hero-kpis, .grid-4, .form-grid, .image-stack { grid-template-columns:1fr; }
       .slide, .slide-content { min-height:340px; }
       .modal { padding:10px; }
       .modal-head, .modal-body { padding:18px; }
@@ -1403,51 +1547,6 @@
             <div class="kpi"><strong>20+</strong><span>años de experiencia</span></div>
             <div class="kpi"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
             <div class="kpi"><strong>0-100</strong><span>diagnóstico inicial</span></div>
-          </div>
-
-          <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-            <span class="hero-certification-note">Certificaciones que refuerzan confianza y respaldo ante clientes.</span>
-          </div>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-          <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-        </div>
-
-        <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
-          </div>
-        </div>
-
-        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
-          <span class="hero-certifications-title">Certificaciones</span>
-          <div class="hero-certifications-row">
-            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
-            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
           </div>
         </div>
 
@@ -1505,8 +1604,8 @@
         <div class="certifications-panel reveal-card" aria-label="Certificaciones que respaldan a Crecer Acredita">
           <div class="certifications-copy">
             <span class="eyebrow">Certificaciones</span>
-            <h2>Certificaciones que respaldan nuestra gestión.</h2>
-            <p>Estos sellos refuerzan nuestro compromiso con un servicio serio, trazable y alineado a estándares de evaluación y cumplimiento.</p>
+            <h2>Respaldo visible para una gestión confiable.</h2>
+            <p>Destacamos acreditaciones y registros que refuerzan nuestro estándar de servicio, trazabilidad y acompañamiento para empresas contratistas y mandantes.</p>
           </div>
           <div class="certifications-logos">
             <span class="certification-logo-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
@@ -1515,7 +1614,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="section seal-preview" id="sello-resumen">
       <div class="wrap seal-preview-grid">
@@ -1542,23 +1640,6 @@
         <div class="seal-preview-visual reveal-card">
           <img src="imagenes/13.png" alt="Reconocimiento y certificación del Sello Crecer">
           <div class="seal-preview-caption"><strong>Tres niveles de reconocimiento</strong><span>Medallas Bronce, Plata y Oro para comunicar confianza operacional.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="risk-strip" id="evaluacion">
-      <div class="wrap">
-        <div class="risk-box">
-          <div class="risk-intro">
-            <span class="eyebrow">Autoevaluación de Riesgo Crecer</span>
-            <h2>Diagnóstico preliminar en pocos minutos.</h2>
-            <p class="lead">Evalúa de forma inicial el cumplimiento laboral, previsional, documental y de seguridad de tu organización.</p>
-            <button class="btn btn-primary" data-open-eval>Iniciar evaluación gratuita</button>
-          </div>
-          <div class="hero-proof"><strong>20+</strong><span>años de experiencia</span></div>
-          <div class="hero-proof"><strong>360°</strong><span>cumplimiento y riesgo</span></div>
-          <div class="hero-proof"><strong>100%</strong><span>diagnóstico trazable</span></div>
-          <div class="hero-proof"><strong>0-100</strong><span>score inicial</span></div>
         </div>
       </div>
     </section>
@@ -1716,6 +1797,42 @@
         </div>
       </div>
     </section>
+
+    <?php
+      $clientLogos = glob(__DIR__ . '/clientes/*.{png,jpg,jpeg,webp,svg}', GLOB_BRACE) ?: [];
+      natcasesort($clientLogos);
+      $clientLogos = array_values($clientLogos);
+    ?>
+    <?php if (!empty($clientLogos)): ?>
+      <section class="clients-carousel-section" id="clientes" aria-label="Clientes que confían en Crecer Acredita">
+        <div class="wrap">
+          <div class="clients-carousel-panel reveal-card">
+            <div class="clients-carousel-head">
+              <div>
+                <span class="eyebrow">Clientes</span>
+                <h2>Confianza de empresas que exigen cumplimiento y trazabilidad.</h2>
+                <p>Un recorrido por organizaciones que han confiado en Crecer Acredita para fortalecer control documental, cumplimiento y soporte preventivo.</p>
+              </div>
+              <span class="clients-carousel-badge"><?= count($clientLogos) ?> empresas destacadas</span>
+            </div>
+            <div class="clients-carousel-shell">
+              <div class="clients-carousel-track">
+                <?php foreach (array_merge($clientLogos, $clientLogos) as $logoPath): ?>
+                  <?php
+                    $logoFile = basename($logoPath);
+                    $logoAlt = 'Cliente Crecer Acredita ' . pathinfo($logoFile, PATHINFO_FILENAME);
+                  ?>
+                  <span class="client-logo-card">
+                    <img src="clientes/<?= htmlspecialchars($logoFile, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($logoAlt, ENT_QUOTES, 'UTF-8') ?>">
+                  </span>
+                <?php endforeach; ?>
+              </div>
+            </div>
+            <p class="clients-carousel-footnote">Selección de marcas que reflejan experiencia, continuidad y confianza operacional.</p>
+          </div>
+        </div>
+      </section>
+    <?php endif; ?>
   </main>
 
   <?php include __DIR__ . '/includes/site-footer.php'; ?>
