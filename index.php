@@ -368,7 +368,8 @@
       .hero-bg-rotator span:first-child { opacity:1; }
     }
     .hero-kpis { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-    .hero-certifications {
+    .hero-copy .hero-certifications { display:none; }
+    .hero-certifications-panel {
       position:absolute;
       right:-42px;
       bottom:18px;
@@ -1352,7 +1353,7 @@
       .brand-mark { width:188px; height:44px; }
       .brand-mark .logo-placeholder { min-height:44px; padding:7px 12px; }
       .hero-grid { padding:36px 0 154px; gap:20px; }
-      .hero-certifications { right:50%; bottom:22px; width:min(308px, calc(100vw - 32px)); transform:translateX(50%); }
+      .hero-certifications-panel { right:50%; bottom:22px; width:min(308px, calc(100vw - 32px)); transform:translateX(50%); }
       .hero-certification-card { height:70px; padding:9px; }
       .section { padding:42px 0; }
       .hero-copy, .risk-box, .contact-cta, .seal-card, .mid-cta-panel { padding:18px; border-radius:17px; }
@@ -1422,6 +1423,14 @@
         </div>
 
         <div class="hero-certifications" aria-label="Certificaciones que respaldan a Crecer Acredita">
+          <span class="hero-certifications-title">Certificaciones</span>
+          <div class="hero-certifications-row">
+            <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
+            <span class="hero-certification-card"><img src="certificacion/sicep.jpg" alt="Certificación SICEP"></span>
+          </div>
+        </div>
+
+        <div class="hero-certifications hero-certifications-panel" aria-label="Certificaciones que respaldan a Crecer Acredita">
           <span class="hero-certifications-title">Certificaciones</span>
           <div class="hero-certifications-row">
             <span class="hero-certification-card"><img src="certificacion/iso.jpg" alt="Certificación ISO"></span>
