@@ -14,8 +14,8 @@ class AssessmentMailer
         $config = new EmailConfiguration;
         $settings = $config->settings();
         $template = $config->template($this->riskKey((float)$result['final_score']));
-        $to = $this->sanitizeEmail((string)($lead['email'] ?? ''));
-        if ($to === '') return false;
+        $leadRecipient = $this->sanitizeEmail((string)($lead['email'] ?? ''));
+        if ($leadRecipient === '') return false;
 
         $fromEmail = $this->sanitizeEmail((string)$settings['assessment_from_email']) ?: 'contacto@creceracredita.cl';
         $fromName = $this->cleanHeader((string)$settings['assessment_from_name']);
@@ -32,7 +32,7 @@ class AssessmentMailer
 
         if ($host !== '' && $protocol === 'smtp') {
             $bcc = $internalRecipients !== '' ? explode(', ', $internalRecipients) : [];
-            return $this->sendViaServer($settings, $fromEmail, $fromName, $replyTo, $to, $bcc, $subject, $message, $boundary);
+            return $this->sendViaServer($settings, $fromEmail, $fromName, $replyTo, $leadRecipient, $bcc, $subject, $message, $boundary);
         }
 
         if ($host !== '' && $protocol !== 'smtp') {
@@ -43,6 +43,7 @@ class AssessmentMailer
             'MIME-Version: 1.0',
             'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
             'From: ' . $fromName . ' <' . $fromEmail . '>',
+            'To: <' . $leadRecipient . '>',
             'Reply-To: ' . $replyTo,
             'X-Mailer: PHP/' . phpversion(),
         ];
@@ -50,7 +51,7 @@ class AssessmentMailer
             $headers[] = 'Bcc: ' . $internalRecipients;
         }
 
-        return mail($to, $this->encodeSubject($subject), $message, implode("\r\n", $headers));
+        return mail($leadRecipient, $this->encodeSubject($subject), $message, implode("\r\n", $headers));
     }
 
     private function sendViaServer(array $settings, string $fromEmail, string $fromName, string $replyTo, string $visibleTo, array $bccRecipients, string $subject, string $body, string $boundary): bool
