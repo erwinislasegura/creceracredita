@@ -12,7 +12,7 @@ class AssessmentMailer
     public function send(array $lead, array $result): bool
     {
         $config = new EmailConfiguration;
-        $settings = $config->settings();
+        $settings = $this->outgoingSettings($config->settings());
         $template = $config->template($this->riskKey((float)$result['final_score']));
         $leadRecipient = $this->sanitizeEmail((string)($lead['email'] ?? ''));
         if ($leadRecipient === '') return false;
@@ -40,6 +40,25 @@ class AssessmentMailer
     }
 
 
+    private function outgoingSettings(array $settings): array
+    {
+        $host = strtolower(trim((string)($settings['assessment_mail_host'] ?? '')));
+        if ($host === '') return $settings;
+
+        if (substr($host, 0, 5) === 'imap.') {
+            $settings['assessment_mail_host'] = 'smtp.' . substr(trim((string)$settings['assessment_mail_host']), 5);
+        }
+
+        $port = (string)($settings['assessment_mail_port'] ?? '');
+        if ($port === '993' || $port === '143' || $port === '') {
+            $settings['assessment_mail_port'] = '587';
+            $settings['assessment_mail_encryption'] = 'tls';
+        }
+
+        $settings['assessment_mail_protocol'] = 'smtp';
+        return $settings;
+    }
+
     private function sendWithPhpMail(string $fromEmail, string $fromName, string $replyTo, string $leadRecipient, array $bccRecipients, string $subject, string $message, string $boundary): bool
     {
         $headers = [
@@ -48,6 +67,8 @@ class AssessmentMailer
             'From: ' . $fromName . ' <' . $fromEmail . '>',
             'To: <' . $leadRecipient . '>',
             'Reply-To: ' . $replyTo,
+            'Date: ' . date(DATE_RFC2822),
+            'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . $this->smtpName() . '>',
             'X-Mailer: PHP/' . phpversion(),
         ];
         if (!empty($bccRecipients)) {
@@ -55,7 +76,7 @@ class AssessmentMailer
         }
 
         $allRecipients = array_values(array_unique(array_merge([$leadRecipient], $bccRecipients)));
-        return mail(implode(', ', $allRecipients), $this->encodeSubject($subject), $message, implode("\r\n", $headers));
+        return mail(implode(', ', $allRecipients), $this->encodeSubject($subject), $message, implode("\r\n", $headers), '-f' . $fromEmail);
     }
 
     private function sendViaServer(array $settings, string $fromEmail, string $fromName, string $replyTo, string $visibleTo, array $bccRecipients, string $subject, string $body, string $boundary): bool
