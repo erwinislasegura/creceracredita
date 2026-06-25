@@ -2,7 +2,7 @@
 <div class="grid2">
   <div class="panel">
     <h2>Correo de autoevaluaciones</h2>
-    <p>Configura el remitente y los destinatarios internos que recibirán copia de cada resultado enviado desde el modal.</p>
+    <p>Configura el servidor IMAP/SMTP, el remitente y los destinatarios internos que recibirán copia de cada resultado enviado desde el modal.</p>
     <a class="btn primary" href="<?=url('/settings/email')?>">Configurar envío</a>
   </div>
   <div class="panel">

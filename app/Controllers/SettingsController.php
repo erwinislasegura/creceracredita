@@ -21,8 +21,9 @@ class SettingsController
         \verify_csrf();
         $fromEmail = trim((string)($_POST['assessment_from_email'] ?? ''));
         $replyTo = trim((string)($_POST['assessment_reply_to'] ?? ''));
-        if (!filter_var($fromEmail, FILTER_VALIDATE_EMAIL) || ($replyTo !== '' && !filter_var($replyTo, FILTER_VALIDATE_EMAIL))) {
-            \flash('error', 'Revisa el correo remitente y el correo de respuesta.');
+        $port = (int)($_POST['assessment_mail_port'] ?? 0);
+        if (!filter_var($fromEmail, FILTER_VALIDATE_EMAIL) || ($replyTo !== '' && !filter_var($replyTo, FILTER_VALIDATE_EMAIL)) || $port < 1 || $port > 65535) {
+            \flash('error', 'Revisa el correo remitente, el correo de respuesta y el puerto del servidor.');
             \redirect('/settings/email');
         }
         (new EmailConfiguration)->saveSettings($_POST);

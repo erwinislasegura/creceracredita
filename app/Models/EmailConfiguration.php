@@ -8,6 +8,12 @@ class EmailConfiguration extends Model
         'assessment_from_email' => 'contacto@creceracredita.cl',
         'assessment_reply_to' => 'contacto@creceracredita.cl',
         'assessment_internal_recipients' => 'contacto@creceracredita.cl, erwin.2785@gmail.com',
+        'assessment_mail_protocol' => 'imap',
+        'assessment_mail_host' => '',
+        'assessment_mail_port' => '993',
+        'assessment_mail_encryption' => 'ssl',
+        'assessment_mail_username' => '',
+        'assessment_mail_password' => '',
     ];
 
     public function settings(): array
@@ -27,6 +33,9 @@ class EmailConfiguration extends Model
         $allowed = array_keys($this->defaultSettings);
         $stmt = $this->db->prepare('INSERT INTO app_settings(setting_key, setting_value, updated_at) VALUES(?,?,NOW()) ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value), updated_at=NOW()');
         foreach ($allowed as $key) {
+            if ($key === 'assessment_mail_password' && empty($data[$key])) {
+                continue;
+            }
             $stmt->execute([$key, trim((string)($data[$key] ?? $this->defaultSettings[$key]))]);
         }
     }

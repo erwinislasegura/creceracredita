@@ -39,7 +39,86 @@ class AssessmentMailer
         $message = "--{$boundary}\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n{$text}\r\n\r\n";
         $message .= "--{$boundary}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n{$html}\r\n\r\n--{$boundary}--";
 
+        $recipients = array_filter(array_merge([$to], $internalRecipients !== '' ? explode(', ', $internalRecipients) : []));
+        if (trim((string)($settings['assessment_mail_host'] ?? '')) !== '') {
+            return $this->sendViaServer($settings, $fromEmail, $fromName, $replyTo, $recipients, $to, $subject, $message, $boundary);
+        }
+
         return mail($to, $this->encodeSubject($subject), $message, implode("\r\n", $headers));
+    }
+
+
+    private function sendViaServer(array $settings, string $fromEmail, string $fromName, string $replyTo, array $recipients, string $visibleTo, string $subject, string $body, string $boundary): bool
+    {
+        $host = trim((string)$settings['assessment_mail_host']);
+        $port = (int)($settings['assessment_mail_port'] ?: 993);
+        $encryption = (string)($settings['assessment_mail_encryption'] ?? 'ssl');
+        $username = trim((string)($settings['assessment_mail_username'] ?? ''));
+        $password = (string)($settings['assessment_mail_password'] ?? '');
+        $remote = $encryption === 'ssl' ? 'ssl://' . $host : $host;
+        $socket = @fsockopen($remote, $port, $errno, $errstr, 20);
+        if (!$socket) {
+            error_log("Assessment mail server connection error: {$errno} {$errstr}");
+            return false;
+        }
+
+        $ok = $this->expect($socket, [220]);
+        $ok = $ok && $this->command($socket, 'EHLO ' . ($_SERVER['HTTP_HOST'] ?? 'localhost'), [250]);
+        if ($ok && $encryption === 'tls') {
+            $ok = $this->command($socket, 'STARTTLS', [220]);
+            if ($ok) {
+                $ok = stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+                $ok = $ok && $this->command($socket, 'EHLO ' . ($_SERVER['HTTP_HOST'] ?? 'localhost'), [250]);
+            }
+        }
+        if ($ok && $username !== '' && $password !== '') {
+            $ok = $this->command($socket, 'AUTH LOGIN', [334]);
+            $ok = $ok && $this->command($socket, base64_encode($username), [334]);
+            $ok = $ok && $this->command($socket, base64_encode($password), [235]);
+        }
+        $ok = $ok && $this->command($socket, 'MAIL FROM:<' . $fromEmail . '>', [250]);
+        foreach ($recipients as $recipient) {
+            $ok = $ok && $this->command($socket, 'RCPT TO:<' . $recipient . '>', [250, 251]);
+        }
+        $headers = [
+            'MIME-Version: 1.0',
+            'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
+            'From: ' . $fromName . ' <' . $fromEmail . '>',
+            'To: <' . $visibleTo . '>',
+            'Reply-To: ' . $replyTo,
+            'Subject: ' . $this->encodeSubject($subject),
+            'Date: ' . date(DATE_RFC2822),
+        ];
+        $data = implode("\r\n", $headers) . "\r\n\r\n" . $body;
+        $data = preg_replace('/^\./m', '..', $data);
+        $ok = $ok && $this->command($socket, 'DATA', [354]);
+        $ok = $ok && $this->command($socket, $data . "\r\n.", [250]);
+        $this->command($socket, 'QUIT', [221]);
+        fclose($socket);
+        return (bool)$ok;
+    }
+
+    private function command($socket, string $command, array $codes): bool
+    {
+        fwrite($socket, $command . "\r\n");
+        return $this->expect($socket, $codes);
+    }
+
+    private function expect($socket, array $codes): bool
+    {
+        $response = '';
+        while (($line = fgets($socket, 515)) !== false) {
+            $response .= $line;
+            if (preg_match('/^\d{3} /', $line)) {
+                break;
+            }
+        }
+        $code = (int)substr($response, 0, 3);
+        if (!in_array($code, $codes, true)) {
+            error_log('Assessment mail server response error: ' . trim($response));
+            return false;
+        }
+        return true;
     }
 
     private function riskKey(float $score): string
