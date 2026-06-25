@@ -8,10 +8,10 @@ class EmailConfiguration extends Model
         'assessment_from_email' => 'contacto@creceracredita.cl',
         'assessment_reply_to' => 'contacto@creceracredita.cl',
         'assessment_internal_recipients' => 'contacto@creceracredita.cl, erwin.2785@gmail.com',
-        'assessment_mail_protocol' => 'imap',
+        'assessment_mail_protocol' => 'smtp',
         'assessment_mail_host' => '',
-        'assessment_mail_port' => '993',
-        'assessment_mail_encryption' => 'ssl',
+        'assessment_mail_port' => '587',
+        'assessment_mail_encryption' => 'tls',
         'assessment_mail_username' => '',
         'assessment_mail_password' => '',
     ];
