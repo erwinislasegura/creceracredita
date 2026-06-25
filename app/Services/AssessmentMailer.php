@@ -21,24 +21,27 @@ class AssessmentMailer
         $fromName = $this->cleanHeader((string)$settings['assessment_from_name']);
         $replyTo = $this->sanitizeEmail((string)$settings['assessment_reply_to']) ?: $fromEmail;
         $internalRecipients = $this->sanitizeEmailList((string)$settings['assessment_internal_recipients']);
+        $bccRecipients = $internalRecipients !== '' ? explode(', ', $internalRecipients) : [];
         $subject = $this->replaceTokens((string)$template['subject'], $lead, $result, $fromEmail);
         $html = $this->replaceTokens((string)$template['html_body'], $lead, $result, $fromEmail);
         $text = trim(strip_tags(str_replace(['</p>', '</li>', '<br>', '<br/>', '<br />'], "\n", $html)));
         $boundary = 'crecer_' . bin2hex(random_bytes(12));
         $message = "--{$boundary}\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n{$text}\r\n\r\n";
         $message .= "--{$boundary}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n{$html}\r\n\r\n--{$boundary}--";
-        $protocol = strtolower(trim((string)($settings['assessment_mail_protocol'] ?? 'smtp')));
         $host = trim((string)($settings['assessment_mail_host'] ?? ''));
 
-        if ($host !== '' && $protocol === 'smtp') {
-            $bcc = $internalRecipients !== '' ? explode(', ', $internalRecipients) : [];
-            return $this->sendViaServer($settings, $fromEmail, $fromName, $replyTo, $leadRecipient, $bcc, $subject, $message, $boundary);
+        if ($host !== '') {
+            $sent = $this->sendViaServer($settings, $fromEmail, $fromName, $replyTo, $leadRecipient, $bccRecipients, $subject, $message, $boundary);
+            if ($sent) return true;
+            error_log('Assessment SMTP delivery failed; retrying with PHP mail().');
         }
 
-        if ($host !== '' && $protocol !== 'smtp') {
-            error_log('Assessment mail configuration warning: outgoing mail requires SMTP; falling back to PHP mail().');
-        }
+        return $this->sendWithPhpMail($fromEmail, $fromName, $replyTo, $leadRecipient, $bccRecipients, $subject, $message, $boundary);
+    }
 
+
+    private function sendWithPhpMail(string $fromEmail, string $fromName, string $replyTo, string $leadRecipient, array $bccRecipients, string $subject, string $message, string $boundary): bool
+    {
         $headers = [
             'MIME-Version: 1.0',
             'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
@@ -47,11 +50,12 @@ class AssessmentMailer
             'Reply-To: ' . $replyTo,
             'X-Mailer: PHP/' . phpversion(),
         ];
-        if ($internalRecipients !== '') {
-            $headers[] = 'Bcc: ' . $internalRecipients;
+        if (!empty($bccRecipients)) {
+            $headers[] = 'Bcc: ' . implode(', ', $bccRecipients);
         }
 
-        return mail($leadRecipient, $this->encodeSubject($subject), $message, implode("\r\n", $headers));
+        $allRecipients = array_values(array_unique(array_merge([$leadRecipient], $bccRecipients)));
+        return mail(implode(', ', $allRecipients), $this->encodeSubject($subject), $message, implode("\r\n", $headers));
     }
 
     private function sendViaServer(array $settings, string $fromEmail, string $fromName, string $replyTo, string $visibleTo, array $bccRecipients, string $subject, string $body, string $boundary): bool
@@ -87,10 +91,16 @@ class AssessmentMailer
             $ok = $ok && $this->command($socket, base64_encode($password), [235]);
         }
         $ok = $ok && $this->command($socket, 'MAIL FROM:<' . $fromEmail . '>', [250]);
+        $acceptedRecipients = [];
         $recipients = array_values(array_unique(array_filter(array_merge([$visibleTo], $bccRecipients))));
-        foreach ($recipients as $recipient) {
-            $ok = $ok && $this->command($socket, 'RCPT TO:<' . $recipient . '>', [250, 251]);
+        if ($ok) {
+            foreach ($recipients as $recipient) {
+                if ($this->command($socket, 'RCPT TO:<' . $recipient . '>', [250, 251])) {
+                    $acceptedRecipients[] = $recipient;
+                }
+            }
         }
+        $ok = $ok && !empty($acceptedRecipients);
         $headers = [
             'MIME-Version: 1.0',
             'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
