@@ -1,26 +1,26 @@
 <?php $title='Configuración de correo'; ?>
 <div class="actions"><a class="btn ghost" href="<?=url('/settings')?>">Volver</a><a class="btn" href="<?=url('/settings/email-templates')?>">Editar plantillas</a></div>
 <div class="panel">
-  <h2>Servidor IMAP para correo saliente</h2>
-  <p>Configura la cuenta desde la que se enviarán todos los correos del modal. Si tu proveedor usa SMTP para salida, ingresa aquí el mismo host/puerto SMTP entregado por el proveedor.</p>
+  <h2>Servidor SMTP para correo saliente</h2>
+  <p>Configura la cuenta SMTP desde la que se enviarán los correos del modal. IMAP solo sirve para leer correo; para envío efectivo usa el host, puerto y seguridad SMTP entregados por tu proveedor. Para Gmail usa smtp.gmail.com, puerto 587, TLS y una contraseña de aplicación.</p>
   <form method="post" action="<?=url('/settings/email')?>">
     <?=csrf_field()?>
     <div class="grid2">
       <label>Protocolo
         <select name="assessment_mail_protocol">
-          <?php $protocol=$settings['assessment_mail_protocol'] ?? 'imap'; ?>
+          <?php $protocol=$settings['assessment_mail_protocol'] ?? 'smtp'; ?>
           <option value="imap" <?=$protocol==='imap'?'selected':''?>>IMAP</option>
-          <option value="smtp" <?=$protocol==='smtp'?'selected':''?>>SMTP</option>
+          <option value="smtp" <?=$protocol==='smtp'?'selected':''?>>SMTP (recomendado)</option>
         </select>
       </label>
       <label>Servidor / Host
-        <input name="assessment_mail_host" placeholder="imap.tudominio.cl" value="<?=e($settings['assessment_mail_host'] ?? '')?>">
+        <input name="assessment_mail_host" placeholder="smtp.tudominio.cl" value="<?=e($settings['assessment_mail_host'] ?? '')?>">
       </label>
       <label>Puerto
-        <input type="number" name="assessment_mail_port" placeholder="993" value="<?=e($settings['assessment_mail_port'] ?? '993')?>">
+        <input type="number" name="assessment_mail_port" placeholder="587" value="<?=e($settings['assessment_mail_port'] ?? '587')?>">
       </label>
       <label>Seguridad
-        <?php $enc=$settings['assessment_mail_encryption'] ?? 'ssl'; ?>
+        <?php $enc=$settings['assessment_mail_encryption'] ?? 'tls'; ?>
         <select name="assessment_mail_encryption">
           <option value="ssl" <?=$enc==='ssl'?'selected':''?>>SSL</option>
           <option value="tls" <?=$enc==='tls'?'selected':''?>>TLS / STARTTLS</option>
