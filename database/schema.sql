@@ -6,3 +6,5 @@ CREATE TABLE assessment_answers (id INT AUTO_INCREMENT PRIMARY KEY,client_id INT
 CREATE TABLE assessment_results (id INT AUTO_INCREMENT PRIMARY KEY,client_id INT NOT NULL,labor_score DECIMAL(5,2),pension_score DECIMAL(5,2),safety_score DECIMAL(5,2),document_score DECIMAL(5,2),contractor_score DECIMAL(5,2),final_score DECIMAL(5,2),risk_level VARCHAR(40),recommendation TEXT,created_at TIMESTAMP NULL,FOREIGN KEY(client_id) REFERENCES clients(id) ON DELETE CASCADE);
 CREATE TABLE activity_logs (id INT AUTO_INCREMENT PRIMARY KEY,user_id INT NULL,action VARCHAR(80) NOT NULL,entity_type VARCHAR(80),entity_id INT,description TEXT,ip_address VARCHAR(60),created_at TIMESTAMP NULL,FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL);
 CREATE TABLE settings (id INT AUTO_INCREMENT PRIMARY KEY,setting_key VARCHAR(120) NOT NULL UNIQUE,setting_value TEXT);
+CREATE TABLE app_settings (setting_key VARCHAR(120) PRIMARY KEY,setting_value TEXT,updated_at TIMESTAMP NULL);
+CREATE TABLE assessment_email_templates (risk_key VARCHAR(20) PRIMARY KEY,label VARCHAR(80) NOT NULL,subject VARCHAR(255) NOT NULL,html_body MEDIUMTEXT NOT NULL,updated_at TIMESTAMP NULL);
