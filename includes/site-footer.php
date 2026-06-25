@@ -337,20 +337,106 @@ $crmAccessUrl = $crmAccessUrl ?? 'public/login';
       text-align:center;
     }
     .score {
-      width:126px;
-      height:126px;
-      margin:0 auto 15px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:var(--green);
-      color:#fff;
-      font-size:34px;
-      font-weight:700;
-      box-shadow:var(--shadow);
+      --score-percent:0;
+      --needle-angle:calc(-90deg + (var(--score-percent) * 1.8deg));
+      --risk-color:#74c900;
+      position:relative;
+      width:min(250px, 82vw);
+      height:154px;
+      margin:0 auto 18px;
+      color:var(--ink);
+      filter:drop-shadow(0 16px 22px rgba(0,32,96,.12));
     }
-    .score.medium { background:var(--mustard); color:#fff; }
-    .score.high { background:var(--danger); }
+    .score.medium { --risk-color:#f3c623; }
+    .score.high { --risk-color:#ee432f; }
+    .score::before {
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:125px;
+      border-radius:125px 125px 0 0;
+      background:
+        conic-gradient(from 270deg at 50% 100%,
+          #b9ef00 0deg 64deg,
+          #f2df25 64deg 116deg,
+          #f59d26 116deg 150deg,
+          #e9442e 150deg 180deg,
+          transparent 180deg 360deg);
+      -webkit-mask:radial-gradient(circle at 50% 100%, transparent 0 49px, #000 50px);
+      mask:radial-gradient(circle at 50% 100%, transparent 0 49px, #000 50px);
+    }
+    .score::after {
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:39px;
+      width:97px;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(90deg, #253041 0 64%, var(--risk-color) 64% 100%);
+      transform-origin:7px 50%;
+      transform:rotate(var(--needle-angle));
+      box-shadow:0 5px 10px rgba(23,32,51,.22);
+    }
+    .score-label {
+      position:absolute;
+      bottom:54px;
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.05em;
+      color:#9aa3af;
+      text-transform:uppercase;
+    }
+    .score-label.low { left:20px; transform:rotate(-72deg); }
+    .score-label.medium { left:50%; top:5px; bottom:auto; transform:translateX(-50%); }
+    .score-label.high { right:18px; transform:rotate(72deg); }
+    .score-needle-hub {
+      position:absolute;
+      left:50%;
+      bottom:33px;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      background:#fff;
+      border:8px solid #243042;
+      transform:translateX(-50%);
+      z-index:2;
+      box-shadow:0 5px 11px rgba(23,32,51,.25);
+    }
+    .score-value {
+      position:absolute;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      display:flex;
+      align-items:baseline;
+      gap:3px;
+      font-size:34px;
+      line-height:1;
+      font-weight:800;
+      color:#3f3f3f;
+      letter-spacing:-.04em;
+      z-index:3;
+    }
+    .score-value small {
+      font-size:16px;
+      font-weight:800;
+      color:inherit;
+    }
+    .score-caption {
+      position:absolute;
+      left:50%;
+      bottom:-23px;
+      transform:translateX(-50%);
+      font-size:25px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.06em;
+      color:#3f3f3f;
+      text-transform:uppercase;
+    }
     @media (max-width:960px) {
       .modal-layout { grid-template-columns:1fr; }
       .modal-aside { display:none; }
@@ -432,7 +518,14 @@ $crmAccessUrl = $crmAccessUrl ?? 'public/login';
 
               <div id="resultStep" style="display:none;">
                 <div class="result-card">
-                  <div class="score" id="scoreCircle">0</div>
+                  <div class="score" id="scoreCircle" role="img" aria-label="Puntaje final 0 de 100" style="--score-percent:0;">
+                    <span class="score-label low">Bajo</span>
+                    <span class="score-label medium">Medio</span>
+                    <span class="score-label high">Alto</span>
+                    <span class="score-needle-hub" aria-hidden="true"></span>
+                    <span class="score-value"><span id="scoreValue">0</span><small>%</small></span>
+                    <span class="score-caption">Risk</span>
+                  </div>
                   <h2 id="riskTitle" style="margin-bottom:10px;">Resultado</h2>
                   <p id="riskMsg" class="lead" style="margin-inline:auto;"></p>
                   <div id="specialMsg" style="margin:16px 0;"></div>
@@ -698,8 +791,11 @@ $crmAccessUrl = $crmAccessUrl ?? 'public/login';
           fecha:new Date().toISOString()
         }));
 
-        document.getElementById('scoreCircle').textContent = final;
-        document.getElementById('scoreCircle').className = 'score ' + result.className;
+        const scoreCircle = document.getElementById('scoreCircle');
+        scoreCircle.className = 'score ' + result.className;
+        scoreCircle.style.setProperty('--score-percent', 100 - final);
+        scoreCircle.setAttribute('aria-label', `Puntaje final ${final} de 100`);
+        document.getElementById('scoreValue').textContent = final;
         document.getElementById('riskTitle').textContent = result.title;
         document.getElementById('riskMsg').textContent = result.message;
         document.getElementById('resultCta').textContent = result.cta;
